@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dtlcn2mtrw7ax"]
+
+[ext_resource type="Texture2D" uid="uid://c5arag4jnaelj" path="res://assets/students/stupidité.png" id="1_btk28"]
+
+[node name="life_sprite" type="TextureRect" unique_id=2042559942]
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("1_btk28")
+stretch_mode = 5

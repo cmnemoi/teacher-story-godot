@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://comgbjh65362c"]
+
+[ext_resource type="Script" uid="uid://l8via0tfryjq" path="res://scenes/students/student_tooltip.gd" id="1_fuvat"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuvat"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 250
+corner_radius_top_right = 250
+corner_radius_bottom_right = 250
+corner_radius_bottom_left = 250
+corner_detail = 20
+shadow_size = 10
+
+[node name="Student_Tooltip" type="Control" unique_id=1432997240]
+z_index = 1
+layout_mode = 3
+anchor_left = 0.9
+anchor_right = 1.7
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fuvat")
+
+[node name="Panel" type="Panel" parent="." unique_id=916249115]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fuvat")
+
+[node name="PanelContainer" type="VBoxContainer" parent="Panel" unique_id=2101168822]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.1
+anchor_right = 0.93
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="Panel/PanelContainer" unique_id=1395382248]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 41)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "TITLE"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/PanelContainer" unique_id=1198770795]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Description" type="RichTextLabel" parent="Panel/PanelContainer" unique_id=2096662569]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 12
+text = "DESC"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://dil4fb1onwfqg"]
+
+[ext_resource type="PackedScene" uid="uid://hjb8qvrsxsr8" path="res://scenes/desk/desk.tscn" id="1_27kh8"]
+[ext_resource type="Script" uid="uid://527eevp76k6b" path="res://scenes/gamemain/student_randomizer.gd" id="1_b4cvc"]
+
+[node name="GameMain" type="Node" unique_id=993646125]
+
+[node name="StudentRandomizer" type="Node" parent="." unique_id=896814977]
+script = ExtResource("1_b4cvc")
+
+[node name="ClassRoom" type="Control" parent="." unique_id=300094550]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Desk" parent="ClassRoom" unique_id=2059827739 node_paths=PackedStringArray("student") instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = -74.0
+offset_top = -261.0
+offset_right = 54.0
+offset_bottom = -133.0
+student = NodePath("")
+group = 1
+
+[node name="Desk2" parent="ClassRoom" unique_id=370355892 instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = 19.0
+offset_top = -215.0
+offset_right = 147.0
+offset_bottom = -87.0
+group = 1
+column = 1
+
+[node name="Desk3" parent="ClassRoom" unique_id=1601613327 instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = 169.0
+offset_top = -109.0
+offset_right = 297.0
+offset_bottom = 19.0
+group = 2
+column = 2
+
+[node name="Desk4" parent="ClassRoom" unique_id=961680321 instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = 264.0
+offset_top = -63.0
+offset_right = 392.0
+offset_bottom = 65.0
+group = 2
+column = 4
+
+[node name="Desk5" parent="ClassRoom" unique_id=662414079 instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = -243.0
+offset_top = -149.0
+offset_right = -115.0
+offset_bottom = -21.0
+group = 3
+row = 1
+
+[node name="Desk6" parent="ClassRoom" unique_id=1010355695 instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = -150.0
+offset_top = -104.0
+offset_right = -22.0
+offset_bottom = 24.0
+group = 3
+row = 1
+column = 1
+
+[node name="Desk7" parent="ClassRoom" unique_id=260715519 node_paths=PackedStringArray("student") instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 6.0
+offset_right = 158.0
+offset_bottom = 134.0
+student = NodePath("")
+group = 4
+row = 1
+column = 3
+
+[node name="Desk8" parent="ClassRoom" unique_id=672059818 node_paths=PackedStringArray("student") instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = 123.0
+offset_top = 51.0
+offset_right = 251.0
+offset_bottom = 179.0
+student = NodePath("")
+group = 4
+row = 1
+column = 4
+
+[node name="Desk9" parent="ClassRoom" unique_id=1333457737 node_paths=PackedStringArray("student") instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = -395.0
+offset_top = -43.0
+offset_right = -267.0
+offset_bottom = 85.0
+student = NodePath("")
+group = 5
+row = 2
+
+[node name="Desk10" parent="ClassRoom" unique_id=766614130 node_paths=PackedStringArray("student") instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = -303.0
+offset_top = 4.0
+offset_right = -175.0
+offset_bottom = 132.0
+student = NodePath("")
+group = 5
+row = 2
+column = 1
+
+[node name="Desk11" parent="ClassRoom" unique_id=905552252 instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = -128.0
+offset_top = 86.0
+offset_right = 0.0
+offset_bottom = 214.0
+group = 6
+row = 2
+column = 2
+
+[node name="Desk12" parent="ClassRoom" unique_id=1605624134 instance=ExtResource("1_27kh8")]
+layout_mode = 1
+offset_left = -34.0
+offset_top = 131.0
+offset_right = 94.0
+offset_bottom = 259.0
+group = 6
+row = 2
+column = 3
