@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvg73eaj0mexf"]
+
+[ext_resource type="Script" uid="uid://dd55gexrralli" path="res://scenes/Singleton/skill_target_select_handler.gd" id="1_ml75g"]
+
+[node name="SkillTargetSelectHandler" type="Node" unique_id=538637258]
+script = ExtResource("1_ml75g")
