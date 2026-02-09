@@ -22,8 +22,9 @@ func _on_main_button_pressed() -> void:
 	for student in student_targets:
 		if student is Student:
 			student.damage(resource.damage_modifier,resource.ennui_breaker,resource.ennui_only)
-	
-	#TODO: Add effect on specfic cases
+	match resource.name:
+		"Rappel à l'ordre": pass #TODO: Remove negative effect
+		"Concentration": pass #TODO: Add positive effect 
 	
 	for skill in Global.skill_list:
 		skill.main_button.disabled = false

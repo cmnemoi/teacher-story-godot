@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://2bowsbefe021"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_ywp54"]
+[ext_resource type="Texture2D" uid="uid://b4goofr4rs78c" path="res://assets/skills/RappelAl'OrdreIcon.png" id="2_ex5c4"]
+
+[resource]
+script = ExtResource("1_ywp54")
+name = "Rappel à l'ordre"
+sprite = ExtResource("2_ex5c4")
+description = "L'élève ciblé perd 2 pv. Le skill passe au travers l'ennui."
+damage_modifier = 1
+ennui_only = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

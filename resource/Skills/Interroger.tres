@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://cu1vdts2y2rv7"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_54lfc"]
+[ext_resource type="Texture2D" uid="uid://5uh1llo7arll" path="res://assets/skills/InterrogerIcon.png" id="2_54lfc"]
+
+[resource]
+script = ExtResource("1_54lfc")
+name = "Interroger"
+sprite = ExtResource("2_54lfc")
+description = "L'élève ciblé perd 4 pv"
+damage_modifier = 4
+metadata/_custom_type_script = "uid://cibimso3crkbb"

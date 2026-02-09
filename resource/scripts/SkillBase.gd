@@ -13,7 +13,6 @@ class_name SkillResource
 @export var bonus_note := 0 
 @export var ennui_only := false
 @export var ennui_breaker := false
-@export var remove_negative_effect := false
 
 #negatives
 @export var heal_modifier := 0

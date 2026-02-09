@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://527eevp76k6b" path="res://scenes/gamemain/student_randomizer.gd" id="1_b4cvc"]
 [ext_resource type="PackedScene" uid="uid://6nm68j81g586" path="res://scenes/desk/group_desks.tscn" id="3_bvwi8"]
 [ext_resource type="PackedScene" uid="uid://f3y4pef7vvfd" path="res://scenes/skills/skill_base.tscn" id="3_l3ydj"]
-[ext_resource type="Resource" uid="uid://2bowsbefe021" path="res://resource/Skills/PointeDeSagesse.tres" id="4_bvwi8"]
+[ext_resource type="Resource" uid="uid://du8fw0pvf2ns2" path="res://resource/Skills/PointeDeSagesse.tres" id="4_bvwi8"]
 [ext_resource type="Resource" uid="uid://ceubcahowtp87" path="res://resource/Skills/Concentration1.tres" id="5_kmx0x"]
+[ext_resource type="Resource" uid="uid://cu1vdts2y2rv7" path="res://resource/Skills/Interroger.tres" id="6_wortu"]
+[ext_resource type="Resource" uid="uid://2bowsbefe021" path="res://resource/Skills/RappelAl'Ordre.tres" id="7_bcit8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3ydj"]
 bg_color = Color(0, 0, 0, 1)
@@ -114,11 +116,9 @@ resource = ExtResource("5_kmx0x")
 [node name="SkillBase4" parent="Panel/HBoxContainer" unique_id=1316799459 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
+resource = ExtResource("6_wortu")
 
 [node name="SkillBase5" parent="Panel/HBoxContainer" unique_id=2018632818 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="SkillBase6" parent="Panel/HBoxContainer" unique_id=583115228 instance=ExtResource("3_l3ydj")]
-layout_mode = 2
-size_flags_horizontal = 3
+resource = ExtResource("7_bcit8")
