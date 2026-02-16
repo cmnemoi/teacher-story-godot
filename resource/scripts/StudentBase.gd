@@ -7,5 +7,5 @@ enum CaractereType {Reveur,Jovial,Malin,Timide,Clown,Bruyant,Manipulateur,Hypera
 @export var stupidite_de_base := 3
 @export var ennui_de_base := 2
 @export var student_name := "Michel"
-@export var base_note: float = 10
+@export var note: float = 10
 @export var sprite: Texture2D = preload("res://assets/students/guy1.png")

@@ -12,7 +12,6 @@ const LIFE_SPRITE_SCENE = preload("res://scenes/students/life_sprite.tscn")
 
 @onready var stupidite := resource.stupidite_de_base
 @onready var ennui := resource.ennui_de_base
-@onready var current_note = resource.base_note
 var untouchable: bool = false
 var current_rank: int = 2 ##valeur entre 0 et 2, 0 c'est le dernier rang, 2 celui de devant
 var bonus_note_on_death: int = 0
@@ -55,7 +54,7 @@ func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false
 
 func die():
 	untouchable = true
-	current_note += 1 * current_rank + bonus_note_on_death
+	resource.note += 1 * current_rank + bonus_note_on_death
 	modulate = Color("5f5f5f")
 	for child in $HpContainer.get_children():
 		if child is TextureRect:

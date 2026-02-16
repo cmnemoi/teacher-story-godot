@@ -12,12 +12,12 @@
 [ext_resource type="Resource" uid="uid://3mw2n4es48sm" path="res://resource/Skills/HurlerLeCours.tres" id="8_46t7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3ydj"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 12
 border_width_top = 12
 border_width_right = 12
 border_width_bottom = 12
-border_color = Color(0.37, 0.103353344, 0.022200001, 1)
+border_color = Color(0, 0, 0, 1)
 border_blend = true
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -203,6 +203,37 @@ theme_override_font_sizes/font_size = 32
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="InfoPanel" type="Control" parent="." unique_id=1504059880]
+layout_mode = 3
+anchor_left = 0.02
+anchor_top = 0.3
+anchor_right = 0.2
+anchor_bottom = 0.7
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="InfoPanel" unique_id=341625422]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l3ydj")
+
+[node name="InfoContainer" type="GridContainer" parent="InfoPanel/Panel" unique_id=1861114725]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 8
+columns = 2
 
 [editable path="ClassRoom/GroupDesks6"]
 [editable path="ClassRoom/GroupDesks5"]

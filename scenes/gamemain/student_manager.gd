@@ -2,13 +2,27 @@ extends Node
 
 var students_resources := []
 var students := []
+var info_labels : Array[RichTextLabel] = []
 var student_scene = preload("res://scenes/students/student.tscn")
 var gender = ["boy","girl"]
-var boy_names = ["Michael","Edward","Clint","James","John"]
-var girl_names = ["Kate","Marie","Alicia","Susie","Rachel"]
+var boy_names = [
+	"Kévin", "Maxime", "Mathéo", "Hugo", "Victor", "Julien",
+	"Théo", "Sébastien", "Thomas", "Nicolas", "Hervé", "Alexis",
+	"Rémi", "David", "Titeuf", "Stephen", "Benjamin", "Frédéric",
+	"Jérôme", "Johnnatan", "Antoine", "Anthony", "Jean-Marc",
+	"Chen", "Cédric", "Dylan", "Morgan", "Abdel-Hakim", "Abdallah",
+	"Abel", "Adelin", "Christophe", "Yoann", "Steve"]
+var girl_names = [
+	"Lola", "Léa", "Margaret", "Ebène", "Julie", "Marie", "Claire",
+	"Mélanie", "Céline", "Annabelle", "Fanny", "Morganne",
+	"Adeline", "Rachida", "Roxanne", "Richarde", "Audrey",
+	"Nadège", "Najette", "Caroline", "Colette"]
+
 
 func generate_x_random_student(x) -> void:
 	clear_students()
+	clear_students_resources()
+	info_labels.clear()
 	
 	for i in range(x):
 		if i >= len(%DeskManager.desks):
@@ -53,7 +67,21 @@ func generate_x_random_student(x) -> void:
 		else:
 			print("WTF IS GOING ON, A STUDENT IS NON BINARY APPARENTLY")
 		students_resources.append(new_student_resource)
-		new_student_resource.base_note = randi_range(8,14) #TODO: should change depending on difficulty
+		new_student_resource.note = randi_range(8,14) #TODO: should change depending on difficulty
+		
+		var label = RichTextLabel.new()
+		label.bbcode_enabled = true
+		label.text = "[color=000000][b]%s[/b]: %s"%[new_student_resource.student_name,new_student_resource.note]
+		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		label.scroll_active = false
+		label.custom_minimum_size = Vector2(16,32)
+		%InfoContainer.add_child(label)
+		info_labels.append(label)
+
+func update_info_labels():
+	for i in range(len(info_labels)):
+		info_labels[i].text = "[color=000000][b]%s[/b]: %s/20"%[students_resources[i].student_name,students_resources[i].note]
 
 func assign_students_to_random_desk():
 	var possible_spot := []
@@ -90,3 +118,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	generate_x_random_student(5)
 	assign_students_to_random_desk()
+
+func _process(_delta: float) -> void:
+	update_info_labels()

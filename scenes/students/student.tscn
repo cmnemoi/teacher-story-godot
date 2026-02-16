@@ -35,8 +35,8 @@ anchor_right = 0.75
 anchor_bottom = -0.1
 
 [node name="Student_Tooltip" parent="." unique_id=813405298 instance=ExtResource("3_fahmq")]
-visible = false
 layout_mode = 1
+anchor_right = 2.3
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
