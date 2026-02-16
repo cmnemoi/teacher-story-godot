@@ -2,25 +2,20 @@ extends Button
 class_name Student
 
 enum CaractereType {Reveur,Jovial,Malin,Timide,Clown,Bruyant,Manipulateur,Hyperactif}
-
 const SPRITE_ENNUI = preload("uid://1qgo66qnt5ib")
 const SPRITE_HOVER_ENNUI = preload("res://assets/students/hover_ennui.png")
 const SPRITE_STUPIDITE = preload("uid://c5arag4jnaelj")
 const SPRITE_HOVER_STUPIDITE = preload("uid://b26vh50eoqmtb")
 const LIFE_SPRITE_SCENE = preload("res://scenes/students/life_sprite.tscn")
 
-@export var caractere: CaractereType = CaractereType.Reveur
+@export var resource : StudentResource 
 
-@export var stupidite_de_base := 3
-@onready var stupidite := stupidite_de_base
-@export var ennui_de_base := 2
-@onready var ennui := ennui_de_base
-@export var student_name := "Michel"
-@export var note: float = 10
+@onready var stupidite := resource.stupidite_de_base
+@onready var ennui := resource.ennui_de_base
+@onready var current_note = resource.base_note
 var untouchable: bool = false
 var current_rank: int = 2 ##valeur entre 0 et 2, 0 c'est le dernier rang, 2 celui de devant
 var bonus_note_on_death: int = 0
-@export var sprite: Texture2D = preload("res://assets/students/guy1.png")
 
 func make_ui() -> void:
 	for child in $HpContainer.get_children():
@@ -40,8 +35,8 @@ func make_ui() -> void:
 
 func _ready() -> void:
 	make_ui()
-	$Student_Tooltip.init(student_name,"Caractère: %s"%CaractereType.keys()[caractere],Color("#211f26"),Color("3098edff"),Color("959595ff"))
-	$TextureRect.texture = sprite
+	$Student_Tooltip.init(resource.student_name,"Caractère: %s"%CaractereType.keys()[resource.caractere],Color("#211f26"),Color("3098edff"),Color("959595ff"))
+	$TextureRect.texture = resource.sprite
 
 func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false):
 	if !untouchable:
@@ -60,15 +55,15 @@ func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false
 
 func die():
 	untouchable = true
-	note += 1 * current_rank + bonus_note_on_death
+	current_note += 1 * current_rank + bonus_note_on_death
 	modulate = Color("5f5f5f")
 	for child in $HpContainer.get_children():
 		if child is TextureRect:
 			child.queue_free()
 
 func reset():
-	stupidite = stupidite_de_base
-	ennui = ennui_de_base
+	stupidite = resource.stupidite_de_base
+	ennui = resource.ennui_de_base
 	untouchable = false
 	modulate = Color("ffffff")
 	make_ui()
