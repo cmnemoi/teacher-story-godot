@@ -28,6 +28,7 @@ texture_normal = ExtResource("2_7cx4e")
 stretch_mode = 5
 
 [node name="Tooltip" parent="." unique_id=1432997240 instance=ExtResource("3_7cx4e")]
+visible = false
 layout_mode = 1
 anchor_left = 1.2
 anchor_top = -0.4

@@ -5,7 +5,6 @@
 
 [node name="GroupDesks" type="TextureButton" unique_id=445608929]
 z_index = -1
-custom_minimum_size = Vector2(220, 200)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

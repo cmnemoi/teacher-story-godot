@@ -26,6 +26,10 @@ Global="*res://scenes/Singleton/global.gd"
 SkillTargetSelectHandler="*uid://dvg73eaj0mexf"
 ManagerList="*uid://cyo7ygscfoevd"
 
+[debug]
+
+gdscript/warnings/integer_division=0
+
 [display]
 
 window/size/mode=2

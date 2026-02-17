@@ -6,10 +6,27 @@
 [ext_resource type="PackedScene" uid="uid://f3y4pef7vvfd" path="res://scenes/skills/skill_base.tscn" id="3_l3ydj"]
 [ext_resource type="Script" uid="uid://b2hk0iwa6w8sw" path="res://scenes/gamemain/desk_manager.gd" id="3_t6wvf"]
 [ext_resource type="Resource" uid="uid://du8fw0pvf2ns2" path="res://resource/Skills/PointeDeSagesse.tres" id="4_bvwi8"]
+[ext_resource type="Script" uid="uid://ys5x6gspa43q" path="res://scenes/gamemain/grid_container.gd" id="4_cn2bm"]
 [ext_resource type="Resource" uid="uid://ceubcahowtp87" path="res://resource/Skills/Concentration1.tres" id="5_kmx0x"]
+[ext_resource type="Texture2D" uid="uid://c65yeitrb0sdt" path="res://assets/ui/bottom_panel.png" id="5_r60v2"]
 [ext_resource type="Resource" uid="uid://cu1vdts2y2rv7" path="res://resource/Skills/Interroger.tres" id="6_wortu"]
 [ext_resource type="Resource" uid="uid://2bowsbefe021" path="res://resource/Skills/RappelAl'Ordre.tres" id="7_bcit8"]
 [ext_resource type="Resource" uid="uid://3mw2n4es48sm" path="res://resource/Skills/HurlerLeCours.tres" id="8_46t7q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r60v2"]
+draw_center = false
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(1, 0.7607843, 0.16862746, 1)
+corner_detail = 10
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+shadow_color = Color(0.84705883, 0.77254903, 0.6431373, 1)
+shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3ydj"]
 bg_color = Color(1, 1, 1, 1)
@@ -24,7 +41,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="GameMain" type="Node" unique_id=993646125]
+[node name="lé" type="Node" unique_id=993646125]
 
 [node name="TimerManager" type="Node" parent="." unique_id=1935789655]
 unique_name_in_owner = true
@@ -38,155 +55,106 @@ script = ExtResource("1_b4cvc")
 unique_name_in_owner = true
 script = ExtResource("3_t6wvf")
 
-[node name="ClassRoom" type="Control" parent="." unique_id=300094550]
+[node name="ClassRoom" type="Panel" parent="." unique_id=896156397]
 unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.95
+anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r60v2")
 
-[node name="GroupDesks6" parent="ClassRoom" unique_id=1534971643 instance=ExtResource("3_bvwi8")]
+[node name="GridContainer" type="GridContainer" parent="ClassRoom" unique_id=1686117174]
 layout_mode = 1
-offset_left = -87.0
-offset_top = -229.0
-offset_right = 133.0
-offset_bottom = -29.0
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.15
+anchor_right = 0.8
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+script = ExtResource("4_cn2bm")
 
-[node name="Desk" parent="ClassRoom/GroupDesks6" index="0" unique_id=335661609]
-row = 2
+[node name="GroupDesks" parent="ClassRoom/GridContainer" unique_id=445608929 instance=ExtResource("3_bvwi8")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Desk2" parent="ClassRoom/GroupDesks6" index="1" unique_id=1456143697]
-row = 2
-column = 1
+[node name="GroupDesks2" parent="ClassRoom/GridContainer" unique_id=1293188095 instance=ExtResource("3_bvwi8")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="GroupDesks5" parent="ClassRoom" unique_id=1503463705 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks3" parent="ClassRoom/GridContainer" unique_id=845111316 instance=ExtResource("3_bvwi8")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GroupDesks4" parent="ClassRoom/GridContainer" unique_id=1209994987 instance=ExtResource("3_bvwi8")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GroupDesks5" parent="ClassRoom/GridContainer" unique_id=588126496 instance=ExtResource("3_bvwi8")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GroupDesks6" parent="ClassRoom/GridContainer" unique_id=2061344818 instance=ExtResource("3_bvwi8")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="TextureRect" parent="ClassRoom" unique_id=1045265016]
 layout_mode = 1
-offset_left = 165.0
-offset_top = -87.0
-offset_right = 385.0
-offset_bottom = 113.0
-
-[node name="Desk" parent="ClassRoom/GroupDesks5" index="0" unique_id=335661609]
-group = 1
-row = 2
-column = 2
-
-[node name="Desk2" parent="ClassRoom/GroupDesks5" index="1" unique_id=1456143697]
-group = 1
-row = 2
-column = 3
-
-[node name="GroupDesks3" parent="ClassRoom" unique_id=1041504637 instance=ExtResource("3_bvwi8")]
-layout_mode = 1
-offset_left = -251.0
-offset_top = -164.0
-offset_right = -31.0
-offset_bottom = 36.0
-
-[node name="Desk" parent="ClassRoom/GroupDesks3" index="0" unique_id=335661609]
-group = 3
-row = 1
-
-[node name="Desk2" parent="ClassRoom/GroupDesks3" index="1" unique_id=1456143697]
-group = 3
-row = 1
-column = 1
-
-[node name="GroupDesks4" parent="ClassRoom" unique_id=102551852 instance=ExtResource("3_bvwi8")]
-layout_mode = 1
-offset_left = 29.0
-offset_top = -9.0
-offset_right = 249.0
-offset_bottom = 191.0
-
-[node name="Desk" parent="ClassRoom/GroupDesks4" index="0" unique_id=335661609]
-group = 4
-row = 1
-column = 2
-
-[node name="Desk2" parent="ClassRoom/GroupDesks4" index="1" unique_id=1456143697]
-group = 4
-row = 1
-column = 3
-
-[node name="GroupDesks2" parent="ClassRoom" unique_id=1521194866 instance=ExtResource("3_bvwi8")]
-layout_mode = 1
-offset_left = -395.0
-offset_top = -65.0
-offset_right = -175.0
-offset_bottom = 135.0
-
-[node name="Desk" parent="ClassRoom/GroupDesks2" index="0" unique_id=335661609]
-group = 5
-
-[node name="Desk2" parent="ClassRoom/GroupDesks2" index="1" unique_id=1456143697]
-group = 5
-column = 1
-
-[node name="GroupDesks" parent="ClassRoom" unique_id=445608929 instance=ExtResource("3_bvwi8")]
-layout_mode = 1
-offset_left = -116.0
-offset_top = 89.0
-offset_right = 104.0
-offset_bottom = 289.0
-
-[node name="Desk" parent="ClassRoom/GroupDesks" index="0" unique_id=335661609]
-group = 6
-column = 2
-
-[node name="Desk2" parent="ClassRoom/GroupDesks" index="1" unique_id=1456143697]
-group = 6
-column = 3
-
-[node name="Panel" type="Panel" parent="." unique_id=1878056105]
 anchors_preset = -1
 anchor_left = 0.2
-anchor_top = 0.9
+anchor_top = 0.8
 anchor_right = 0.8
-anchor_bottom = 0.9
-offset_top = -120.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_l3ydj")
+texture = ExtResource("5_r60v2")
+stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1833815339]
+[node name="HBoxContainer" type="HBoxContainer" parent="ClassRoom/Panel" unique_id=1833815339]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.25
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_right = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SkillBase" parent="Panel/HBoxContainer" unique_id=1992360077 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase" parent="ClassRoom/Panel/HBoxContainer" unique_id=1992360077 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("4_bvwi8")
 
-[node name="SkillBase2" parent="Panel/HBoxContainer" unique_id=1429961247 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase2" parent="ClassRoom/Panel/HBoxContainer" unique_id=1429961247 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SkillBase3" parent="Panel/HBoxContainer" unique_id=710136843 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase3" parent="ClassRoom/Panel/HBoxContainer" unique_id=710136843 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("5_kmx0x")
 
-[node name="SkillBase4" parent="Panel/HBoxContainer" unique_id=1316799459 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase4" parent="ClassRoom/Panel/HBoxContainer" unique_id=1316799459 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("6_wortu")
 
-[node name="SkillBase5" parent="Panel/HBoxContainer" unique_id=2018632818 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase5" parent="ClassRoom/Panel/HBoxContainer" unique_id=2018632818 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("7_bcit8")
 
-[node name="SkillBase6" parent="Panel/HBoxContainer" unique_id=289783335 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase6" parent="ClassRoom/Panel/HBoxContainer" unique_id=289783335 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("8_46t7q")
@@ -235,10 +203,4 @@ grow_vertical = 2
 theme_override_constants/h_separation = 8
 columns = 2
 
-[editable path="ClassRoom/GroupDesks6"]
-[editable path="ClassRoom/GroupDesks5"]
-[editable path="ClassRoom/GroupDesks3"]
-[editable path="ClassRoom/GroupDesks4"]
-[editable path="ClassRoom/GroupDesks2"]
-[editable path="ClassRoom/GroupDesks2/Desk"]
-[editable path="ClassRoom/GroupDesks"]
+[connection signal="sort_children" from="ClassRoom/GridContainer" to="ClassRoom/GridContainer" method="_on_sort_children"]
