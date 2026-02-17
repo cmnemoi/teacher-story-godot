@@ -12,6 +12,10 @@
 [ext_resource type="Resource" uid="uid://cu1vdts2y2rv7" path="res://resource/Skills/Interroger.tres" id="6_wortu"]
 [ext_resource type="Resource" uid="uid://2bowsbefe021" path="res://resource/Skills/RappelAl'Ordre.tres" id="7_bcit8"]
 [ext_resource type="Resource" uid="uid://3mw2n4es48sm" path="res://resource/Skills/HurlerLeCours.tres" id="8_46t7q"]
+[ext_resource type="Texture2D" uid="uid://c4nloatrcadeq" path="res://assets/ui/right_border.png" id="13_1scvx"]
+[ext_resource type="Texture2D" uid="uid://7wsbkr82yxed" path="res://assets/ui/bottom_border.png" id="13_ebuvp"]
+[ext_resource type="Texture2D" uid="uid://bf3g7p7csxelp" path="res://assets/ui/left_border.png" id="14_31s3c"]
+[ext_resource type="Script" uid="uid://c3y6e74m8gxsc" path="res://scenes/gamemain/border.gd" id="15_q0l7d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r60v2"]
 draw_center = false
@@ -55,116 +59,144 @@ script = ExtResource("1_b4cvc")
 unique_name_in_owner = true
 script = ExtResource("3_t6wvf")
 
-[node name="ClassRoom" type="Panel" parent="." unique_id=896156397]
+[node name="Game" type="Control" parent="." unique_id=1800385284]
+layout_mode = 3
+anchor_left = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClassRoom" type="Panel" parent="Game" unique_id=896156397]
 unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3
 anchor_top = 0.2
 anchor_right = 0.95
 anchor_bottom = 0.8
+offset_left = -17.28003
+offset_top = 6.480011
+offset_right = -17.28003
+offset_bottom = 6.480011
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r60v2")
 
-[node name="GridContainer" type="GridContainer" parent="ClassRoom" unique_id=1686117174]
+[node name="IsometricContainer" type="GridContainer" parent="Game/ClassRoom" unique_id=1686117174]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.35
-anchor_top = 0.15
+anchor_left = 0.4
+anchor_top = 0.25
 anchor_right = 0.8
-anchor_bottom = 0.7
+anchor_bottom = 0.6
 grow_horizontal = 2
 grow_vertical = 2
 columns = 2
 script = ExtResource("4_cn2bm")
 
-[node name="GroupDesks" parent="ClassRoom/GridContainer" unique_id=445608929 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks" parent="Game/ClassRoom/IsometricContainer" unique_id=445608929 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GroupDesks2" parent="ClassRoom/GridContainer" unique_id=1293188095 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks2" parent="Game/ClassRoom/IsometricContainer" unique_id=1293188095 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GroupDesks3" parent="ClassRoom/GridContainer" unique_id=845111316 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks3" parent="Game/ClassRoom/IsometricContainer" unique_id=845111316 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GroupDesks4" parent="ClassRoom/GridContainer" unique_id=1209994987 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks4" parent="Game/ClassRoom/IsometricContainer" unique_id=1209994987 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GroupDesks5" parent="ClassRoom/GridContainer" unique_id=588126496 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks5" parent="Game/ClassRoom/IsometricContainer" unique_id=588126496 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GroupDesks6" parent="ClassRoom/GridContainer" unique_id=2061344818 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks6" parent="Game/ClassRoom/IsometricContainer" unique_id=2061344818 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Panel" type="TextureRect" parent="ClassRoom" unique_id=1045265016]
+[node name="Panel" type="Control" parent="Game/ClassRoom" unique_id=1527956626]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2
-anchor_top = 0.8
-anchor_right = 0.8
+anchor_top = 0.6
+anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-texture = ExtResource("5_r60v2")
-stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ClassRoom/Panel" unique_id=1833815339]
+[node name="HBoxContainer" type="HBoxContainer" parent="Game/ClassRoom/Panel" unique_id=1833815339]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
+anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SkillBase" parent="ClassRoom/Panel/HBoxContainer" unique_id=1992360077 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase" parent="Game/ClassRoom/Panel/HBoxContainer" unique_id=1992360077 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("4_bvwi8")
 
-[node name="SkillBase2" parent="ClassRoom/Panel/HBoxContainer" unique_id=1429961247 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase2" parent="Game/ClassRoom/Panel/HBoxContainer" unique_id=1429961247 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SkillBase3" parent="ClassRoom/Panel/HBoxContainer" unique_id=710136843 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase3" parent="Game/ClassRoom/Panel/HBoxContainer" unique_id=710136843 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("5_kmx0x")
 
-[node name="SkillBase4" parent="ClassRoom/Panel/HBoxContainer" unique_id=1316799459 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase4" parent="Game/ClassRoom/Panel/HBoxContainer" unique_id=1316799459 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("6_wortu")
 
-[node name="SkillBase5" parent="ClassRoom/Panel/HBoxContainer" unique_id=2018632818 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase5" parent="Game/ClassRoom/Panel/HBoxContainer" unique_id=2018632818 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("7_bcit8")
 
-[node name="SkillBase6" parent="ClassRoom/Panel/HBoxContainer" unique_id=289783335 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase6" parent="Game/ClassRoom/Panel/HBoxContainer" unique_id=289783335 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("8_46t7q")
 
-[node name="RemainingTimeLabel" type="Label" parent="." unique_id=1916491119]
+[node name="TextureRect" type="TextureRect" parent="Game/ClassRoom/Panel" unique_id=1634113714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_r60v2")
+expand_mode = 5
+
+[node name="RemainingTimeLabel" type="Label" parent="Game/ClassRoom/Panel" unique_id=1916491119]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.91
-anchor_top = 0.85
-anchor_right = 0.91
-anchor_bottom = 0.85
+anchor_left = 0.887
+anchor_top = 0.67700005
+anchor_right = 0.887
+anchor_bottom = 0.67700005
+offset_left = -18.984985
+offset_top = -25.238708
+offset_right = 18.015015
+offset_bottom = 19.761292
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
@@ -172,15 +204,15 @@ text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InfoPanel" type="Control" parent="." unique_id=1504059880]
-layout_mode = 3
-anchor_left = 0.02
+[node name="InfoPanel" type="Control" parent="Game" unique_id=1504059880]
+layout_mode = 1
+anchor_left = 0.1
 anchor_top = 0.3
-anchor_right = 0.2
+anchor_right = 0.25
 anchor_bottom = 0.7
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="InfoPanel" unique_id=341625422]
+[node name="Panel" type="Panel" parent="Game/InfoPanel" unique_id=341625422]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -190,7 +222,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_l3ydj")
 
-[node name="InfoContainer" type="GridContainer" parent="InfoPanel/Panel" unique_id=1861114725]
+[node name="InfoContainer" type="GridContainer" parent="Game/InfoPanel/Panel" unique_id=1861114725]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -203,4 +235,38 @@ grow_vertical = 2
 theme_override_constants/h_separation = 8
 columns = 2
 
-[connection signal="sort_children" from="ClassRoom/GridContainer" to="ClassRoom/GridContainer" method="_on_sort_children"]
+[node name="BottomBorder" type="TextureRect" parent="." unique_id=681632833]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_ebuvp")
+expand_mode = 2
+
+[node name="RightBorder" type="TextureRect" parent="." unique_id=730892878]
+anchors_preset = -1
+anchor_left = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("13_1scvx")
+expand_mode = 4
+script = ExtResource("15_q0l7d")
+
+[node name="LeftBorder" type="TextureRect" parent="." unique_id=1646461961]
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_31s3c")
+expand_mode = 4
+script = ExtResource("15_q0l7d")
+
+[connection signal="sort_children" from="Game/ClassRoom/IsometricContainer" to="Game/ClassRoom/IsometricContainer" method="_on_sort_children"]
+[connection signal="resized" from="RightBorder" to="RightBorder" method="_on_resized"]
+[connection signal="resized" from="LeftBorder" to="LeftBorder" method="_on_resized"]
