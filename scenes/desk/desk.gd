@@ -15,3 +15,7 @@ func _ready() -> void:
 
 func is_empty():
 	return student == null
+
+func _process(_delta: float) -> void:
+	if student:
+		student.current_rank = row

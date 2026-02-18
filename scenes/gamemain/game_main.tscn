@@ -14,8 +14,8 @@
 [ext_resource type="Resource" uid="uid://3mw2n4es48sm" path="res://resource/Skills/HurlerLeCours.tres" id="8_46t7q"]
 [ext_resource type="Texture2D" uid="uid://c4nloatrcadeq" path="res://assets/ui/right_border.png" id="13_1scvx"]
 [ext_resource type="Texture2D" uid="uid://7wsbkr82yxed" path="res://assets/ui/bottom_border.png" id="13_ebuvp"]
+[ext_resource type="Texture2D" uid="uid://df7t1i674uynl" path="res://assets/ui/paper_texture.png" id="13_q0l7d"]
 [ext_resource type="Texture2D" uid="uid://bf3g7p7csxelp" path="res://assets/ui/left_border.png" id="14_31s3c"]
-[ext_resource type="Script" uid="uid://c3y6e74m8gxsc" path="res://scenes/gamemain/border.gd" id="15_q0l7d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r60v2"]
 draw_center = false
@@ -31,19 +31,6 @@ expand_margin_right = 16.0
 expand_margin_bottom = 16.0
 shadow_color = Color(0.84705883, 0.77254903, 0.6431373, 1)
 shadow_size = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3ydj"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 12
-border_width_top = 12
-border_width_right = 12
-border_width_bottom = 12
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
 
 [node name="lé" type="Node" unique_id=993646125]
 
@@ -63,7 +50,7 @@ script = ExtResource("3_t6wvf")
 layout_mode = 3
 anchor_left = 0.1
 anchor_right = 0.9
-anchor_bottom = 0.9
+anchor_bottom = 0.912
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -74,11 +61,7 @@ anchors_preset = -1
 anchor_left = 0.3
 anchor_top = 0.2
 anchor_right = 0.95
-anchor_bottom = 0.8
-offset_left = -17.28003
-offset_top = 6.480011
-offset_right = -17.28003
-offset_bottom = 6.480011
+anchor_bottom = 0.85
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -101,30 +84,79 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks" index="1" unique_id=1456143697]
+column = 1
+
 [node name="GroupDesks2" parent="Game/ClassRoom/IsometricContainer" unique_id=1293188095 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks2" index="0" unique_id=335661609]
+group = 1
+column = 2
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks2" index="1" unique_id=1456143697]
+group = 1
+column = 3
 
 [node name="GroupDesks3" parent="Game/ClassRoom/IsometricContainer" unique_id=845111316 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks3" index="0" unique_id=335661609]
+group = 2
+row = 1
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks3" index="1" unique_id=1456143697]
+group = 2
+row = 1
+column = 1
+
 [node name="GroupDesks4" parent="Game/ClassRoom/IsometricContainer" unique_id=1209994987 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks4" index="0" unique_id=335661609]
+group = 3
+row = 1
+column = 2
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks4" index="1" unique_id=1456143697]
+group = 3
+row = 1
+column = 3
 
 [node name="GroupDesks5" parent="Game/ClassRoom/IsometricContainer" unique_id=588126496 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks5" index="0" unique_id=335661609]
+group = 4
+row = 2
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks5" index="1" unique_id=1456143697]
+group = 4
+row = 2
+column = 1
+
 [node name="GroupDesks6" parent="Game/ClassRoom/IsometricContainer" unique_id=2061344818 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks6" index="0" unique_id=335661609]
+group = 5
+row = 2
+column = 2
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks6" index="1" unique_id=1456143697]
+group = 5
+row = 2
+column = 3
 
 [node name="Panel" type="Control" parent="Game/ClassRoom" unique_id=1527956626]
 layout_mode = 1
@@ -174,7 +206,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("8_46t7q")
 
-[node name="TextureRect" type="TextureRect" parent="Game/ClassRoom/Panel" unique_id=1634113714]
+[node name="BottomTextureStuff" type="TextureRect" parent="Game/ClassRoom/Panel" unique_id=1634113714]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -204,15 +237,8 @@ text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InfoPanel" type="Control" parent="Game" unique_id=1504059880]
-layout_mode = 1
-anchor_left = 0.1
-anchor_top = 0.3
-anchor_right = 0.25
-anchor_bottom = 0.7
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="Game/InfoPanel" unique_id=341625422]
+[node name="ColorRect" type="ColorRect" parent="Game/ClassRoom" unique_id=474154499]
+z_index = -10
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -220,31 +246,73 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_l3ydj")
+color = Color(0.57, 0.57, 0.57, 1)
 
-[node name="InfoContainer" type="GridContainer" parent="Game/InfoPanel/Panel" unique_id=1861114725]
+[node name="InfoPanel" type="Control" parent="Game" unique_id=1504059880]
+layout_mode = 1
+anchor_left = 0.02
+anchor_top = 0.55
+anchor_right = 0.25
+anchor_bottom = 0.95
+grow_vertical = 2
+
+[node name="InfoContainer" type="GridContainer" parent="Game/InfoPanel" unique_id=1861114725]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 8
-columns = 2
-
-[node name="BottomBorder" type="TextureRect" parent="." unique_id=681632833]
-unique_name_in_owner = true
-anchors_preset = -1
-anchor_top = 0.9
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("13_ebuvp")
-expand_mode = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Name" type="RichTextLabel" parent="Game/InfoPanel/InfoContainer" unique_id=787683601]
+custom_minimum_size = Vector2(16, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.19607843, 0.43137255, 0.49019608, 1)
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+text = "[b]Prénom[/b]"
+scroll_active = false
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="Note" type="RichTextLabel" parent="Game/InfoPanel/InfoContainer" unique_id=1888389528]
+custom_minimum_size = Vector2(16, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.19607843, 0.43137255, 0.49019608, 1)
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+text = "[b]Note[/b]"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 3
+
+[node name="PaperBG" type="TextureRect" parent="Game" unique_id=1932020326]
+z_index = -15
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_q0l7d")
+stretch_mode = 1
 
 [node name="RightBorder" type="TextureRect" parent="." unique_id=730892878]
 anchors_preset = -1
@@ -255,7 +323,6 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("13_1scvx")
 expand_mode = 4
-script = ExtResource("15_q0l7d")
 
 [node name="LeftBorder" type="TextureRect" parent="." unique_id=1646461961]
 anchors_preset = -1
@@ -265,8 +332,27 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("14_31s3c")
 expand_mode = 4
-script = ExtResource("15_q0l7d")
+
+[node name="BottomBorder" type="TextureRect" parent="." unique_id=681632833]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.91200006
+anchor_right = 0.90000004
+anchor_bottom = 1.0
+offset_left = -0.20000458
+offset_top = 0.023986816
+offset_right = 0.19995117
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_ebuvp")
+expand_mode = 2
 
 [connection signal="sort_children" from="Game/ClassRoom/IsometricContainer" to="Game/ClassRoom/IsometricContainer" method="_on_sort_children"]
-[connection signal="resized" from="RightBorder" to="RightBorder" method="_on_resized"]
-[connection signal="resized" from="LeftBorder" to="LeftBorder" method="_on_resized"]
+
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks2"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks3"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks4"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks5"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks6"]
