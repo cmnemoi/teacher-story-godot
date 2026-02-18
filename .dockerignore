@@ -10,9 +10,9 @@ compose.*.yml
 .idea
 *.tmp
 *.import
-export_presets.cfg
 # Ne pas ignorer les assets nécessaires
 !assets/
 !scenes/
 !scripts/
 !project.godot
+!export_presets.cfg
