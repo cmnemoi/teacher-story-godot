@@ -77,16 +77,18 @@ func generate_x_random_student(x) -> void:
 		set_label_settings(name_label)
 		set_label_settings(note_label)
 		name_label.text = "[color=326e7d]%s: "%[new_student_resource.student_name]
-		note_label.text = '[right][color=#76ae7d]%s'%[new_student_resource.note]
+		note_label.text = '[right][color=#76ae7d]%s/20'%[new_student_resource.note]
 		%InfoContainer.add_child(name_label)
 		%InfoContainer.add_child(note_label)
 		name_info_labels.append(name_label)
 		note_info_labels.append(note_label)
 
 func update_info_labels():
-	pass
-	#for i in range(len(info_labels)):
-	#	info_labels[i].text = "[color=326e7d]%s[color=#76ae7d]: %s/20"%[students_resources[i].student_name,students_resources[i].note]
+	for i in range(len(name_info_labels)):
+		name_info_labels[i].text = "[color=326e7d]%s: "%[students_resources[i].student_name]
+	for i in range(len(note_info_labels)):
+		note_info_labels[i].text = '[right][color=#76ae7d]%s/20'%[students_resources[i].note]
+
 
 func set_label_settings(label_to_change):
 	label_to_change.bbcode_enabled = true

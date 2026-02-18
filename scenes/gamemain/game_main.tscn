@@ -84,30 +84,79 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks" index="1" unique_id=1456143697]
+column = 1
+
 [node name="GroupDesks2" parent="Game/ClassRoom/IsometricContainer" unique_id=1293188095 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks2" index="0" unique_id=335661609]
+group = 1
+column = 2
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks2" index="1" unique_id=1456143697]
+group = 1
+column = 3
 
 [node name="GroupDesks3" parent="Game/ClassRoom/IsometricContainer" unique_id=845111316 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks3" index="0" unique_id=335661609]
+group = 2
+row = 1
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks3" index="1" unique_id=1456143697]
+group = 2
+row = 1
+column = 1
+
 [node name="GroupDesks4" parent="Game/ClassRoom/IsometricContainer" unique_id=1209994987 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks4" index="0" unique_id=335661609]
+group = 3
+row = 1
+column = 2
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks4" index="1" unique_id=1456143697]
+group = 3
+row = 1
+column = 3
 
 [node name="GroupDesks5" parent="Game/ClassRoom/IsometricContainer" unique_id=588126496 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks5" index="0" unique_id=335661609]
+group = 4
+row = 2
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks5" index="1" unique_id=1456143697]
+group = 4
+row = 2
+column = 1
+
 [node name="GroupDesks6" parent="Game/ClassRoom/IsometricContainer" unique_id=2061344818 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Desk" parent="Game/ClassRoom/IsometricContainer/GroupDesks6" index="0" unique_id=335661609]
+group = 5
+row = 2
+column = 2
+
+[node name="Desk2" parent="Game/ClassRoom/IsometricContainer/GroupDesks6" index="1" unique_id=1456143697]
+group = 5
+row = 2
+column = 3
 
 [node name="Panel" type="Control" parent="Game/ClassRoom" unique_id=1527956626]
 layout_mode = 1
@@ -157,7 +206,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("8_46t7q")
 
-[node name="TextureRect" type="TextureRect" parent="Game/ClassRoom/Panel" unique_id=1634113714]
+[node name="BottomTextureStuff" type="TextureRect" parent="Game/ClassRoom/Panel" unique_id=1634113714]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -195,6 +245,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.57, 0.57, 0.57, 1)
 
 [node name="InfoPanel" type="Control" parent="Game" unique_id=1504059880]
@@ -251,7 +302,7 @@ scroll_active = false
 horizontal_alignment = 2
 vertical_alignment = 3
 
-[node name="TextureRect" type="TextureRect" parent="Game" unique_id=1932020326]
+[node name="PaperBG" type="TextureRect" parent="Game" unique_id=1932020326]
 z_index = -15
 layout_mode = 1
 anchors_preset = 15
@@ -259,6 +310,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("13_q0l7d")
 stretch_mode = 1
 
@@ -297,3 +349,10 @@ texture = ExtResource("13_ebuvp")
 expand_mode = 2
 
 [connection signal="sort_children" from="Game/ClassRoom/IsometricContainer" to="Game/ClassRoom/IsometricContainer" method="_on_sort_children"]
+
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks2"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks3"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks4"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks5"]
+[editable path="Game/ClassRoom/IsometricContainer/GroupDesks6"]

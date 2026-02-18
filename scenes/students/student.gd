@@ -55,6 +55,10 @@ func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false
 func die():
 	untouchable = true
 	resource.note += 1 * current_rank + bonus_note_on_death
+	if resource.note >20:
+		resource.note = 20
+	elif resource.note <0:
+		resource.note = 0
 	modulate = Color("5f5f5f")
 	for child in $HpContainer.get_children():
 		if child is TextureRect:
