@@ -13,5 +13,5 @@ func _on_sort_children() -> void:
 		var pos_y = ((size.y/lines) * line) + offset_y * column
 		var pos_x =  ((size.x/columns)*column) + offset_x * (lines-line)
 
-		children[i].position.x = pos_x - (size.x)
+		children[i].position.x = pos_x - (size.x/1.5)
 		children[i].position.y = pos_y - (size.y/6)

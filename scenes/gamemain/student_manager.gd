@@ -2,7 +2,8 @@ extends Node
 
 var students_resources := []
 var students := []
-var info_labels : Array[RichTextLabel] = []
+var name_info_labels : Array[RichTextLabel] = []
+var note_info_labels : Array[RichTextLabel] = []
 var student_scene = preload("res://scenes/students/student.tscn")
 var gender = ["boy","girl"]
 var boy_names = [
@@ -22,7 +23,8 @@ var girl_names = [
 func generate_x_random_student(x) -> void:
 	clear_students()
 	clear_students_resources()
-	info_labels.clear()
+	name_info_labels.clear()
+	note_info_labels.clear()
 	
 	for i in range(x):
 		if i >= len(%DeskManager.desks):
@@ -69,19 +71,30 @@ func generate_x_random_student(x) -> void:
 		students_resources.append(new_student_resource)
 		new_student_resource.note = randi_range(8,14) #TODO: should change depending on difficulty
 		
-		var label = RichTextLabel.new()
-		label.bbcode_enabled = true
-		label.text = "[color=000000][b]%s[/b]: %s"%[new_student_resource.student_name,new_student_resource.note]
-		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		label.size_flags_vertical = Control.SIZE_EXPAND_FILL
-		label.scroll_active = false
-		label.custom_minimum_size = Vector2(16,32)
-		%InfoContainer.add_child(label)
-		info_labels.append(label)
+		#,new_student_resource.note
+		var name_label = RichTextLabel.new()
+		var note_label = RichTextLabel.new()
+		set_label_settings(name_label)
+		set_label_settings(note_label)
+		name_label.text = "[color=326e7d]%s: "%[new_student_resource.student_name]
+		note_label.text = '[right][color=#76ae7d]%s'%[new_student_resource.note]
+		%InfoContainer.add_child(name_label)
+		%InfoContainer.add_child(note_label)
+		name_info_labels.append(name_label)
+		note_info_labels.append(note_label)
 
 func update_info_labels():
-	for i in range(len(info_labels)):
-		info_labels[i].text = "[color=000000][b]%s[/b]: %s/20"%[students_resources[i].student_name,students_resources[i].note]
+	pass
+	#for i in range(len(info_labels)):
+	#	info_labels[i].text = "[color=326e7d]%s[color=#76ae7d]: %s/20"%[students_resources[i].student_name,students_resources[i].note]
+
+func set_label_settings(label_to_change):
+	label_to_change.bbcode_enabled = true
+	label_to_change.add_theme_font_size_override("normal_font_size",32)
+	label_to_change.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	label_to_change.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	label_to_change.scroll_active = false
+	label_to_change.custom_minimum_size = Vector2(16,32)
 
 func assign_students_to_random_desk():
 	var possible_spot := []
@@ -116,7 +129,7 @@ func reset_all_students():
 func _ready() -> void:
 	ManagerList.student_manager = self
 	await get_tree().process_frame
-	generate_x_random_student(5)
+	generate_x_random_student(7)
 	assign_students_to_random_desk()
 
 func _process(_delta: float) -> void:
