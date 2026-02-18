@@ -9,10 +9,6 @@ services:
       - traefik.http.routers.teacher-story.entrypoints=websecure
       - traefik.http.routers.teacher-story.tls.certresolver=letsencrypt
       - traefik.http.services.teacher-story.loadbalancer.server.port=8080
-      # Middleware pour les headers CORS (nécessaire pour Godot WebGL)
-      - traefik.http.middlewares.teacher-story-cors.headers.customrequestheaders.Cross-Origin-Opener-Policy=same-origin
-      - traefik.http.middlewares.teacher-story-cors.headers.customrequestheaders.Cross-Origin-Embedder-Policy=require-corp
-      - traefik.http.routers.teacher-story.middlewares=teacher-story-cors@docker
     networks:
       - traefik-proxy
 
