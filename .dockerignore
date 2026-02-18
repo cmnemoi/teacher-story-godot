@@ -1,0 +1,18 @@
+.git
+.gitignore
+.github
+*.md
+Dockerfile
+compose.*.yml
+.dockerignore
+.env
+.vscode
+.idea
+*.tmp
+*.import
+export_presets.cfg
+# Ne pas ignorer les assets nécessaires
+!assets/
+!scenes/
+!scripts/
+!project.godot
