@@ -16,6 +16,7 @@ func make_new_random_mission():
 	var new_resource = MissionBase.new()
 	var difficulty = POSSIBLE_DIFFICULTIES[rng.rand_weighted(DIFFICULTIES_WEIGHTS)]
 	var lenghty = [0,1].pick_random()
+	new_resource.classname = ["Sixième","Cinquième","Quatrième","Troisième","Seconde","Première","Terminale"].pick_random()+" " +["A","B","C","D","E","F","G","H","I","J","K"].pick_random()
 	
 	match difficulty:
 		0: 

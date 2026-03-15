@@ -7,3 +7,4 @@ class_name MissionBase
 @export_enum("easy","medium","hard","impossible") var difficulty
 @export var reward = 50
 @export var goal = 12
+@export var classname : String = "Cinquième K"

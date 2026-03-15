@@ -11,6 +11,15 @@ var girl_student_sprites = [
 	preload("res://assets/students/girl1.png"),
 ]
 
+
+var demon_heads : Array[Texture] = [
+	preload("uid://dme4ic7obj7pq"),
+	preload("uid://bmah484yl4akl"),
+	preload("uid://5ifmk8x86m3s"),
+	preload("uid://bp5bwct6wy6tb"),
+	preload("uid://cf86hk0ybvc0e"),
+	]
+
 func _ready() -> void:
 	if IS_DEBUG:
 		print("DEBUG MODE ON")

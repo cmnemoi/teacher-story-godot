@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://f3y4pef7vvfd" path="res://scenes/skills/skill_base.tscn" id="3_l3ydj"]
 [ext_resource type="Script" uid="uid://b2hk0iwa6w8sw" path="res://scenes/gamemain/desk_manager.gd" id="3_t6wvf"]
 [ext_resource type="Resource" uid="uid://du8fw0pvf2ns2" path="res://resource/Skills/PointeDeSagesse.tres" id="4_bvwi8"]
-[ext_resource type="Script" uid="uid://ys5x6gspa43q" path="res://scenes/gamemain/grid_container.gd" id="4_cn2bm"]
+[ext_resource type="Script" uid="uid://ys5x6gspa43q" path="res://scenes/UI/grid_container.gd" id="4_cn2bm"]
 [ext_resource type="Script" uid="uid://ykafhat80w64" path="res://scenes/gamemain/mission_manager.gd" id="4_nvwvu"]
 [ext_resource type="Resource" uid="uid://ceubcahowtp87" path="res://resource/Skills/Concentration1.tres" id="5_kmx0x"]
 [ext_resource type="Texture2D" uid="uid://c65yeitrb0sdt" path="res://assets/ui/bottom_panel.png" id="5_r60v2"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://7wsbkr82yxed" path="res://assets/ui/bottom_border.png" id="13_ebuvp"]
 [ext_resource type="Texture2D" uid="uid://df7t1i674uynl" path="res://assets/ui/paper_texture.png" id="13_q0l7d"]
 [ext_resource type="Texture2D" uid="uid://bf3g7p7csxelp" path="res://assets/ui/left_border.png" id="14_31s3c"]
+[ext_resource type="Texture2D" uid="uid://dme4ic7obj7pq" path="res://assets/ui/difficulty_icons/diff0.png" id="14_mnqld"]
+[ext_resource type="Script" uid="uid://blj6dnrlpgpvr" path="res://scenes/UI/class_info_container.gd" id="14_q4ntq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r60v2"]
 draw_center = false
@@ -267,8 +269,9 @@ anchor_top = 0.43
 anchor_right = 1.0
 anchor_bottom = 0.52
 grow_vertical = 2
+script = ExtResource("14_q4ntq")
 
-[node name="Name" type="RichTextLabel" parent="Game/InfoPanel/ClassInfoContainer" unique_id=199420183]
+[node name="ClassName" type="RichTextLabel" parent="Game/InfoPanel/ClassInfoContainer" unique_id=199420183]
 custom_minimum_size = Vector2(16, 32)
 layout_mode = 1
 anchors_preset = -1
@@ -285,40 +288,18 @@ theme_override_font_sizes/bold_italics_font_size = 24
 theme_override_font_sizes/italics_font_size = 24
 theme_override_font_sizes/mono_font_size = 24
 bbcode_enabled = true
-text = "[b]Cinquième K[/b]"
+text = "[b]En Congés[/b]"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="HeadsContainer" type="HBoxContainer" parent="Game/InfoPanel/ClassInfoContainer" unique_id=1743159981]
+[node name="HeadsContainer" type="TextureRect" parent="Game/InfoPanel/ClassInfoContainer" unique_id=331094214]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.51
 anchor_right = 1.0
 anchor_bottom = 1.0
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Game/InfoPanel/ClassInfoContainer/HeadsContainer" unique_id=886553811]
-layout_mode = 2
-size_flags_horizontal = 3
-expand_mode = 3
-stretch_mode = 5
-
-[node name="TextureRect2" type="TextureRect" parent="Game/InfoPanel/ClassInfoContainer/HeadsContainer" unique_id=354556220]
-layout_mode = 2
-size_flags_horizontal = 3
-expand_mode = 3
-stretch_mode = 5
-
-[node name="TextureRect3" type="TextureRect" parent="Game/InfoPanel/ClassInfoContainer/HeadsContainer" unique_id=1268414511]
-layout_mode = 2
-size_flags_horizontal = 3
-expand_mode = 3
-stretch_mode = 5
-
-[node name="TextureRect4" type="TextureRect" parent="Game/InfoPanel/ClassInfoContainer/HeadsContainer" unique_id=727746942]
-layout_mode = 2
-size_flags_horizontal = 3
-expand_mode = 3
+texture = ExtResource("14_mnqld")
+expand_mode = 5
 stretch_mode = 5
 
 [node name="StudentInfoContainer" type="GridContainer" parent="Game/InfoPanel" unique_id=1861114725]
