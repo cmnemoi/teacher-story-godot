@@ -9,7 +9,6 @@ func _on_sort_children() -> void:
 	for i in len(children):
 		var column = i%columns
 		var line = i/columns
-		print(line," ",column)
 		var pos_y = ((size.y/lines) * line) + offset_y * column
 		var pos_x =  ((size.x/columns)*column) + offset_x * (lines-line)
 

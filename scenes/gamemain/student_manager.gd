@@ -19,6 +19,9 @@ var girl_names = [
 	"Adeline", "Rachida", "Roxanne", "Richarde", "Audrey",
 	"Nadège", "Caroline", "Colette"]
 
+const POSSIBLE_NOTES : Array[int] = [2,3,4,5,6,7,8,9,10,11,12,13]
+var notes_weights : Array[int] = [5,5,12,12,20,30,20,8,2,2,1]
+var rng = RandomNumberGenerator.new()
 
 func generate_x_random_student(x) -> void:
 	clear_students()
@@ -35,29 +38,29 @@ func generate_x_random_student(x) -> void:
 		new_student_resource.caractere = CaractereType[random_key]
 		match new_student_resource.caractere: #TODO: should change depending on difficulty
 			CaractereType.Reveur: 
-				new_student_resource.ennui_de_base = 3
-				new_student_resource.stupidite_de_base = 2
+				new_student_resource.ennui_de_base = randi_range(2,6)
+				new_student_resource.stupidite_de_base = randi_range(3,4)
 			CaractereType.Jovial: 
-				new_student_resource.ennui_de_base = 1
-				new_student_resource.stupidite_de_base = 3
+				new_student_resource.ennui_de_base = randi_range(2,3)
+				new_student_resource.stupidite_de_base = randi_range(2,4)
 			CaractereType.Malin: 
-				new_student_resource.ennui_de_base = 3
-				new_student_resource.stupidite_de_base = 1
+				new_student_resource.ennui_de_base = randi_range(0,3)
+				new_student_resource.stupidite_de_base = randi_range(2,4)
 			CaractereType.Timide: 
-				new_student_resource.ennui_de_base = 2
-				new_student_resource.stupidite_de_base = 3
+				new_student_resource.ennui_de_base = randi_range(1,4)
+				new_student_resource.stupidite_de_base = randi_range(2,4)
 			CaractereType.Clown:
-				new_student_resource.ennui_de_base = 0
-				new_student_resource.stupidite_de_base = 4
+				new_student_resource.ennui_de_base = randi_range(1,4)
+				new_student_resource.stupidite_de_base = randi_range(2,4)
 			CaractereType.Bruyant:
-				new_student_resource.ennui_de_base = 2
-				new_student_resource.stupidite_de_base = 3
+				new_student_resource.ennui_de_base = randi_range(1,4)
+				new_student_resource.stupidite_de_base = randi_range(3,4)
 			CaractereType.Manipulateur:
-				new_student_resource.ennui_de_base = 4
-				new_student_resource.stupidite_de_base = 1
+				new_student_resource.ennui_de_base = randi_range(0,3)
+				new_student_resource.stupidite_de_base = randi_range(2,4)
 			CaractereType.Hyperactif:
-				new_student_resource.ennui_de_base = 3
-				new_student_resource.stupidite_de_base = 3
+				new_student_resource.ennui_de_base = randi_range(1,4)
+				new_student_resource.stupidite_de_base = randi_range(3,4)
 
 		var student_gender = gender.pick_random()
 		if student_gender == "boy":
@@ -69,17 +72,18 @@ func generate_x_random_student(x) -> void:
 		else:
 			print("WTF IS GOING ON, A STUDENT IS NON BINARY APPARENTLY")
 		students_resources.append(new_student_resource)
-		new_student_resource.note = randi_range(8,14) #TODO: should change depending on difficulty
+		new_student_resource.note = POSSIBLE_NOTES[rng.rand_weighted(notes_weights)]
+		if randf() < .3:
+			new_student_resource.note += 0.5
 		
-		#,new_student_resource.note
 		var name_label = RichTextLabel.new()
 		var note_label = RichTextLabel.new()
 		set_label_settings(name_label)
 		set_label_settings(note_label)
 		name_label.text = "[color=326e7d]%s: "%[new_student_resource.student_name]
 		note_label.text = '[right][color=#76ae7d]%s/20'%[new_student_resource.note]
-		%InfoContainer.add_child(name_label)
-		%InfoContainer.add_child(note_label)
+		%StudentInfoContainer.add_child(name_label)
+		%StudentInfoContainer.add_child(note_label)
 		name_info_labels.append(name_label)
 		note_info_labels.append(note_label)
 

@@ -1,7 +1,7 @@
 extends Node
 
 @onready var remaining_time_label: Label =%RemainingTimeLabel
-var max_time : int = 20
+var max_time : int = 10
 var remaining_time : int = max_time
 
 func update_time(amount):
