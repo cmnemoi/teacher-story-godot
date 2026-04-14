@@ -96,7 +96,7 @@ func update_info_labels():
 
 func set_label_settings(label_to_change):
 	label_to_change.bbcode_enabled = true
-	label_to_change.add_theme_font_size_override("normal_font_size",32)
+	label_to_change.add_theme_font_size_override("normal_font_size",16)
 	label_to_change.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	label_to_change.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	label_to_change.scroll_active = false

@@ -6,7 +6,7 @@ const SPRITE_ENNUI = preload("uid://1qgo66qnt5ib")
 const SPRITE_HOVER_ENNUI = preload("res://assets/students/hover_ennui.png")
 const SPRITE_STUPIDITE = preload("uid://c5arag4jnaelj")
 const SPRITE_HOVER_STUPIDITE = preload("uid://b26vh50eoqmtb")
-const LIFE_SPRITE_SCENE = preload("res://scenes/students/life_sprite.tscn")
+const LIFE_SPRITE_SCENE = preload("uid://dtlcn2mtrw7ax")
 
 @export var resource : StudentResource 
 
