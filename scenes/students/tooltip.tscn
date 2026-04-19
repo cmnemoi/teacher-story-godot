@@ -43,7 +43,7 @@ alignment = 1
 
 [node name="Title" type="RichTextLabel" parent="Panel/PanelContainer" unique_id=1395382248]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 8
 text = "TITLE"
@@ -53,12 +53,13 @@ vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="Panel/PanelContainer" unique_id=1198770795]
 layout_mode = 2
+theme_override_constants/separation = 1
 
 [node name="Description" type="RichTextLabel" parent="Panel/PanelContainer" unique_id=2096662569]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/normal_font_size = 6
 text = "DESC"
 scroll_active = false
 horizontal_alignment = 1
