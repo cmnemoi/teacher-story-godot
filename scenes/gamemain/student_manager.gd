@@ -11,7 +11,7 @@ var boy_names = [
 	"Théo", "Sébastien", "Thomas", "Nicolas", "Hervé", "Alexis",
 	"Rémi", "David", "Stephen", "Benjamin", "Frédéric",
 	"Jérôme", "Johnnatan", "Antoine", "Anthony", "Jean-Marc",
-	"Chen", "Cédric", "Dylan", "Abdel-Hakim", "Abdallah",
+	"Chen", "Cédric", "Dylan", "Abdel", "Abdallah",
 	"Abel", "Christophe", "Yoann", "Steve"]
 var girl_names = [
 	"Lola", "Léa", "Margaret", "Ebène", "Julie", "Marie", "Claire",
@@ -70,7 +70,7 @@ func generate_x_random_student(x) -> void:
 			new_student_resource.sprite = Global.girl_student_sprites.pick_random()
 			new_student_resource.student_name = girl_names.pick_random()
 		else:
-			print("WTF IS GOING ON, A STUDENT IS NON BINARY APPARENTLY")
+			print("WTF IS GOING ON, A STUDENT IS NON BINARY APPARENTLY (SUPPORT TO THEM BUT THAT'S NOT SUPPOSED TO HAPPEN IN THIS GAME THO)")
 		students_resources.append(new_student_resource)
 		new_student_resource.note = POSSIBLE_NOTES[rng.rand_weighted(notes_weights)]
 		if randf() < .3:

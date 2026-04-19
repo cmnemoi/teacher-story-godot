@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://comgbjh65362c" path="res://scenes/students/tooltip.tscn" id="3_7cx4e"]
 
 [node name="SkillBase" type="Control" unique_id=1992360077]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
