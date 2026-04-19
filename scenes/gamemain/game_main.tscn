@@ -9,14 +9,14 @@
 [ext_resource type="Script" uid="uid://ys5x6gspa43q" path="res://scenes/UI/grid_container.gd" id="4_cn2bm"]
 [ext_resource type="Script" uid="uid://ykafhat80w64" path="res://scenes/gamemain/mission_manager.gd" id="4_nvwvu"]
 [ext_resource type="Resource" uid="uid://ceubcahowtp87" path="res://resource/Skills/Concentration1.tres" id="5_kmx0x"]
-[ext_resource type="Texture2D" uid="uid://c65yeitrb0sdt" path="res://assets/ui/bottom_panel.png" id="5_r60v2"]
+[ext_resource type="Texture2D" uid="uid://c65yeitrb0sdt" path="res://assets/ui/outside_stuff/bottom_panel.png" id="5_r60v2"]
 [ext_resource type="Resource" uid="uid://cu1vdts2y2rv7" path="res://resource/Skills/Interroger.tres" id="6_wortu"]
 [ext_resource type="Resource" uid="uid://2bowsbefe021" path="res://resource/Skills/RappelAl'Ordre.tres" id="7_bcit8"]
 [ext_resource type="Resource" uid="uid://3mw2n4es48sm" path="res://resource/Skills/HurlerLeCours.tres" id="8_46t7q"]
-[ext_resource type="Texture2D" uid="uid://c4nloatrcadeq" path="res://assets/ui/right_border.png" id="13_1scvx"]
-[ext_resource type="Texture2D" uid="uid://7wsbkr82yxed" path="res://assets/ui/bottom_border.png" id="13_ebuvp"]
-[ext_resource type="Texture2D" uid="uid://df7t1i674uynl" path="res://assets/ui/paper_texture.png" id="13_q0l7d"]
-[ext_resource type="Texture2D" uid="uid://bf3g7p7csxelp" path="res://assets/ui/left_border.png" id="14_31s3c"]
+[ext_resource type="Texture2D" uid="uid://c4nloatrcadeq" path="res://assets/ui/outside_stuff/right_border.png" id="13_1scvx"]
+[ext_resource type="Texture2D" uid="uid://7wsbkr82yxed" path="res://assets/ui/outside_stuff/bottom_border.png" id="13_ebuvp"]
+[ext_resource type="Texture2D" uid="uid://df7t1i674uynl" path="res://assets/ui/outside_stuff/paper_texture.png" id="13_q0l7d"]
+[ext_resource type="Texture2D" uid="uid://bf3g7p7csxelp" path="res://assets/ui/outside_stuff/left_border.png" id="14_31s3c"]
 [ext_resource type="Texture2D" uid="uid://dme4ic7obj7pq" path="res://assets/ui/difficulty_icons/diff0.png" id="14_mnqld"]
 [ext_resource type="Script" uid="uid://blj6dnrlpgpvr" path="res://scenes/UI/class_info_container.gd" id="14_q4ntq"]
 
@@ -48,7 +48,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="lé" type="Node" unique_id=993646125]
+[node name="main" type="Node" unique_id=993646125]
 
 [node name="TimerManager" type="Node" parent="." unique_id=1935789655]
 unique_name_in_owner = true
@@ -66,7 +66,7 @@ script = ExtResource("3_t6wvf")
 unique_name_in_owner = true
 script = ExtResource("4_nvwvu")
 
-[node name="MainGame" type="Control" parent="." unique_id=1800385284]
+[node name="MainGameScreen" type="Control" parent="." unique_id=1800385284]
 layout_mode = 3
 anchor_left = 0.1
 anchor_right = 0.9
@@ -74,7 +74,7 @@ anchor_bottom = 0.912
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ClassRoom" type="Panel" parent="MainGame" unique_id=896156397]
+[node name="ClassRoom" type="Panel" parent="MainGameScreen" unique_id=896156397]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -87,7 +87,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r60v2")
 
-[node name="IsometricContainer" type="GridContainer" parent="MainGame/ClassRoom" unique_id=1686117174]
+[node name="IsometricContainer" type="GridContainer" parent="MainGameScreen/ClassRoom" unique_id=1686117174]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -101,86 +101,86 @@ script = ExtResource("4_cn2bm")
 offset_y = 64
 offset_x = 64
 
-[node name="GroupDesks" parent="MainGame/ClassRoom/IsometricContainer" unique_id=445608929 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks" parent="MainGameScreen/ClassRoom/IsometricContainer" unique_id=445608929 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Desk2" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks" index="1" unique_id=1456143697]
+[node name="Desk2" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks" index="1" unique_id=1456143697]
 column = 1
 
-[node name="GroupDesks2" parent="MainGame/ClassRoom/IsometricContainer" unique_id=1293188095 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks2" parent="MainGameScreen/ClassRoom/IsometricContainer" unique_id=1293188095 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Desk" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks2" index="0" unique_id=335661609]
+[node name="Desk" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks2" index="0" unique_id=335661609]
 group = 1
 column = 2
 
-[node name="Desk2" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks2" index="1" unique_id=1456143697]
+[node name="Desk2" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks2" index="1" unique_id=1456143697]
 group = 1
 column = 3
 
-[node name="GroupDesks3" parent="MainGame/ClassRoom/IsometricContainer" unique_id=845111316 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks3" parent="MainGameScreen/ClassRoom/IsometricContainer" unique_id=845111316 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Desk" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks3" index="0" unique_id=335661609]
+[node name="Desk" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks3" index="0" unique_id=335661609]
 group = 2
 row = 1
 
-[node name="Desk2" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks3" index="1" unique_id=1456143697]
+[node name="Desk2" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks3" index="1" unique_id=1456143697]
 group = 2
 row = 1
 column = 1
 
-[node name="GroupDesks4" parent="MainGame/ClassRoom/IsometricContainer" unique_id=1209994987 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks4" parent="MainGameScreen/ClassRoom/IsometricContainer" unique_id=1209994987 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Desk" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks4" index="0" unique_id=335661609]
+[node name="Desk" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks4" index="0" unique_id=335661609]
 group = 3
 row = 1
 column = 2
 
-[node name="Desk2" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks4" index="1" unique_id=1456143697]
+[node name="Desk2" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks4" index="1" unique_id=1456143697]
 group = 3
 row = 1
 column = 3
 
-[node name="GroupDesks5" parent="MainGame/ClassRoom/IsometricContainer" unique_id=588126496 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks5" parent="MainGameScreen/ClassRoom/IsometricContainer" unique_id=588126496 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Desk" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks5" index="0" unique_id=335661609]
+[node name="Desk" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks5" index="0" unique_id=335661609]
 group = 4
 row = 2
 
-[node name="Desk2" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks5" index="1" unique_id=1456143697]
+[node name="Desk2" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks5" index="1" unique_id=1456143697]
 group = 4
 row = 2
 column = 1
 
-[node name="GroupDesks6" parent="MainGame/ClassRoom/IsometricContainer" unique_id=2061344818 instance=ExtResource("3_bvwi8")]
+[node name="GroupDesks6" parent="MainGameScreen/ClassRoom/IsometricContainer" unique_id=2061344818 instance=ExtResource("3_bvwi8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Desk" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks6" index="0" unique_id=335661609]
+[node name="Desk" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks6" index="0" unique_id=335661609]
 group = 5
 row = 2
 column = 2
 
-[node name="Desk2" parent="MainGame/ClassRoom/IsometricContainer/GroupDesks6" index="1" unique_id=1456143697]
+[node name="Desk2" parent="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks6" index="1" unique_id=1456143697]
 group = 5
 row = 2
 column = 3
 
-[node name="Panel" type="Control" parent="MainGame/ClassRoom" unique_id=1527956626]
+[node name="Panel" type="Control" parent="MainGameScreen/ClassRoom" unique_id=1527956626]
 layout_mode = 1
 anchor_top = 0.7
 anchor_right = 1.0
@@ -189,7 +189,7 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainGame/ClassRoom/Panel" unique_id=1833815339]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainGameScreen/ClassRoom/Panel" unique_id=1833815339]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -200,36 +200,36 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 
-[node name="SkillBase" parent="MainGame/ClassRoom/Panel/HBoxContainer" unique_id=1992360077 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase" parent="MainGameScreen/ClassRoom/Panel/HBoxContainer" unique_id=1992360077 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("4_bvwi8")
 
-[node name="SkillBase2" parent="MainGame/ClassRoom/Panel/HBoxContainer" unique_id=1429961247 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase2" parent="MainGameScreen/ClassRoom/Panel/HBoxContainer" unique_id=1429961247 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SkillBase3" parent="MainGame/ClassRoom/Panel/HBoxContainer" unique_id=710136843 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase3" parent="MainGameScreen/ClassRoom/Panel/HBoxContainer" unique_id=710136843 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("5_kmx0x")
 
-[node name="SkillBase4" parent="MainGame/ClassRoom/Panel/HBoxContainer" unique_id=1316799459 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase4" parent="MainGameScreen/ClassRoom/Panel/HBoxContainer" unique_id=1316799459 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("6_wortu")
 
-[node name="SkillBase5" parent="MainGame/ClassRoom/Panel/HBoxContainer" unique_id=2018632818 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase5" parent="MainGameScreen/ClassRoom/Panel/HBoxContainer" unique_id=2018632818 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("7_bcit8")
 
-[node name="SkillBase6" parent="MainGame/ClassRoom/Panel/HBoxContainer" unique_id=289783335 instance=ExtResource("3_l3ydj")]
+[node name="SkillBase6" parent="MainGameScreen/ClassRoom/Panel/HBoxContainer" unique_id=289783335 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("8_46t7q")
 
-[node name="BottomTextureStuff" type="TextureRect" parent="MainGame/ClassRoom/Panel" unique_id=1634113714]
+[node name="BottomTextureStuff" type="TextureRect" parent="MainGameScreen/ClassRoom/Panel" unique_id=1634113714]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -243,7 +243,7 @@ mouse_filter = 2
 texture = ExtResource("5_r60v2")
 expand_mode = 5
 
-[node name="RemainingTimeLabel" type="Label" parent="MainGame/ClassRoom/Panel" unique_id=1916491119]
+[node name="RemainingTimeLabel" type="Label" parent="MainGameScreen/ClassRoom/Panel" unique_id=1916491119]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -262,7 +262,7 @@ text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="MainGame/ClassRoom" unique_id=474154499]
+[node name="ColorRect" type="ColorRect" parent="MainGameScreen/ClassRoom" unique_id=474154499]
 z_index = -10
 layout_mode = 1
 anchors_preset = 15
@@ -273,7 +273,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.57, 0.57, 0.57, 1)
 
-[node name="InfoPanel" type="Control" parent="MainGame" unique_id=1504059880]
+[node name="InfoPanel" type="Control" parent="MainGameScreen" unique_id=1504059880]
 layout_mode = 1
 anchor_left = 0.02
 anchor_top = 0.05
@@ -281,7 +281,7 @@ anchor_right = 0.25
 anchor_bottom = 0.95
 grow_vertical = 2
 
-[node name="MissionInfoContainer" type="Panel" parent="MainGame/InfoPanel" unique_id=1976718178]
+[node name="MissionInfoContainer" type="Panel" parent="MainGameScreen/InfoPanel" unique_id=1976718178]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.21
@@ -291,7 +291,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q4ntq")
 
-[node name="ObjectiveLabel" type="RichTextLabel" parent="MainGame/InfoPanel/MissionInfoContainer" unique_id=819956432]
+[node name="ObjectiveLabel" type="RichTextLabel" parent="MainGameScreen/InfoPanel/MissionInfoContainer" unique_id=819956432]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -307,7 +307,7 @@ fit_content = true
 scroll_active = false
 vertical_alignment = 1
 
-[node name="RewardLabel" type="RichTextLabel" parent="MainGame/InfoPanel/MissionInfoContainer" unique_id=1173656832]
+[node name="RewardLabel" type="RichTextLabel" parent="MainGameScreen/InfoPanel/MissionInfoContainer" unique_id=1173656832]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -318,12 +318,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.19607843, 0.43137255, 0.49019608, 1)
 bbcode_enabled = true
-text = "[color=f07c46][b]100 XP[/b][/color] [font_size=12] [i](reste 4 cours) [/i] [/font_size]"
+text = "[color=f07c46][b]50[/b][/color] [img]uid://dfcgw32nv5d56[/img][font_size=12] [i](reste 4 cours) [/i] [/font_size]"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1
 
-[node name="ClassInfoContainer" type="Control" parent="MainGame/InfoPanel" unique_id=9508005]
+[node name="ClassInfoContainer" type="Control" parent="MainGameScreen/InfoPanel" unique_id=9508005]
 layout_mode = 1
 anchor_top = 0.44
 anchor_right = 1.0
@@ -331,7 +331,7 @@ anchor_bottom = 0.52
 grow_vertical = 2
 script = ExtResource("14_q4ntq")
 
-[node name="ClassName" type="RichTextLabel" parent="MainGame/InfoPanel/ClassInfoContainer" unique_id=199420183]
+[node name="ClassName" type="RichTextLabel" parent="MainGameScreen/InfoPanel/ClassInfoContainer" unique_id=199420183]
 custom_minimum_size = Vector2(16, 32)
 layout_mode = 1
 anchors_preset = -1
@@ -347,7 +347,7 @@ text = "[b]En Congés[/b]"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="HeadsContainer" type="TextureRect" parent="MainGame/InfoPanel/ClassInfoContainer" unique_id=331094214]
+[node name="HeadsContainer" type="TextureRect" parent="MainGameScreen/InfoPanel/ClassInfoContainer" unique_id=331094214]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.51
@@ -357,7 +357,7 @@ texture = ExtResource("14_mnqld")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="StudentInfoContainer" type="GridContainer" parent="MainGame/InfoPanel" unique_id=1861114725]
+[node name="StudentInfoContainer" type="GridContainer" parent="MainGameScreen/InfoPanel" unique_id=1861114725]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -369,7 +369,7 @@ grow_vertical = 2
 theme_override_constants/v_separation = 1
 columns = 2
 
-[node name="Name" type="RichTextLabel" parent="MainGame/InfoPanel/StudentInfoContainer" unique_id=787683601]
+[node name="Name" type="RichTextLabel" parent="MainGameScreen/InfoPanel/StudentInfoContainer" unique_id=787683601]
 custom_minimum_size = Vector2(16, 32)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -386,7 +386,7 @@ scroll_active = false
 horizontal_alignment = 3
 vertical_alignment = 3
 
-[node name="Note" type="RichTextLabel" parent="MainGame/InfoPanel/StudentInfoContainer" unique_id=1888389528]
+[node name="Note" type="RichTextLabel" parent="MainGameScreen/InfoPanel/StudentInfoContainer" unique_id=1888389528]
 custom_minimum_size = Vector2(16, 32)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -402,6 +402,41 @@ text = "[b]Note[/b]"
 scroll_active = false
 horizontal_alignment = 2
 vertical_alignment = 3
+
+[node name="MissionSelectionScreen" type="Control" parent="." unique_id=1989413597]
+visible = false
+layout_mode = 3
+anchor_left = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.912
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MissionSelectionScreen" unique_id=152305592]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.295
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.19607843, 0.43137255, 0.49019608, 1)
+bbcode_enabled = true
+text = "[font_size= 32][b]Nouvelle mission ![/b][/font_size]
+Choissisez une classe parmis celles qui ont besoin de vous.
+[b]Bonne chance, Mr Norray ![/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MissionSelectionScreen" unique_id=140476159]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="PaperBG" type="TextureRect" parent="." unique_id=1932020326]
 z_index = -15
@@ -448,11 +483,17 @@ grow_vertical = 0
 texture = ExtResource("13_ebuvp")
 expand_mode = 2
 
-[connection signal="sort_children" from="MainGame/ClassRoom/IsometricContainer" to="MainGame/ClassRoom/IsometricContainer" method="_on_sort_children"]
+[node name="Control" type="Control" parent="." unique_id=1562216959]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[editable path="MainGame/ClassRoom/IsometricContainer/GroupDesks"]
-[editable path="MainGame/ClassRoom/IsometricContainer/GroupDesks2"]
-[editable path="MainGame/ClassRoom/IsometricContainer/GroupDesks3"]
-[editable path="MainGame/ClassRoom/IsometricContainer/GroupDesks4"]
-[editable path="MainGame/ClassRoom/IsometricContainer/GroupDesks5"]
-[editable path="MainGame/ClassRoom/IsometricContainer/GroupDesks6"]
+[connection signal="sort_children" from="MainGameScreen/ClassRoom/IsometricContainer" to="MainGameScreen/ClassRoom/IsometricContainer" method="_on_sort_children"]
+
+[editable path="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks"]
+[editable path="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks2"]
+[editable path="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks3"]
+[editable path="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks4"]
+[editable path="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks5"]
+[editable path="MainGameScreen/ClassRoom/IsometricContainer/GroupDesks6"]
