@@ -11,13 +11,14 @@ var boy_names = [
 	"Théo", "Sébastien", "Thomas", "Nicolas", "Hervé", "Alexis",
 	"Rémi", "David", "Stephen", "Benjamin", "Frédéric",
 	"Jérôme", "Johnnatan", "Antoine", "Anthony", "Jean-Marc",
-	"Chen", "Cédric", "Dylan", "Abdel-Hakim", "Abdallah",
-	"Abel", "Christophe", "Yoann", "Steve"]
+	"Chen", "Cédric", "Dylan", "Abdel", "Abdallah",
+	"Abel", "Christophe", "Yoann", "Steve","Nassimou","Seldon",
+	"Demurgos","Patate"]
 var girl_names = [
 	"Lola", "Léa", "Margaret", "Ebène", "Julie", "Marie", "Claire",
 	"Mélanie", "Céline", "Annabelle", "Fanny", "Morganne",
 	"Adeline", "Rachida", "Roxanne", "Richarde", "Audrey",
-	"Nadège", "Caroline", "Colette"]
+	"Nadège", "Caroline", "Colette","Enora","Biosha"]
 
 const POSSIBLE_NOTES : Array[int] = [2,3,4,5,6,7,8,9,10,11,12,13]
 var notes_weights : Array[int] = [5,5,12,12,20,30,20,8,2,2,1]
@@ -70,7 +71,7 @@ func generate_x_random_student(x) -> void:
 			new_student_resource.sprite = Global.girl_student_sprites.pick_random()
 			new_student_resource.student_name = girl_names.pick_random()
 		else:
-			print("WTF IS GOING ON, A STUDENT IS NON BINARY APPARENTLY")
+			print("WTF IS GOING ON, A STUDENT IS NON BINARY APPARENTLY (SUPPORT TO THEM BUT THAT'S NOT SUPPOSED TO HAPPEN IN THIS GAME THO)")
 		students_resources.append(new_student_resource)
 		new_student_resource.note = POSSIBLE_NOTES[rng.rand_weighted(notes_weights)]
 		if randf() < .3:
@@ -91,7 +92,8 @@ func update_info_labels():
 	for i in range(len(name_info_labels)):
 		name_info_labels[i].text = "[color=326e7d]%s: "%[students_resources[i].student_name]
 	for i in range(len(note_info_labels)):
-		note_info_labels[i].text = '[right][color=#76ae7d]%s/20'%[students_resources[i].note]
+		note_info_labels[i].text = '[right][color=%s]%s/20'%[Global.get_color_for_note(students_resources[i].note),students_resources[i].note]
+
 
 
 func set_label_settings(label_to_change):

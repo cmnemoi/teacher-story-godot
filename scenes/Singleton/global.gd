@@ -23,3 +23,9 @@ var demon_heads : Array[Texture] = [
 func _ready() -> void:
 	if IS_DEBUG:
 		print("DEBUG MODE ON")
+
+func get_color_for_note(note):
+	if note >= 10:
+		return '#76ae7d'
+	elif note <10:
+		return "red"

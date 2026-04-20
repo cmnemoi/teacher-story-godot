@@ -66,3 +66,5 @@ func make_new_random_mission():
 	new_resource.difficulty = difficulty
 	current_mission_resource = new_resource
 	
+	%ObjectiveLabel.text = "Note minimum [color=%s] [b]  %s/20 [/b] [/color]"%[Global.get_color_for_note(current_mission_resource.goal),current_mission_resource.goal]
+	%RewardLabel.text = "[color=f07c46][b]%s[/b][/color] [img]uid://dfcgw32nv5d56[/img][font_size=12] [i](reste %s cours) [/i] [/font_size]"%[current_mission_resource.reward,current_mission_resource.ideal_max_lesson]
