@@ -292,6 +292,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q4ntq")
 
 [node name="ObjectiveLabel" type="RichTextLabel" parent="MainGameScreen/InfoPanel/MissionInfoContainer" unique_id=819956432]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -308,6 +309,7 @@ scroll_active = false
 vertical_alignment = 1
 
 [node name="RewardLabel" type="RichTextLabel" parent="MainGameScreen/InfoPanel/MissionInfoContainer" unique_id=1173656832]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
