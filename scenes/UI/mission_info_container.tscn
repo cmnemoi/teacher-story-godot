@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c3hc4i0pi0eki"]
+
+[ext_resource type="Script" uid="uid://dhshthrcleykg" path="res://scenes/UI/mission_info_container.gd" id="1_8j53l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4ntq"]
+bg_color = Color(0.9098039, 0.9098039, 0.9098039, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.62352943, 0.69803923, 0.69803923, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="MissionInfoContainer" type="Panel" unique_id=265468243]
+anchors_preset = -1
+anchor_top = 0.21
+anchor_right = 1.1
+anchor_bottom = 0.35
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q4ntq")
+script = ExtResource("1_8j53l")
+
+[node name="ObjectiveLabel" type="RichTextLabel" parent="." unique_id=2140004924]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.25
+anchor_right = 0.95
+anchor_bottom = 0.4
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.19607843, 0.43137255, 0.49019608, 1)
+bbcode_enabled = true
+text = "Note minimum [color=red] [b]  8/20 [/b] [/color]"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="RewardLabel" type="RichTextLabel" parent="." unique_id=728051124]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.55
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.19607843, 0.43137255, 0.49019608, 1)
+bbcode_enabled = true
+text = "[color=f07c46][b]50[/b][/color] [img]uid://dfcgw32nv5d56[/img][font_size=12] [i](reste 4 cours) [/i] [/font_size]"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
