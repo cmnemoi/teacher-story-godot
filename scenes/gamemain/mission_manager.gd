@@ -32,14 +32,7 @@ func mission_selected(resource,name_labels,note_labels,caractere_labels):
 	sm.name_info_labels = name_labels
 	sm.note_info_labels = note_labels
 	sm.caractere_info_labels = caractere_labels
-	#shitty code incoming:
-	var labels_to_reparent: Array[RichTextLabel] = []
-	for i in range(len(name_labels+note_labels)):
-		if i%2 == 0:
-			labels_to_reparent.append(name_labels[int(i/2)])
-		else:
-			labels_to_reparent.append(note_labels[int(i/2)-1])
-	reparent_labels(labels_to_reparent,%StudentInfoContainer)
+	reparent_labels(Global.interleave_arrays(name_labels,note_labels),%StudentInfoContainer)
 	sm.assign_students_to_random_desk()
 	%MainGameScreen.show()
 	%MissionSelectionScreen.hide()

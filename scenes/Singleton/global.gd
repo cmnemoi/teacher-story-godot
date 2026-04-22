@@ -29,3 +29,13 @@ func get_color_for_note(note):
 		return '#76ae7d'
 	elif note <10:
 		return "red"
+
+func interleave_arrays(a: Array, b: Array) -> Array:
+	var result: Array = []
+	var size = min(a.size(), b.size())
+	
+	for i in size:
+		result.append(a[i])
+		result.append(b[i])
+	
+	return result
