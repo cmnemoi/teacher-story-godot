@@ -18,12 +18,13 @@ func update_mainscreen_ui():
 	%MissionInfoContainer.update_reward_label("[color=f07c46][b]%s[/b][/color] [img]uid://dfcgw32nv5d56[/img][font_size=12] [i](reste %s cours) [/i] [/font_size]"%[current_mission_resource.reward,current_mission_resource.ideal_max_lesson])
 
 func generate_mission_selection():
+	%MainGameScreen.hide()
+	%MissionSelectionScreen.show()
 	for child in %MissionSelectionInstanceContainer.get_children():
 		if child is MissionSelectionInstance:
 			var new_mission = make_new_random_mission()
 			child.update_ui(new_mission)
-	%MainGameScreen.hide()
-	%MissionSelectionScreen.show()
+
 
 func mission_selected(resource,name_labels,note_labels,caractere_labels):
 	current_mission_resource = resource

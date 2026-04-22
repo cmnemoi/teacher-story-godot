@@ -2,6 +2,8 @@ extends Node
 
 @onready var IS_DEBUG = "debug" in OS.get_cmdline_args()
 
+var DEBUG_SKIP_MISSION_SELECTION = false
+
 var skill_list :Array[Control]= []
 
 var boy_student_sprites = [
