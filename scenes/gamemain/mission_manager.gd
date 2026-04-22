@@ -10,7 +10,19 @@ var goals_weights : Array[int] = [7,10,9,6,2,0]
 
 func _ready() -> void:
 	ManagerList.mission_manager = self
-	make_new_random_mission()
+	current_mission_resource = make_new_random_mission()
+	update_mainscreen_ui()
+	generate_mission_selection()
+
+func update_mainscreen_ui():
+	%MissionInfoContainer.update_objective_label("Note minimum [color=%s] [b]  %s/20 [/b] [/color]"%[Global.get_color_for_note(current_mission_resource.goal),current_mission_resource.goal])
+	%MissionInfoContainer.update_reward_label("[color=f07c46][b]%s[/b][/color] [img]uid://dfcgw32nv5d56[/img][font_size=12] [i](reste %s cours) [/i] [/font_size]"%[current_mission_resource.reward,current_mission_resource.ideal_max_lesson])
+
+func generate_mission_selection():
+	for child in %MissionSelectionInstanceContainer.get_children():
+		if child is MissionSelectionInstance:
+			var new_mission = make_new_random_mission()
+			child.update_ui(new_mission)
 
 func make_new_random_mission():
 	var new_resource = MissionBase.new()
@@ -28,7 +40,7 @@ func make_new_random_mission():
 				new_resource.ideal_max_lesson = 5
 				new_resource.absolute_max_lesson = 8
 				goals_weights = [3,7,10,9,6,2,0]
-			new_resource.reward = 50
+			new_resource.reward = 40
 		1:
 			if lenghty:
 				new_resource.ideal_max_lesson = 5
@@ -38,7 +50,7 @@ func make_new_random_mission():
 				new_resource.ideal_max_lesson = 4
 				new_resource.absolute_max_lesson = 6
 				goals_weights = [2,4,8,9,5,2,0]
-			new_resource.reward = 100
+			new_resource.reward = 60
 		2:
 			if lenghty:
 				new_resource.ideal_max_lesson = 4
@@ -48,7 +60,7 @@ func make_new_random_mission():
 				new_resource.ideal_max_lesson = 3
 				new_resource.absolute_max_lesson = 4
 				goals_weights = [0,2,5,9,11,6,2]
-			new_resource.reward = 150
+			new_resource.reward = 90
 		3:
 			if lenghty:
 				new_resource.ideal_max_lesson = 3
@@ -58,13 +70,10 @@ func make_new_random_mission():
 				new_resource.ideal_max_lesson = 2
 				new_resource.absolute_max_lesson = 3
 				goals_weights = [0,0,2,4,7,6,2]
-			new_resource.reward = 250 
+			new_resource.reward = 120
 	
 	new_resource.goal = POSSIBLE_GOALS[rng.rand_weighted(goals_weights)]
 	if randi_range(0,1000000) == 8:
 		new_resource.goal = 2 #Enjoy the free win, you earned it
 	new_resource.difficulty = difficulty
-	current_mission_resource = new_resource
-	
-	%MissionInfoContainer.update_objective_label("Note minimum [color=%s] [b]  %s/20 [/b] [/color]"%[Global.get_color_for_note(current_mission_resource.goal),current_mission_resource.goal])
-	%MissionInfoContainer.update_reward_label("[color=f07c46][b]%s[/b][/color] [img]uid://dfcgw32nv5d56[/img][font_size=12] [i](reste %s cours) [/i] [/font_size]"%[current_mission_resource.reward,current_mission_resource.ideal_max_lesson])
+	return new_resource

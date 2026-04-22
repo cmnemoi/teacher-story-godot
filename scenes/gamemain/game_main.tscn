@@ -60,6 +60,7 @@ unique_name_in_owner = true
 script = ExtResource("4_nvwvu")
 
 [node name="MainGameScreen" type="Control" parent="." unique_id=1800385284]
+visible = false
 layout_mode = 3
 anchor_left = 0.1
 anchor_right = 0.9
@@ -347,7 +348,6 @@ limit_right = 1150
 limit_bottom = 0
 
 [node name="MissionSelectionScreen" type="Control" parent="." unique_id=1989413597]
-visible = false
 layout_mode = 3
 anchor_left = 0.1
 anchor_right = 0.9
@@ -373,7 +373,8 @@ Choissisez une classe parmis celles qui ont besoin de vous.
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MissionSelectionScreen" unique_id=140476159]
+[node name="MissionSelectionInstanceContainer" type="VBoxContainer" parent="MissionSelectionScreen" unique_id=140476159]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -383,20 +384,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="MissionSelectionInstance" parent="MissionSelectionScreen/VBoxContainer" unique_id=673878213 instance=ExtResource("18_quxqi")]
+[node name="MissionSelectionInstance" parent="MissionSelectionScreen/MissionSelectionInstanceContainer" unique_id=673878213 instance=ExtResource("18_quxqi")]
 layout_mode = 2
 
-[node name="MissionSelectionInstance2" parent="MissionSelectionScreen/VBoxContainer" unique_id=648258962 instance=ExtResource("18_quxqi")]
+[node name="MissionSelectionInstance2" parent="MissionSelectionScreen/MissionSelectionInstanceContainer" unique_id=648258962 instance=ExtResource("18_quxqi")]
 layout_mode = 2
 
-[node name="MissionSelectionInstance3" parent="MissionSelectionScreen/VBoxContainer" unique_id=1817666602 instance=ExtResource("18_quxqi")]
+[node name="MissionSelectionInstance3" parent="MissionSelectionScreen/MissionSelectionInstanceContainer" unique_id=1817666602 instance=ExtResource("18_quxqi")]
 layout_mode = 2
 
 [node name="ScrollCamera" type="Camera2D" parent="MissionSelectionScreen" unique_id=758466382]
-position = Vector2(-115.200005, 0)
+offset = Vector2(-115, 0)
 anchor_mode = 0
 limit_left = 0
-limit_top = 0
+limit_top = -130
 limit_right = 1150
 limit_bottom = 650
 

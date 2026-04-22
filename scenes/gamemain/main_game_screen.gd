@@ -8,6 +8,7 @@ func _ready():
 	base_cam_pos = scroll_camera.position
 
 func _process(_delta: float) -> void:
+	scroll_camera.enabled = visible
 	if visible:
 		if Input.is_action_just_pressed("scroll_down"):
 			scroll_camera.position.y = min(scroll_camera.limit_bottom,scroll_camera.position.y + scroll_power)

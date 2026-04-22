@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bkn7wa1q772a6" path="res://resource/themes/panel.tres" id="1_doa4x"]
 [ext_resource type="PackedScene" uid="uid://c3hc4i0pi0eki" path="res://scenes/UI/mission_info_container.tscn" id="2_4nfyi"]
+[ext_resource type="Script" uid="uid://8t7osxsa0w63" path="res://scenes/UI/mission_selection_instance.gd" id="2_7cxbe"]
 [ext_resource type="Texture2D" uid="uid://cxfaq4ovw4trr" path="res://assets/ui/gradients/students_info_bg_gradient.png" id="2_37hkb"]
 [ext_resource type="Theme" uid="uid://bme2k0756p2" path="res://resource/themes/label.tres" id="2_m2xek"]
 [ext_resource type="PackedScene" uid="uid://cy5da64ey6xrn" path="res://scenes/UI/student_info_container.tscn" id="2_vr5xt"]
@@ -21,6 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_doa4x")
+script = ExtResource("2_7cxbe")
 
 [node name="Intitule" type="RichTextLabel" parent="." unique_id=606695043]
 layout_mode = 1
@@ -103,6 +105,7 @@ fit_content = true
 scroll_active = false
 
 [node name="MissionInfoContainer" parent="Container/VBoxContainer2" unique_id=265468243 instance=ExtResource("2_4nfyi")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -128,6 +131,7 @@ fit_content = true
 scroll_active = false
 
 [node name="HeadsContainer" type="TextureRect" parent="Container/VBoxContainer3" unique_id=2093511894]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(110, 50)
 layout_mode = 2
 size_flags_horizontal = 0
