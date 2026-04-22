@@ -26,7 +26,7 @@ var girl_names = [
 "Louna","Maélys","Margot","Marie","Marie-Lou","Marine","Mathilde","Maya",
 "Melinda","Mélissa","Mia","Myriam","Naomie","Pauline","Philippine","Rose",
 "Sofia","Stella","Suzette","Tess","Valentine","Victoria","Violette",
-"Yasmine","Zoé","Biosha"
+"Yasmine","Zoé","Biosha","Tommy"
 ]
 const POSSIBLE_NOTES : Array[int] = [2,3,4,5,6,7,8,9,10,11,12,13]
 var notes_weights : Array[int] = [5,5,12,12,20,30,20,8,2,2,1]
@@ -119,11 +119,11 @@ func make_labels(resource,container,include_caractere_labels = false):
 		
 func set_label_settings(label_to_change):
 	label_to_change.bbcode_enabled = true
-	label_to_change.add_theme_font_size_override("normal_font_size",16)
+	label_to_change.add_theme_font_size_override("normal_font_size",15)
 	label_to_change.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	label_to_change.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	label_to_change.scroll_active = false
-	label_to_change.custom_minimum_size = Vector2(18,24)
+	label_to_change.custom_minimum_size = Vector2(18,20)
 
 func assign_students_to_random_desk():
 	var possible_spot := []

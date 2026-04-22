@@ -41,3 +41,20 @@ func interleave_arrays(a: Array, b: Array) -> Array:
 		result.append(b[i])
 	
 	return result
+
+func get_text_for_mission_objective(resource:MissionBase):
+	"Note minimum [color=%s] [b]  %s [/b] [/color]"
+	var note = resource.goal
+	var text = ""
+	if resource.goal_is_for_x_student != -1:
+		if note == 10:  
+			if resource.goal_is_for_x_student == 1:
+				text = "%s redoublant maximum"%int(len(resource.students) - resource.goal_is_for_x_student)
+			else:
+				text = "%s redoublants maximum"%int(len(resource.students) - resource.goal_is_for_x_student)
+		elif note == 12: text = "Mentions \"Assez bien\" x %s"%resource.goal_is_for_x_student
+		elif note ==  14: text = "Mentions \"Bien\" x %s"%resource.goal_is_for_x_student
+		elif note == 16: text = "Mention \"Très Bien\" x %s"%resource.goal_is_for_x_student
+		else: text = "Note minimum:[color=%s][b] %s/20[/b][/color]"%[get_color_for_note(note),note]
+	else: text = "Note minimum:[color=%s][b] %s/20[/b][/color]"%[get_color_for_note(note),note]
+	return text

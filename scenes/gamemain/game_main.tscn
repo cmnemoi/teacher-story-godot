@@ -280,8 +280,7 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 1
 anchor_top = 0.18
-anchor_right = 1.0
-anchor_bottom = 0.3
+anchor_bottom = 0.33
 
 [node name="ClassInfoContainer" type="Control" parent="MainGameScreen/InfoPanel" unique_id=9508005]
 layout_mode = 1

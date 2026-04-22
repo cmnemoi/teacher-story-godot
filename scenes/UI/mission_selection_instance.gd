@@ -11,7 +11,7 @@ var caractere_labels: Array[RichTextLabel] = []
 func update_ui(mission_resource):
 	current_mission_resource = mission_resource
 	%Intitule.text = "La classe de [b]%s[/b] a besoin de vos connaissances en [b]%s[/b] !"%[mission_resource.classname,mission_resource.matiere]
-	%MissionInfoContainer.update_objective_label("Note minimum [color=%s] [b]  %s/20 [/b] [/color]"%[Global.get_color_for_note(mission_resource.goal),mission_resource.goal])
+	%MissionInfoContainer.update_objective_label(Global.get_text_for_mission_objective(mission_resource))
 	%MissionInfoContainer.update_reward_label("[color=f07c46][b]%s[/b][/color] [img]uid://dfcgw32nv5d56[/img][font_size=12] [i](reste %s cours) [/i] [/font_size]"%[mission_resource.reward,mission_resource.ideal_max_lesson])
 	%HeadsContainer.texture = Global.demon_heads[mission_resource.difficulty+1]
 	for student_resource in mission_resource.students:
@@ -32,6 +32,7 @@ func update_ui(mission_resource):
 		unhide_all_labels()
 		Global.DEBUG_SKIP_MISSION_SELECTION = true
 		ManagerList.mission_manager.mission_selected(current_mission_resource,name_labels,note_labels,caractere_labels)
+
 
 
 func unhide_label(target_label):
