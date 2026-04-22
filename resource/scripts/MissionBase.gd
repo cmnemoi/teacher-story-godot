@@ -8,3 +8,5 @@ class_name MissionBase
 @export var reward = 50
 @export var goal = 12
 @export var classname : String = "Cinquième K"
+@export var matiere : String = "Histoire-Géo"
+@export var students : Array = []
