@@ -28,6 +28,7 @@ func update_ui(mission_resource):
 			hidden_labels.append([label,label.text])
 			label.text = "[center][color=326e7d]Inconnu"
 			caractere_labels.append(label)
+
 func unhide_label(target_label):
 	for label in hidden_labels:
 		if label[0] == target_label:

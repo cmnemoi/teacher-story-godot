@@ -57,7 +57,7 @@ func make_new_random_mission():
 				new_resource.ideal_max_lesson = 5
 				new_resource.absolute_max_lesson = 8
 				goals_weights = [3,7,10,9,6,2,0]
-			new_resource.students = ManagerList.student_manager.generate_x_random_student(4)
+			new_resource.students = ManagerList.student_manager.generate_x_random_student(5)
 			new_resource.reward = 40
 		1:
 			if lenghty:
