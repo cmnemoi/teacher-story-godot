@@ -8,19 +8,26 @@ var caractere_info_labels : Array[RichTextLabel] = []
 var student_scene = preload("res://scenes/students/student.tscn")
 var gender = ["boy","girl"]
 var boy_names = [
-	"Kévin", "Maxime", "Mathéo", "Hugo", "Victor", "Julien",
-	"Théo", "Sébastien", "Thomas", "Nicolas", "Hervé", "Alexis",
-	"Rémi", "David", "Stephen", "Benjamin", "Frédéric",
-	"Jérôme", "Johnnatan", "Antoine", "Anthony", "Jean-Marc",
-	"Chen", "Cédric", "Dylan", "Abdel", "Abdallah",
-	"Abel", "Christophe", "Yoann", "Steve","Nassimou","Seldon",
-	"Demurgos","Patate"]
+"Alexandre","Alexis","Andress","Antoine","Arthur","Athanase","Aurélien",
+"Barnabé","Benjamin","Caïn","Camille","Charles","Edouard","Clément","David","Diego",
+"Eliott","Enzo","Esteban","Félix","François","Gaetan","Henri","Hugo","Jean",
+"Jean-Baptiste","Joachim","Jonathan","Joseph","Joshua","Judas","Justin","Kevin",
+"Imane","Lenny","Léon","Loïc","Louis","Lucas","Marius","Mathieu","Maxime","Mehdi",
+"Mohamed","Nathan","Nicolas","Oscar","Paul","Pierre","Raoul","Raphaël","Rémi",
+"Robin","Romeo","Samuel","Sébastien","Théo","Thomas","Tom","Valentin",
+"Vincent","Yann","Yassine","Zlatan","Seldon","Demugros","Patate","Nassimou"
+]
 var girl_names = [
-	"Lola", "Léa", "Margaret", "Ebène", "Julie", "Marie", "Claire",
-	"Mélanie", "Céline", "Annabelle", "Fanny", "Morganne",
-	"Adeline", "Rachida", "Roxanne", "Richarde", "Audrey",
-	"Nadège", "Caroline", "Colette","Enora","Biosha"]
-
+"Adele","Agathe","Aïcha","Alice","Alizée","Amandine","Anaïs","Angélique","Anna",
+"Apolline","Barbara","Béatrice","Céleste","Chaima","Charlotte","Chloe",
+"Claire","Clara","Constance","Domitille","Eglantine","Eleonore","Enora","Elise",
+"Elsa","Emilie","Emma","Fanchon","Fanny","Félicie","Georgette",
+"Inaya","Inès","Jeanne","Julie","Kenza","Kimberley","Lili","Lou","Louise",
+"Louna","Maélys","Margot","Marie","Marie-Lou","Marine","Mathilde","Maya",
+"Melinda","Mélissa","Mia","Myriam","Naomie","Pauline","Philippine","Rose",
+"Sofia","Stella","Suzette","Tess","Valentine","Victoria","Violette",
+"Yasmine","Zoé","Biosha","Tommy"
+]
 const POSSIBLE_NOTES : Array[int] = [2,3,4,5,6,7,8,9,10,11,12,13]
 var notes_weights : Array[int] = [5,5,12,12,20,30,20,8,2,2,1]
 var rng = RandomNumberGenerator.new()
@@ -112,11 +119,11 @@ func make_labels(resource,container,include_caractere_labels = false):
 		
 func set_label_settings(label_to_change):
 	label_to_change.bbcode_enabled = true
-	label_to_change.add_theme_font_size_override("normal_font_size",16)
+	label_to_change.add_theme_font_size_override("normal_font_size",15)
 	label_to_change.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	label_to_change.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	label_to_change.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	label_to_change.scroll_active = false
-	label_to_change.custom_minimum_size = Vector2(16,16)
+	label_to_change.custom_minimum_size = Vector2(18,20)
 
 func assign_students_to_random_desk():
 	var possible_spot := []
@@ -151,6 +158,3 @@ func reset_all_students():
 func _ready() -> void:
 	ManagerList.student_manager = self
 	await get_tree().process_frame
-
-func _process(_delta: float) -> void:
-	update_info_labels()

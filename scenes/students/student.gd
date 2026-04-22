@@ -59,6 +59,7 @@ func die():
 		resource.note = 20
 	elif resource.note <0:
 		resource.note = 0
+	ManagerList.student_manager.update_info_labels()
 	modulate = Color("5f5f5f")
 	for child in $HpContainer.get_children():
 		if child is TextureRect:
