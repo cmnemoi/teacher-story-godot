@@ -54,44 +54,44 @@ func make_new_random_mission():
 	match difficulty:
 		0: 
 			if all_students:
-				goals_weights = [2,10,5,0]
-			else:
 				goals_weights = [3,7,10,9,6,2,0]
+			else:
+				goals_weights = [2,10,5,0]
 			new_resource.students = ManagerList.student_manager.generate_x_random_student(5)
 		1:
 			if all_students:
 
-				goals_weights = [1,7,7,1]
-			else:
 				goals_weights = [2,4,8,9,5,2,0]
+			else:
+				goals_weights = [1,7,7,1]
 			new_resource.students = ManagerList.student_manager.generate_x_random_student(5)
 		2:
 			if all_students:
-				goals_weights = [0,4,12,4]
-			else:
 				goals_weights = [0,2,5,9,11,6,2]
+			else:
+				goals_weights = [0,4,12,4]
 			new_resource.students = ManagerList.student_manager.generate_x_random_student(6)
 		3:
 			if all_students:
-				goals_weights = [0,0,8,3]
-			else:
 				goals_weights = [0,0,2,4,7,6,2]
+			else:
+				goals_weights = [0,0,8,3]
 			new_resource.students = ManagerList.student_manager.generate_x_random_student(8)
 	
-
-	new_resource.goal = POSSIBLE_GOALS[rng.rand_weighted(goals_weights)]
+	if all_students:
+		new_resource.goal = POSSIBLE_GOALS[rng.rand_weighted(goals_weights)]
+	else:
+		new_resource.goal = POSSIBLE_GOALS_FOR_X_ELEVES[rng.rand_weighted(goals_weights)]
 	if !all_students:
 		match new_resource.goal:
 			10:  new_resource.goal_is_for_x_student = randi_range(1,5)
 			12: new_resource.goal_is_for_x_student = randi_range(1,5)
 			14: new_resource.goal_is_for_x_student = randi_range(1,4)
 			16:  new_resource.goal_is_for_x_student = randi_range(1,3)
-	if randi_range(0,1000000) == 8:
-		new_resource.goal = 2 #Enjoy the free win, you earned it
+
 	new_resource.difficulty = difficulty
 	if all_students:
 		new_resource.goal_is_for_x_student = -1
-	
 	var best_students
 	var worst_student = StudentResource.new()
 	worst_student.note = 20
@@ -99,7 +99,7 @@ func make_new_random_mission():
 		for student in new_resource.students:
 			if student.note < worst_student.note:
 				worst_student = student
-		new_resource.ideal_max_lesson = int(floor((new_resource.goal - worst_student.note)/2))+1 
+		new_resource.ideal_max_lesson = int(ceil((new_resource.goal - floor(worst_student.note))/2))+1
 	else:
 		best_students = [] 
 		for i in range(new_resource.goal_is_for_x_student):
@@ -112,8 +112,8 @@ func make_new_random_mission():
 		for student in best_students:
 			if student.note < worst_student.note:
 				worst_student = student
-		new_resource.ideal_max_lesson = int(floor((new_resource.goal - worst_student.note)/2))+1 
-	
+		new_resource.ideal_max_lesson = int(ceil((new_resource.goal - floor(worst_student.note))/2))+1
+		
 	var student_sum = 0
 	if all_students:
 		for student in new_resource.students:
@@ -123,4 +123,6 @@ func make_new_random_mission():
 			student_sum += (new_resource.goal-student.note)
 	
 	new_resource.reward = 10* int(new_resource.ideal_max_lesson +  floor( student_sum / new_resource.ideal_max_lesson))
+	if randi_range(0,1000000) == 8:
+		new_resource.goal = 2 #Enjoy the free win, you earned it
 	return new_resource
