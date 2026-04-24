@@ -15,7 +15,7 @@ func stop_class():
 	remaining_time = max_time
 
 func _ready() -> void:
-	remaining_time_label.text = str(max(0,remaining_time))
+	#remaining_time_label.text = str(max(0,remaining_time))
 	ManagerList.timer_manager = self
 
 

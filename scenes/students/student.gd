@@ -1,4 +1,4 @@
-extends Button
+extends CharacterBody2D
 class_name Student
 
 enum CaractereType {Reveur,Jovial,Malin,Timide,Clown,Bruyant,Manipulateur,Hyperactif}
@@ -17,6 +17,7 @@ var current_rank: int = 2 ##valeur entre 0 et 2, 0 c'est le dernier rang, 2 celu
 var bonus_note_on_death: int = 0
 
 func make_ui() -> void:
+	$TextureRect.texture = resource.sprite
 	for child in $HpContainer.get_children():
 		child.queue_free()
 	
@@ -34,8 +35,6 @@ func make_ui() -> void:
 
 func _ready() -> void:
 	make_ui()
-	$Student_Tooltip.init(resource.student_name,"Caractère: %s"%CaractereType.keys()[resource.caractere],Color("#211f26"),Color("3098edff"),Color("959595ff"))
-	$TextureRect.texture = resource.sprite
 
 func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false):
 	if !untouchable:
@@ -88,7 +87,6 @@ func _on_mouse_entered() -> void:
 			child.texture = SPRITE_HOVER_ENNUI
 		else:
 			print("The texture of the hp of a astudent was FUCKING WRONG SOMEHOW")
-	$Student_Tooltip.show()
 
 
 func _on_mouse_exited() -> void:
@@ -99,4 +97,3 @@ func _on_mouse_exited() -> void:
 			child.texture = SPRITE_ENNUI
 		else:
 			print("The texture of the hp of a student was FUCKING WRONG SOMEHOW")
-	$Student_Tooltip.hide()

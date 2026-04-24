@@ -26,17 +26,12 @@ var girl_names = [
 "Louna","Maélys","Margot","Marie","Marie-Lou","Marine","Mathilde","Maya",
 "Melinda","Mélissa","Mia","Myriam","Naomie","Pauline","Philippine","Rose",
 "Sofia","Stella","Suzette","Tess","Valentine","Victoria","Violette",
-"Yasmine","Zoé","Biosha","Tommy"
+"Yasmine","Zoé","Biosha","Tommy","Mawie"
 ]
 const POSSIBLE_NOTES : Array[int] = [2,3,4,5,6,7,8,9,10,11,12,13]
 var notes_weights : Array[int] = [5,5,12,12,20,30,20,8,2,2,1]
 var rng = RandomNumberGenerator.new()
 func generate_x_random_student(x):
-	"""	clear_students()
-	clear_students_resources()
-	name_info_labels.clear()
-	note_info_labels.clear()
-	caractere_info_labels.clear()"""
 	var resources =[]
 	for i in range(x):
 		if i >= len(%DeskManager.desks):
