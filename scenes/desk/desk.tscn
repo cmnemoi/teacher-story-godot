@@ -4,18 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bdb06fgk3nurx" path="res://assets/environnement/decorations and desks/chaise.png" id="2_78764"]
 [ext_resource type="Texture2D" uid="uid://cfe6e5bhpo4ft" path="res://assets/other/desk.png" id="2_mkj3i"]
 
-[node name="Desk" type="StaticBody2D" unique_id=1145600263]
+[node name="Desk" type="Sprite2D" unique_id=895890925]
+texture = ExtResource("2_mkj3i")
 script = ExtResource("1_b7gie")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2060811455]
+[node name="chair" type="Sprite2D" parent="." unique_id=2060811455]
+z_index = -1
 texture = ExtResource("2_78764")
 offset = Vector2(4, -6)
 flip_h = true
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1251752097]
-texture = ExtResource("2_mkj3i")
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1712047780]
-position = Vector2(-0.49999988, -1.5000005)
-scale = Vector2(0.99999976, 0.99999976)
-polygon = PackedVector2Array(3.5000007, 5.500002, 12.500003, 0.5000006, -1.5000005, -7.500001, -10.500003, -3.5)

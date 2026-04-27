@@ -7,63 +7,157 @@
 [ext_resource type="Texture2D" uid="uid://cyrr1wvff3kde" path="res://assets/environnement/walls/wall_door.png" id="5_gjsek"]
 [ext_resource type="Texture2D" uid="uid://7bbbwl22weqf" path="res://assets/environnement/walls/wall_front.png" id="6_nssuc"]
 [ext_resource type="Texture2D" uid="uid://kw2hf5qynvc" path="res://assets/environnement/walls/wall_street2.png" id="7_6yp7d"]
+[ext_resource type="Texture2D" uid="uid://bklejwy0ukdnv" path="res://assets/environnement/decorations and desks/deco_armoire2.png" id="8_hytyq"]
+[ext_resource type="Texture2D" uid="uid://bbklcd6r3wxx5" path="res://assets/environnement/decorations and desks/deco_planisphere.png" id="9_85lqo"]
+[ext_resource type="Texture2D" uid="uid://da3ka8j1ldd8o" path="res://assets/environnement/decorations and desks/deco_coucou.png" id="10_y2844"]
+[ext_resource type="Texture2D" uid="uid://cewx0tii7386r" path="res://assets/environnement/decorations and desks/deco_coffre-fort.png" id="11_anq3c"]
+[ext_resource type="Texture2D" uid="uid://cy5qo61omqb11" path="res://assets/environnement/decorations and desks/deco_corbeille.png" id="12_0jolb"]
+[ext_resource type="Texture2D" uid="uid://b3qso2taptyfc" path="res://assets/environnement/decorations and desks/deco_drawings.png" id="13_xq6fy"]
+[ext_resource type="Texture2D" uid="uid://ovbmp50paage" path="res://assets/environnement/decorations and desks/deco_armoire.png" id="14_y6d82"]
+[ext_resource type="Texture2D" uid="uid://bheka44bcyapo" path="res://assets/environnement/decorations and desks/deco_table-globe.png" id="15_b0oxp"]
+[ext_resource type="Texture2D" uid="uid://cdk80n70yu5hl" path="res://assets/environnement/decorations and desks/deco_globe.png" id="16_aqxiq"]
+[ext_resource type="Texture2D" uid="uid://dookgt8jsc6n3" path="res://assets/environnement/decorations and desks/deco_paper-sheet.png" id="17_3a18s"]
+[ext_resource type="Texture2D" uid="uid://df2ysxgwfe5s0" path="res://assets/environnement/decorations and desks/deco_bureau_ordi.png" id="18_ytl7y"]
+[ext_resource type="Texture2D" uid="uid://b8xjtr7bylxnl" path="res://assets/environnement/decorations and desks/deco_bureau.png" id="19_4lvpw"]
+[ext_resource type="Texture2D" uid="uid://cnaclbm7jkbna" path="res://assets/environnement/decorations and desks/deco_stuff-desktop.png" id="20_rvlop"]
 
 [node name="GameSpace" type="Node2D" unique_id=562061812]
 z_index = 5
+y_sort_enabled = true
 
 [node name="GroupDesks" parent="." unique_id=104144593 instance=ExtResource("1_7fwyp")]
+y_sort_enabled = true
 position = Vector2(162, 85)
 
 [node name="GroupDesks2" parent="." unique_id=520262727 instance=ExtResource("1_7fwyp")]
+y_sort_enabled = true
 position = Vector2(213, 112.50001)
 
 [node name="GroupDesks3" parent="." unique_id=1852112793 instance=ExtResource("1_7fwyp")]
+y_sort_enabled = true
 position = Vector2(137, 98)
 
 [node name="GroupDesks4" parent="." unique_id=853635072 instance=ExtResource("1_7fwyp")]
+y_sort_enabled = true
 position = Vector2(188.5, 128)
 
 [node name="GroupDesks5" parent="." unique_id=1095001055 instance=ExtResource("1_7fwyp")]
+y_sort_enabled = true
 position = Vector2(109.66669, 112.166664)
 
 [node name="GroupDesks6" parent="." unique_id=720243250 instance=ExtResource("1_7fwyp")]
+y_sort_enabled = true
 position = Vector2(162.66669, 143.16667)
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=1639015182]
 z_index = -4
+y_sort_enabled = true
 position = Vector2(157, 113.5)
 texture = ExtResource("2_yrjmh")
 metadata/_edit_lock_ = true
 
 [node name="Estrade" type="Sprite2D" parent="." unique_id=2085995972]
 z_index = -4
+y_sort_enabled = true
 position = Vector2(91, 154.83334)
 texture = ExtResource("3_4n3v6")
 
 [node name="Wall_bottom" type="Sprite2D" parent="." unique_id=1203709522]
-z_index = -4
+z_index = -1
+y_sort_enabled = true
 position = Vector2(159.66667, 116.166664)
 texture = ExtResource("4_clmgi")
 metadata/_edit_lock_ = true
 
 [node name="Wall_door" type="Sprite2D" parent="." unique_id=416774012]
-z_index = -4
+z_index = -1
+y_sort_enabled = true
 position = Vector2(159.66667, 116.166664)
 texture = ExtResource("5_gjsek")
 metadata/_edit_lock_ = true
 
 [node name="Wall_front" type="Sprite2D" parent="." unique_id=810438076]
-z_index = -4
+y_sort_enabled = true
 position = Vector2(75, 157.5)
 texture = ExtResource("6_nssuc")
 metadata/_edit_lock_ = true
 
 [node name="Wall_street" type="Sprite2D" parent="." unique_id=348910378]
-z_index = -4
+y_sort_enabled = true
 position = Vector2(243.66669, 158.16667)
 texture = ExtResource("7_6yp7d")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=354434027]
+y_sort_enabled = true
 anchor_mode = 0
 zoom = Vector2(2, 2)
+
+[node name="DecoArmoire2" type="Sprite2D" parent="." unique_id=2072680990]
+y_sort_enabled = true
+position = Vector2(71, 80)
+texture = ExtResource("8_hytyq")
+
+[node name="DecoPlanisphere" type="Sprite2D" parent="." unique_id=427397636]
+y_sort_enabled = true
+position = Vector2(234, 68)
+texture = ExtResource("9_85lqo")
+
+[node name="DecoCoucou" type="Sprite2D" parent="." unique_id=443105771]
+y_sort_enabled = true
+position = Vector2(199, 48)
+texture = ExtResource("10_y2844")
+
+[node name="DecoCoffreFort" type="Sprite2D" parent="." unique_id=648087435]
+y_sort_enabled = true
+position = Vector2(105, 65)
+texture = ExtResource("11_anq3c")
+
+[node name="DecoCorbeille" type="Sprite2D" parent="." unique_id=93224926]
+y_sort_enabled = true
+position = Vector2(111, 141)
+texture = ExtResource("12_0jolb")
+
+[node name="DecoDrawings" type="Sprite2D" parent="." unique_id=1655246164]
+y_sort_enabled = true
+position = Vector2(295, 98)
+texture = ExtResource("13_xq6fy")
+
+[node name="DecoArmoire" type="Sprite2D" parent="." unique_id=1628234151]
+y_sort_enabled = true
+position = Vector2(317, 109)
+texture = ExtResource("14_y6d82")
+flip_h = true
+
+[node name="DecoTableGlobe" type="Sprite2D" parent="." unique_id=2053862568]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(172, 176)
+texture = ExtResource("15_b0oxp")
+
+[node name="DecoGlobe" type="Sprite2D" parent="." unique_id=1054063170]
+y_sort_enabled = true
+position = Vector2(174, 168)
+texture = ExtResource("16_aqxiq")
+
+[node name="DecoPaperSheet" type="Sprite2D" parent="." unique_id=967397873]
+y_sort_enabled = true
+position = Vector2(166, 171)
+texture = ExtResource("17_3a18s")
+
+[node name="DecoBureauOrdi" type="Sprite2D" parent="." unique_id=1301075100]
+y_sort_enabled = true
+position = Vector2(26, 109)
+texture = ExtResource("18_ytl7y")
+flip_h = true
+
+[node name="DecoBureau" type="Sprite2D" parent="." unique_id=84735442]
+y_sort_enabled = true
+position = Vector2(94, 134)
+texture = ExtResource("19_4lvpw")
+
+[node name="DecoStuffDesktop" type="Sprite2D" parent="." unique_id=1695608032]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(94, 130)
+texture = ExtResource("20_rvlop")

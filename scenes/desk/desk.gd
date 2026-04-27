@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Sprite2D
 class_name Desk
 
 
