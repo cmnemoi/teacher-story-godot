@@ -100,7 +100,7 @@ texture = ExtResource("8_hytyq")
 
 [node name="DecoPlanisphere" type="Sprite2D" parent="." unique_id=427397636]
 y_sort_enabled = true
-position = Vector2(234, 68)
+position = Vector2(236, 66)
 texture = ExtResource("9_85lqo")
 
 [node name="DecoCoucou" type="Sprite2D" parent="." unique_id=443105771]

@@ -1,12 +1,12 @@
 extends Node
 
-@onready var remaining_time_label: Label =%RemainingTimeLabel
+#@onready var remaining_time_label: Label =%RemainingTimeLabel
 var max_time : int = 10
 var remaining_time : int = max_time
 
 func update_time(amount):
 	remaining_time += amount
-	remaining_time_label.text = str(max(0,remaining_time))
+	#remaining_time_label.text = str(max(0,remaining_time))
 	if remaining_time <= 0:
 		stop_class()
 
@@ -17,7 +17,3 @@ func stop_class():
 func _ready() -> void:
 	#remaining_time_label.text = str(max(0,remaining_time))
 	ManagerList.timer_manager = self
-
-
-func _on_right_border_resized() -> void:
-	pass # Replace with function body.

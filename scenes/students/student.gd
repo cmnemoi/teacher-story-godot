@@ -34,6 +34,8 @@ func make_ui() -> void:
 			$HpContainer.add_child(new_child)
 
 func _ready() -> void:
+	%"Mouse detector".connect("custom_mouse_enter",_on_mouse_detector_mouse_entered)
+	%"Mouse detector".connect("custome_mouse_exit",_on_mouse_detector_mouse_exited)
 	make_ui()
 
 func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false):
@@ -79,7 +81,7 @@ func _process(_delta: float) -> void:
 			reset()
 
 
-func _on_mouse_entered() -> void:
+func _on_mouse_detector_mouse_entered() -> void:
 	for child in $HpContainer.get_children():
 		if child.ennui == false:
 			child.texture = SPRITE_HOVER_STUPIDITE
@@ -88,8 +90,7 @@ func _on_mouse_entered() -> void:
 		else:
 			print("The texture of the hp of a astudent was FUCKING WRONG SOMEHOW")
 
-
-func _on_mouse_exited() -> void:
+func _on_mouse_detector_mouse_exited() -> void:
 	for child in $HpContainer.get_children():
 		if child.ennui == false:
 			child.texture = SPRITE_STUPIDITE
