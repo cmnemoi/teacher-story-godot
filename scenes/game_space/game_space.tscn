@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cqijj5mokpqyk"]
+
+[ext_resource type="PackedScene" uid="uid://6nm68j81g586" path="res://scenes/desk/group_desks.tscn" id="1_7fwyp"]
+[ext_resource type="Texture2D" uid="uid://dgtx6ch0d7mwr" path="res://assets/environnement/floor/bg_classroom1.png" id="2_yrjmh"]
+[ext_resource type="Texture2D" uid="uid://bsbxvskipptjd" path="res://assets/environnement/floor/estrade3.png" id="3_4n3v6"]
+[ext_resource type="Texture2D" uid="uid://jj7x3idisdx0" path="res://assets/environnement/walls/wall_bottom.png" id="4_clmgi"]
+[ext_resource type="Texture2D" uid="uid://cyrr1wvff3kde" path="res://assets/environnement/walls/wall_door.png" id="5_gjsek"]
+[ext_resource type="Texture2D" uid="uid://7bbbwl22weqf" path="res://assets/environnement/walls/wall_front.png" id="6_nssuc"]
+[ext_resource type="Texture2D" uid="uid://kw2hf5qynvc" path="res://assets/environnement/walls/wall_street2.png" id="7_6yp7d"]
+
+[node name="GameSpace" type="Node2D" unique_id=562061812]
+z_index = 5
+
+[node name="GroupDesks" parent="." unique_id=104144593 instance=ExtResource("1_7fwyp")]
+position = Vector2(162, 85)
+
+[node name="GroupDesks2" parent="." unique_id=520262727 instance=ExtResource("1_7fwyp")]
+position = Vector2(213, 112.50001)
+
+[node name="GroupDesks3" parent="." unique_id=1852112793 instance=ExtResource("1_7fwyp")]
+position = Vector2(137, 98)
+
+[node name="GroupDesks4" parent="." unique_id=853635072 instance=ExtResource("1_7fwyp")]
+position = Vector2(188.5, 128)
+
+[node name="GroupDesks5" parent="." unique_id=1095001055 instance=ExtResource("1_7fwyp")]
+position = Vector2(109.66669, 112.166664)
+
+[node name="GroupDesks6" parent="." unique_id=720243250 instance=ExtResource("1_7fwyp")]
+position = Vector2(162.66669, 143.16667)
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=1639015182]
+z_index = -4
+position = Vector2(157, 113.5)
+texture = ExtResource("2_yrjmh")
+metadata/_edit_lock_ = true
+
+[node name="Estrade" type="Sprite2D" parent="." unique_id=2085995972]
+z_index = -4
+position = Vector2(91, 154.83334)
+texture = ExtResource("3_4n3v6")
+
+[node name="Wall_bottom" type="Sprite2D" parent="." unique_id=1203709522]
+z_index = -4
+position = Vector2(159.66667, 116.166664)
+texture = ExtResource("4_clmgi")
+metadata/_edit_lock_ = true
+
+[node name="Wall_door" type="Sprite2D" parent="." unique_id=416774012]
+z_index = -4
+position = Vector2(159.66667, 116.166664)
+texture = ExtResource("5_gjsek")
+metadata/_edit_lock_ = true
+
+[node name="Wall_front" type="Sprite2D" parent="." unique_id=810438076]
+z_index = -4
+position = Vector2(75, 157.5)
+texture = ExtResource("6_nssuc")
+metadata/_edit_lock_ = true
+
+[node name="Wall_street" type="Sprite2D" parent="." unique_id=348910378]
+z_index = -4
+position = Vector2(243.66669, 158.16667)
+texture = ExtResource("7_6yp7d")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=354434027]
+anchor_mode = 0
+zoom = Vector2(2, 2)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cer0ck3xuhn2"
-path="res://.godot/imported/class_tileset.png-67ffe5d6b503af5649980b5ad5cee171.ctex"
+uid="uid://dookgt8jsc6n3"
+path="res://.godot/imported/deco_paper-sheet.png-98e1166e71cb039ce347e87445f36eea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environnement/class_tileset.png"
-dest_files=["res://.godot/imported/class_tileset.png-67ffe5d6b503af5649980b5ad5cee171.ctex"]
+source_file="res://assets/environnement/decorations and desks/deco_paper-sheet.png"
+dest_files=["res://.godot/imported/deco_paper-sheet.png-98e1166e71cb039ce347e87445f36eea.ctex"]
 
 [params]
 

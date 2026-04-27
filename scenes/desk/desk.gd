@@ -1,4 +1,4 @@
-extends TextureButton
+extends StaticBody2D
 class_name Desk
 
 
