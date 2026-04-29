@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4pagtudtf0tl"
-path="res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"
+uid="uid://dncfx3yyri64o"
+path="res://.godot/imported/bus.png-3e28c5e5ebb49c48e635fe1eb5f4076a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environnement/floor/estrade3.png"
-dest_files=["res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"]
+source_file="res://assets/environnement/vehicles/bus.png"
+dest_files=["res://.godot/imported/bus.png-3e28c5e5ebb49c48e635fe1eb5f4076a.ctex"]
 
 [params]
 

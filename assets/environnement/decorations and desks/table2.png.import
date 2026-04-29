@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4pagtudtf0tl"
-path="res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"
+uid="uid://q1knuvqp6ke2"
+path="res://.godot/imported/table2.png-91a8309b3bc926e2587f6bd529b56d5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environnement/floor/estrade3.png"
-dest_files=["res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"]
+source_file="res://assets/environnement/decorations and desks/table2.png"
+dest_files=["res://.godot/imported/table2.png-91a8309b3bc926e2587f6bd529b56d5f.ctex"]
 
 [params]
 

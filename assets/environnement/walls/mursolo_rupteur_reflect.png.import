@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4pagtudtf0tl"
-path="res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"
+uid="uid://b4lnnhlv40ku1"
+path="res://.godot/imported/mursolo_rupteur_reflect.png-572f2e1b13e37dea1bb9a31ec135af01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environnement/floor/estrade3.png"
-dest_files=["res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"]
+source_file="res://assets/environnement/walls/mursolo_rupteur_reflect.png"
+dest_files=["res://.godot/imported/mursolo_rupteur_reflect.png-572f2e1b13e37dea1bb9a31ec135af01.ctex"]
 
 [params]
 

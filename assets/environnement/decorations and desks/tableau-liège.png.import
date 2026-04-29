@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4pagtudtf0tl"
-path="res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"
+uid="uid://bwlcaku2wytkh"
+path="res://.godot/imported/tableau-liège.png-bdabd38d7825ce81f36d38b795d30c63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environnement/floor/estrade3.png"
-dest_files=["res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"]
+source_file="res://assets/environnement/decorations and desks/tableau-liège.png"
+dest_files=["res://.godot/imported/tableau-liège.png-bdabd38d7825ce81f36d38b795d30c63.ctex"]
 
 [params]
 

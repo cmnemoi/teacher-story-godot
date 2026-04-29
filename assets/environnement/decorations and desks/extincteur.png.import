@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4pagtudtf0tl"
-path="res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"
+uid="uid://dduf5j2s4sb8b"
+path="res://.godot/imported/extincteur.png-717f9cf5e811988437681176f8a90769.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environnement/floor/estrade3.png"
-dest_files=["res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"]
+source_file="res://assets/environnement/decorations and desks/extincteur.png"
+dest_files=["res://.godot/imported/extincteur.png-717f9cf5e811988437681176f8a90769.ctex"]
 
 [params]
 

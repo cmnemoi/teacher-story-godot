@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4pagtudtf0tl"
-path="res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"
+uid="uid://cjpbru6b6nymu"
+path="res://.godot/imported/bg_classroom4.png-f215a2bdf72a8a0c8ce1d04b4d5a6749.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environnement/floor/estrade3.png"
-dest_files=["res://.godot/imported/estrade3.png-e2e2cf5aa546b7a5da39210b026ac7ef.ctex"]
+source_file="res://assets/environnement/floor/bg_classroom4.png"
+dest_files=["res://.godot/imported/bg_classroom4.png-f215a2bdf72a8a0c8ce1d04b4d5a6749.ctex"]
 
 [params]
 
