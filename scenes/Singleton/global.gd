@@ -6,6 +6,8 @@ const HISTORY_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-12,15)
 const MATH_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-258,138)
 const SCIENCE_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-435,227)
 
+const BAG_SPRITES = [preload("uid://cxd8ggqp0omqk"),preload("uid://u78sx6xejio6"),preload("uid://cc75phnlu02nq"),preload("uid://88w24qm8hg25")]
+
 var DEBUG_SKIP_MISSION_SELECTION = false
 
 var skill_list :Array[Control]= []

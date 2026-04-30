@@ -54,12 +54,18 @@
 [ext_resource type="Texture2D" uid="uid://ce32ujmc0q4y0" path="res://assets/environnement/decorations and desks/bonaparte/bonaparte.png" id="50_6am2b"]
 [ext_resource type="Texture2D" uid="uid://dfjnxf068ojts" path="res://assets/environnement/decorations and desks/bonaparte/bonaparte-chapeau.png" id="51_dwbao"]
 [ext_resource type="Texture2D" uid="uid://f4wghc3msnq4" path="res://assets/environnement/decorations and desks/deco_armoire-open.png" id="53_sgv5r"]
+[ext_resource type="Texture2D" uid="uid://blhe0jm8ojpgw" path="res://assets/environnement/vehicles/becane.png" id="55_x2cqw"]
+[ext_resource type="Texture2D" uid="uid://73ej6vussd0o" path="res://assets/environnement/vehicles/becane-mur.png" id="56_y7bd0"]
+[ext_resource type="Texture2D" uid="uid://c0rqlhuan5ots" path="res://assets/environnement/walls/mur-street3.png" id="57_g5rgc"]
+[ext_resource type="Texture2D" uid="uid://dbeu6vu2gidpt" path="res://assets/environnement/walls/mur-street.png" id="58_0jyqw"]
+[ext_resource type="Texture2D" uid="uid://pmci1e1qihcn" path="res://assets/environnement/floor/BG_street4.png" id="59_0jyqw"]
+[ext_resource type="Texture2D" uid="uid://buw1v71nb2fow" path="res://assets/environnement/floor/BG_street3b.png" id="60_6am2b"]
+[ext_resource type="Texture2D" uid="uid://77h1exwk2rru" path="res://assets/environnement/floor/BG_street2.png" id="61_dwbao"]
 
 [node name="GameSpace" type="Node2D" unique_id=562061812]
 z_index = 5
 y_sort_enabled = true
 script = ExtResource("1_1sg2t")
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=354434027]
 y_sort_enabled = true
@@ -399,27 +405,18 @@ metadata/_edit_group_ = true
 [node name="Wall_door" type="Sprite2D" parent="." unique_id=416774012]
 z_index = -1
 y_sort_enabled = true
-position = Vector2(159.66667, 116.166664)
+position = Vector2(160, 114)
 texture = ExtResource("5_gjsek")
-metadata/_edit_lock_ = true
 
 [node name="Wall_front" type="Sprite2D" parent="." unique_id=810438076]
 y_sort_enabled = true
-position = Vector2(76, 157)
+position = Vector2(71, 157)
 texture = ExtResource("6_nssuc")
-metadata/_edit_lock_ = true
 
 [node name="Wall_street" type="Sprite2D" parent="." unique_id=348910378]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(242, 161)
-texture = ExtResource("7_6yp7d")
-metadata/_edit_lock_ = true
-
-[node name="Wall_street2" type="Sprite2D" parent="." unique_id=27494078]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-160, 362)
+position = Vector2(276, 145)
 texture = ExtResource("7_6yp7d")
 metadata/_edit_lock_ = true
 
@@ -790,40 +787,104 @@ flip_h = true
 metadata/_edit_group_ = true
 
 [node name="TableauLiège" type="Sprite2D" parent="." unique_id=1181376580]
+y_sort_enabled = true
 position = Vector2(-298, 391)
 texture = ExtResource("48_g5rgc")
 flip_h = true
 
 [node name="SkullyTete" type="Sprite2D" parent="." unique_id=2058931399]
 z_index = 1
+y_sort_enabled = true
 position = Vector2(-345.5, 280)
 texture = ExtResource("49_0jyqw")
 metadata/_edit_group_ = true
 
 [node name="Bonaparte" type="Sprite2D" parent="." unique_id=185153432]
 z_index = 1
+y_sort_enabled = true
 position = Vector2(-346, 286)
 texture = ExtResource("50_6am2b")
 metadata/_edit_group_ = true
 
 [node name="SkullyTete2" type="Sprite2D" parent="." unique_id=1976433694]
 z_index = 1
+y_sort_enabled = true
 position = Vector2(126, 49)
 texture = ExtResource("49_0jyqw")
 metadata/_edit_group_ = true
 
 [node name="Bonaparte2" type="Sprite2D" parent="." unique_id=439353717]
 z_index = 1
+y_sort_enabled = true
 position = Vector2(125, 56)
 texture = ExtResource("50_6am2b")
 metadata/_edit_group_ = true
 
 [node name="BonaparteChapeau" type="Sprite2D" parent="." unique_id=347779617]
 z_index = 2
+y_sort_enabled = true
 position = Vector2(126, 43)
 texture = ExtResource("51_dwbao")
 
 [node name="DecoArmoireOpen" type="Sprite2D" parent="." unique_id=1489557126]
 z_index = 1
+y_sort_enabled = true
 position = Vector2(-163, 195)
 texture = ExtResource("53_sgv5r")
+
+[node name="Becane" type="Sprite2D" parent="." unique_id=881022026]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-421, 351)
+texture = ExtResource("55_x2cqw")
+
+[node name="BecaneMur" type="Sprite2D" parent="." unique_id=502954448]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-411, 355)
+texture = ExtResource("56_y7bd0")
+
+[node name="MurStreet3" type="Sprite2D" parent="." unique_id=1069905030]
+y_sort_enabled = true
+position = Vector2(-416, 491)
+texture = ExtResource("57_g5rgc")
+metadata/_edit_lock_ = true
+
+[node name="MurStreet" type="Sprite2D" parent="." unique_id=157944400]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-14, 290)
+texture = ExtResource("58_0jyqw")
+metadata/_edit_lock_ = true
+
+[node name="BgStreet4" type="Sprite2D" parent="." unique_id=106035553]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(29, 335)
+texture = ExtResource("59_0jyqw")
+metadata/_edit_lock_ = true
+
+[node name="BgStreet3b" type="Sprite2D" parent="." unique_id=1920488218]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(254, 192)
+texture = ExtResource("60_6am2b")
+metadata/_edit_lock_ = true
+
+[node name="BgStreet2" type="Sprite2D" parent="." unique_id=625091390]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-237, 468)
+texture = ExtResource("61_dwbao")
+metadata/_edit_lock_ = true
+
+[node name="Mursolo2" type="Sprite2D" parent="." unique_id=1622937469]
+y_sort_enabled = true
+position = Vector2(-10, 112)
+texture = ExtResource("5_y2844")
+
+[node name="Mursolo3" type="Sprite2D" parent="." unique_id=767306878]
+y_sort_enabled = true
+position = Vector2(166, 202)
+texture = ExtResource("5_y2844")
+flip_h = true

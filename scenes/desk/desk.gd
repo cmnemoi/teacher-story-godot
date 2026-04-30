@@ -1,6 +1,7 @@
 extends Sprite2D
 class_name Desk
 
+@onready var bag: Sprite2D = $bag
 
 
 @export var student : Student
@@ -20,3 +21,7 @@ func is_empty():
 func _process(_delta: float) -> void:
 	if student:
 		student.current_rank = row
+		bag.texture = student.resource.bag_sprite
+		bag.show()
+	else:
+		bag.hide()
