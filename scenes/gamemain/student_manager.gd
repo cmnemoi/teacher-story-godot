@@ -40,6 +40,7 @@ func generate_x_random_student(x):
 		var new_student_resource = StudentResource.new()
 		var CaractereType = new_student_resource.CaractereType.duplicate()
 		var random_key = CaractereType.keys().pick_random()
+		new_student_resource.bag_sprite = Global.BAG_SPRITES.pick_random()
 		new_student_resource.caractere = CaractereType[random_key]
 		match new_student_resource.caractere: #TODO: should change depending on difficulty
 			CaractereType.Reveur: 

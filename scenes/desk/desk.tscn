@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cmkqfythqdmb1" path="res://scenes/desk/desk.gd" id="1_b7gie"]
 [ext_resource type="Texture2D" uid="uid://bdb06fgk3nurx" path="res://assets/environnement/decorations and desks/chaise.png" id="2_78764"]
 [ext_resource type="Texture2D" uid="uid://cfe6e5bhpo4ft" path="res://assets/other/desk.png" id="2_mkj3i"]
+[ext_resource type="Texture2D" uid="uid://cxd8ggqp0omqk" path="res://assets/students/cartable-bleu.png" id="4_2r18a"]
 
 [node name="Desk" type="Sprite2D" unique_id=895890925]
 texture = ExtResource("2_mkj3i")
@@ -13,3 +14,8 @@ z_index = -1
 texture = ExtResource("2_78764")
 offset = Vector2(4, -6)
 flip_h = true
+
+[node name="bag" type="Sprite2D" parent="." unique_id=2035037241]
+visible = false
+position = Vector2(11, 7)
+texture = ExtResource("4_2r18a")
