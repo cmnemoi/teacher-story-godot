@@ -61,9 +61,15 @@
 [ext_resource type="Texture2D" uid="uid://pmci1e1qihcn" path="res://assets/environnement/floor/BG_street4.png" id="59_0jyqw"]
 [ext_resource type="Texture2D" uid="uid://buw1v71nb2fow" path="res://assets/environnement/floor/BG_street3b.png" id="60_6am2b"]
 [ext_resource type="Texture2D" uid="uid://77h1exwk2rru" path="res://assets/environnement/floor/BG_street2.png" id="61_dwbao"]
+[ext_resource type="PackedScene" uid="uid://bqiqxkr1ffs3a" path="res://scenes/game_space/door.tscn" id="62_6am2b"]
+[ext_resource type="Texture2D" uid="uid://d0mn4md1drdsg" path="res://assets/environnement/walls/mursolo_science.png" id="63_dwbao"]
+[ext_resource type="Texture2D" uid="uid://daioktro7ry8k" path="res://assets/environnement/walls/wall_door_reflect.png" id="64_qu6d5"]
+[ext_resource type="Texture2D" uid="uid://boglsj3rijuok" path="res://assets/environnement/walls/wall_reflect.png" id="65_j5gsg"]
+[ext_resource type="Texture2D" uid="uid://3e1mywrf0jq2" path="res://assets/environnement/decorations and desks/casier-jaune - Copie.png" id="66_d0d5c"]
+[ext_resource type="Texture2D" uid="uid://dna7ktdoiwah5" path="res://assets/environnement/decorations and desks/deco_distributeur.png" id="67_dd515"]
+[ext_resource type="Texture2D" uid="uid://c0ih8qlpn8m7p" path="res://assets/environnement/decorations and desks/casier-jaune_reflect.png" id="68_dd515"]
 
 [node name="GameSpace" type="Node2D" unique_id=562061812]
-z_index = 5
 y_sort_enabled = true
 script = ExtResource("1_1sg2t")
 
@@ -74,7 +80,10 @@ anchor_mode = 0
 zoom = Vector2(2, 2)
 metadata/_edit_lock_ = true
 
-[node name="Desk" parent="." unique_id=895890925 instance=ExtResource("2_updkw")]
+[node name="School" type="Node2D" parent="." unique_id=924341063]
+y_sort_enabled = true
+
+[node name="Desk" parent="School" unique_id=895890925 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-241, 293)
@@ -84,7 +93,7 @@ column = 1
 matiere = "Science"
 metadata/_edit_lock_ = true
 
-[node name="Desk2" parent="." unique_id=1565916858 instance=ExtResource("2_updkw")]
+[node name="Desk2" parent="School" unique_id=1565916858 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-217, 307)
@@ -95,7 +104,7 @@ column = 2
 matiere = "Science"
 metadata/_edit_lock_ = true
 
-[node name="Desk3" parent="." unique_id=408450251 instance=ExtResource("2_updkw")]
+[node name="Desk3" parent="School" unique_id=408450251 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-216, 330)
@@ -106,7 +115,7 @@ column = 3
 matiere = "Science"
 metadata/_edit_lock_ = true
 
-[node name="Desk4" parent="." unique_id=931010676 instance=ExtResource("2_updkw")]
+[node name="Desk4" parent="School" unique_id=931010676 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-302, 316)
@@ -116,7 +125,7 @@ matiere = "Science"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk5" parent="." unique_id=381031753 instance=ExtResource("2_updkw")]
+[node name="Desk5" parent="School" unique_id=381031753 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-287, 325)
@@ -127,7 +136,7 @@ matiere = "Science"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk6" parent="." unique_id=1390787371 instance=ExtResource("2_updkw")]
+[node name="Desk6" parent="School" unique_id=1390787371 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-244, 349)
@@ -137,7 +146,7 @@ column = 3
 matiere = "Science"
 metadata/_edit_lock_ = true
 
-[node name="Desk8" parent="." unique_id=1555710403 instance=ExtResource("2_updkw")]
+[node name="Desk8" parent="School" unique_id=1555710403 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-277, 298)
@@ -148,7 +157,7 @@ matiere = "Science"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk9" parent="." unique_id=393647404 instance=ExtResource("2_updkw")]
+[node name="Desk9" parent="School" unique_id=393647404 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-262, 307)
@@ -160,7 +169,7 @@ matiere = "Science"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk10" parent="." unique_id=805452951 instance=ExtResource("2_updkw")]
+[node name="Desk10" parent="School" unique_id=805452951 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(102, 107)
@@ -168,7 +177,7 @@ texture = ExtResource("3_771so")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk11" parent="." unique_id=1433603558 instance=ExtResource("2_updkw")]
+[node name="Desk11" parent="School" unique_id=1433603558 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(117, 116)
@@ -177,7 +186,7 @@ column = 1
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk12" parent="." unique_id=1627369781 instance=ExtResource("2_updkw")]
+[node name="Desk12" parent="School" unique_id=1627369781 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(147, 132)
@@ -187,7 +196,7 @@ column = 2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk13" parent="." unique_id=480192330 instance=ExtResource("2_updkw")]
+[node name="Desk13" parent="School" unique_id=480192330 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(162, 141)
@@ -197,7 +206,7 @@ column = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk16" parent="." unique_id=1269289526 instance=ExtResource("2_updkw")]
+[node name="Desk16" parent="School" unique_id=1269289526 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(131, 90)
@@ -207,7 +216,7 @@ row = 1
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk17" parent="." unique_id=1323737364 instance=ExtResource("2_updkw")]
+[node name="Desk17" parent="School" unique_id=1323737364 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(146, 99)
@@ -218,7 +227,7 @@ column = 1
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk14" parent="." unique_id=933792136 instance=ExtResource("2_updkw")]
+[node name="Desk14" parent="School" unique_id=933792136 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(170, 114)
@@ -229,7 +238,7 @@ column = 2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk15" parent="." unique_id=1314203358 instance=ExtResource("2_updkw")]
+[node name="Desk15" parent="School" unique_id=1314203358 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(185, 123)
@@ -240,7 +249,7 @@ column = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk18" parent="." unique_id=163456179 instance=ExtResource("2_updkw")]
+[node name="Desk18" parent="School" unique_id=163456179 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(157, 77)
@@ -250,7 +259,7 @@ row = 2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk19" parent="." unique_id=154833482 instance=ExtResource("2_updkw")]
+[node name="Desk19" parent="School" unique_id=154833482 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(172, 86)
@@ -261,7 +270,7 @@ column = 1
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk20" parent="." unique_id=707401754 instance=ExtResource("2_updkw")]
+[node name="Desk20" parent="School" unique_id=707401754 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(197, 100)
@@ -272,7 +281,7 @@ column = 2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk21" parent="." unique_id=1155414224 instance=ExtResource("2_updkw")]
+[node name="Desk21" parent="School" unique_id=1155414224 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(212, 109)
@@ -283,7 +292,7 @@ column = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk22" parent="." unique_id=1296933705 instance=ExtResource("2_updkw")]
+[node name="Desk22" parent="School" unique_id=1296933705 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-82, 201)
@@ -293,7 +302,7 @@ matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk23" parent="." unique_id=214226599 instance=ExtResource("2_updkw")]
+[node name="Desk23" parent="School" unique_id=214226599 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-67, 210)
@@ -304,7 +313,7 @@ matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk24" parent="." unique_id=245238543 instance=ExtResource("2_updkw")]
+[node name="Desk24" parent="School" unique_id=245238543 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-108, 216)
@@ -315,7 +324,7 @@ matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk25" parent="." unique_id=888967613 instance=ExtResource("2_updkw")]
+[node name="Desk25" parent="School" unique_id=888967613 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-93, 225)
@@ -327,7 +336,7 @@ matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk26" parent="." unique_id=562032645 instance=ExtResource("2_updkw")]
+[node name="Desk26" parent="School" unique_id=562032645 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-132, 233)
@@ -337,7 +346,7 @@ matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk27" parent="." unique_id=625266477 instance=ExtResource("2_updkw")]
+[node name="Desk27" parent="School" unique_id=625266477 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-117, 242)
@@ -348,7 +357,7 @@ matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk28" parent="." unique_id=1102737647 instance=ExtResource("2_updkw")]
+[node name="Desk28" parent="School" unique_id=1102737647 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-91, 257)
@@ -359,7 +368,7 @@ matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk29" parent="." unique_id=461063692 instance=ExtResource("2_updkw")]
+[node name="Desk29" parent="School" unique_id=461063692 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-38, 225)
@@ -371,21 +380,21 @@ matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Floor" type="Sprite2D" parent="." unique_id=1639015182]
+[node name="Floor" type="Sprite2D" parent="School" unique_id=1639015182]
 z_index = -4
 y_sort_enabled = true
 position = Vector2(157, 113.5)
 texture = ExtResource("2_yrjmh")
 metadata/_edit_lock_ = true
 
-[node name="Estrade" type="Sprite2D" parent="." unique_id=2085995972]
+[node name="Estrade" type="Sprite2D" parent="School" unique_id=2085995972]
 z_index = -4
 y_sort_enabled = true
 position = Vector2(91, 154.83334)
 texture = ExtResource("3_4n3v6")
 metadata/_edit_lock_ = true
 
-[node name="Wall_bottom" type="Sprite2D" parent="." unique_id=1203709522]
+[node name="Wall_bottom" type="Sprite2D" parent="School" unique_id=1203709522]
 z_index = -2
 y_sort_enabled = true
 position = Vector2(160, 116)
@@ -393,7 +402,7 @@ texture = ExtResource("4_clmgi")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Mursolo" type="Sprite2D" parent="." unique_id=1503014944]
+[node name="Mursolo" type="Sprite2D" parent="School" unique_id=1503014944]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(332, 112)
@@ -402,489 +411,928 @@ flip_h = true
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Wall_door" type="Sprite2D" parent="." unique_id=416774012]
+[node name="Wall_door" type="Sprite2D" parent="School" unique_id=416774012]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(160, 114)
 texture = ExtResource("5_gjsek")
 
-[node name="Wall_front" type="Sprite2D" parent="." unique_id=810438076]
+[node name="Wall_front" type="Sprite2D" parent="School" unique_id=810438076]
 y_sort_enabled = true
 position = Vector2(71, 157)
 texture = ExtResource("6_nssuc")
 
-[node name="Wall_street" type="Sprite2D" parent="." unique_id=348910378]
+[node name="Wall_street" type="Sprite2D" parent="School" unique_id=348910378]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(276, 145)
 texture = ExtResource("7_6yp7d")
 metadata/_edit_lock_ = true
 
-[node name="DecoArmoire2" type="Sprite2D" parent="." unique_id=2072680990]
+[node name="DecoArmoire2" type="Sprite2D" parent="School" unique_id=2072680990]
 y_sort_enabled = true
 position = Vector2(71, 80)
 texture = ExtResource("8_hytyq")
 metadata/_edit_lock_ = true
 
-[node name="DecoPlanisphere" type="Sprite2D" parent="." unique_id=427397636]
+[node name="DecoPlanisphere" type="Sprite2D" parent="School" unique_id=427397636]
 y_sort_enabled = true
 position = Vector2(236, 66)
 texture = ExtResource("9_85lqo")
 metadata/_edit_lock_ = true
 
-[node name="DecoCoucou" type="Sprite2D" parent="." unique_id=443105771]
+[node name="DecoCoucou" type="Sprite2D" parent="School" unique_id=443105771]
 y_sort_enabled = true
 position = Vector2(199, 48)
 texture = ExtResource("10_y2844")
 metadata/_edit_lock_ = true
 
-[node name="DecoCoffreFort" type="Sprite2D" parent="." unique_id=648087435]
+[node name="DecoCoffreFort" type="Sprite2D" parent="School" unique_id=648087435]
 y_sort_enabled = true
 position = Vector2(105, 65)
 texture = ExtResource("11_anq3c")
 metadata/_edit_lock_ = true
 
-[node name="DecoCorbeille" type="Sprite2D" parent="." unique_id=93224926]
+[node name="DecoCorbeille" type="Sprite2D" parent="School" unique_id=93224926]
 y_sort_enabled = true
 position = Vector2(111, 141)
 texture = ExtResource("12_0jolb")
 metadata/_edit_lock_ = true
 
-[node name="DecoDrawings" type="Sprite2D" parent="." unique_id=1655246164]
+[node name="DecoDrawings" type="Sprite2D" parent="School" unique_id=1655246164]
 y_sort_enabled = true
 position = Vector2(295, 98)
 texture = ExtResource("13_xq6fy")
 metadata/_edit_lock_ = true
 
-[node name="DecoArmoire" type="Sprite2D" parent="." unique_id=1628234151]
+[node name="DecoArmoire" type="Sprite2D" parent="School" unique_id=1628234151]
 y_sort_enabled = true
 position = Vector2(317, 109)
 texture = ExtResource("14_y6d82")
 flip_h = true
 metadata/_edit_lock_ = true
 
-[node name="DecoTableGlobe" type="Sprite2D" parent="." unique_id=2053862568]
+[node name="DecoTableGlobe" type="Sprite2D" parent="School" unique_id=2053862568]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(172, 176)
 texture = ExtResource("15_b0oxp")
 metadata/_edit_lock_ = true
 
-[node name="DecoGlobe" type="Sprite2D" parent="." unique_id=1054063170]
+[node name="DecoGlobe" type="Sprite2D" parent="School" unique_id=1054063170]
 y_sort_enabled = true
 position = Vector2(174, 168)
 texture = ExtResource("16_aqxiq")
 metadata/_edit_lock_ = true
 
-[node name="DecoPaperSheet" type="Sprite2D" parent="." unique_id=967397873]
+[node name="DecoPaperSheet" type="Sprite2D" parent="School" unique_id=967397873]
 y_sort_enabled = true
 position = Vector2(166, 171)
 texture = ExtResource("17_3a18s")
 metadata/_edit_lock_ = true
 
-[node name="DecoBureauOrdi" type="Sprite2D" parent="." unique_id=1301075100]
+[node name="DecoBureauOrdi" type="Sprite2D" parent="School" unique_id=1301075100]
 y_sort_enabled = true
 position = Vector2(26, 109)
 texture = ExtResource("18_ytl7y")
 flip_h = true
 metadata/_edit_lock_ = true
 
-[node name="DecoBureau" type="Sprite2D" parent="." unique_id=84735442]
+[node name="DecoBureau" type="Sprite2D" parent="School" unique_id=84735442]
 y_sort_enabled = true
 position = Vector2(94, 134)
 texture = ExtResource("19_4lvpw")
 metadata/_edit_lock_ = true
 
-[node name="DecoStuffDesktop" type="Sprite2D" parent="." unique_id=1695608032]
+[node name="DecoStuffDesktop" type="Sprite2D" parent="School" unique_id=1695608032]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(94, 130)
 texture = ExtResource("20_rvlop")
 metadata/_edit_lock_ = true
 
-[node name="DecoBureau2" type="Sprite2D" parent="." unique_id=1055155621]
+[node name="DecoBureau2" type="Sprite2D" parent="School" unique_id=1055155621]
 y_sort_enabled = true
 position = Vector2(-317, 337)
 texture = ExtResource("19_4lvpw")
 
-[node name="DecoStuffDesktop2" type="Sprite2D" parent="." unique_id=1224856906]
+[node name="DecoStuffDesktop2" type="Sprite2D" parent="School" unique_id=1224856906]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-317, 333)
 texture = ExtResource("20_rvlop")
 
-[node name="Récré" type="Sprite2D" parent="." unique_id=494736607]
+[node name="Récré" type="Sprite2D" parent="School" unique_id=494736607]
 y_sort_enabled = true
 position = Vector2(266, 15)
 texture = ExtResource("22_anq3c")
 metadata/_edit_lock_ = true
 
-[node name="Secretariat" type="Sprite2D" parent="." unique_id=343919876]
+[node name="Secretariat" type="Sprite2D" parent="School" unique_id=343919876]
 y_sort_enabled = true
 position = Vector2(86, 193)
 texture = ExtResource("23_4lvpw")
 metadata/_edit_lock_ = true
 
-[node name="WallBottom2" type="Sprite2D" parent="." unique_id=1217241148]
+[node name="WallBottom2" type="Sprite2D" parent="School" unique_id=1217241148]
 y_sort_enabled = true
 position = Vector2(-83, 241)
 texture = ExtResource("24_rvlop")
 metadata/_edit_lock_ = true
 
-[node name="WallBottom4" type="Sprite2D" parent="." unique_id=1534421217]
+[node name="WallBottom4" type="Sprite2D" parent="School" unique_id=1534421217]
 y_sort_enabled = true
 position = Vector2(-90, 238)
 texture = ExtResource("24_rvlop")
 metadata/_edit_lock_ = true
 
-[node name="WallDoor" type="Sprite2D" parent="." unique_id=1960020913]
+[node name="WallDoor" type="Sprite2D" parent="School" unique_id=1960020913]
 y_sort_enabled = true
 position = Vector2(-89, 238)
 texture = ExtResource("5_gjsek")
 metadata/_edit_lock_ = true
 
-[node name="WallBottom3" type="Sprite2D" parent="." unique_id=9106954]
+[node name="WallBottom3" type="Sprite2D" parent="School" unique_id=9106954]
 y_sort_enabled = true
 position = Vector2(-259, 323)
 texture = ExtResource("25_d71tx")
 metadata/_edit_lock_ = true
 
-[node name="MurCouloir3" type="Sprite2D" parent="." unique_id=1513068693]
+[node name="MurCouloir3" type="Sprite2D" parent="School" unique_id=1513068693]
 y_sort_enabled = true
 position = Vector2(-352, 284)
 texture = ExtResource("26_6bjhq")
-metadata/_edit_lock_ = true
 
-[node name="MurCouloir4" type="Sprite2D" parent="." unique_id=2012278469]
-y_sort_enabled = true
-position = Vector2(-340, 278)
-texture = ExtResource("26_6bjhq")
-metadata/_edit_lock_ = true
-
-[node name="BgClassroom2" type="Sprite2D" parent="." unique_id=886960059]
+[node name="BgClassroom2" type="Sprite2D" parent="School" unique_id=886960059]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(-89, 238)
 texture = ExtResource("27_ksf0l")
 metadata/_edit_lock_ = true
 
-[node name="BgClassroom3" type="Sprite2D" parent="." unique_id=1349291183]
+[node name="BgClassroom3" type="Sprite2D" parent="School" unique_id=1349291183]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(-258, 323)
 texture = ExtResource("28_bbdob")
 metadata/_edit_lock_ = true
 
-[node name="WallFront" type="Sprite2D" parent="." unique_id=1889008100]
+[node name="WallFront" type="Sprite2D" parent="School" unique_id=1889008100]
 y_sort_enabled = true
 position = Vector2(-345, 366)
 texture = ExtResource("6_nssuc")
 metadata/_edit_lock_ = true
 
-[node name="WallBottom5" type="Sprite2D" parent="." unique_id=201791761]
+[node name="WallBottom5" type="Sprite2D" parent="School" unique_id=201791761]
 y_sort_enabled = true
 position = Vector2(-252, 327)
 texture = ExtResource("25_d71tx")
 metadata/_edit_lock_ = true
 
-[node name="MursoloAngle" type="Sprite2D" parent="." unique_id=1946435442]
+[node name="MursoloAngle" type="Sprite2D" parent="School" unique_id=1946435442]
 y_sort_enabled = true
 position = Vector2(7, 194)
 texture = ExtResource("29_3gpep")
 metadata/_edit_lock_ = true
 
-[node name="Estrade3" type="Sprite2D" parent="." unique_id=768659193]
+[node name="Estrade3" type="Sprite2D" parent="School" unique_id=768659193]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(-318, 357)
 texture = ExtResource("3_4n3v6")
 metadata/_edit_lock_ = true
 
-[node name="Estrade2" type="Sprite2D" parent="." unique_id=1200546430]
+[node name="Estrade2" type="Sprite2D" parent="School" unique_id=1200546430]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(-150, 271)
 texture = ExtResource("30_updkw")
 metadata/_edit_lock_ = true
 
-[node name="BgClassroom4" type="Sprite2D" parent="." unique_id=744510537]
+[node name="BgClassroom4" type="Sprite2D" parent="School" unique_id=744510537]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(-439, 408)
 texture = ExtResource("31_4l5mt")
 metadata/_edit_lock_ = true
 
-[node name="DecoDrawings2" type="Sprite2D" parent="." unique_id=197668593]
+[node name="DecoDrawings2" type="Sprite2D" parent="School" unique_id=197668593]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-213, 257)
 texture = ExtResource("13_xq6fy")
 
-[node name="Lavabo3" type="Sprite2D" parent="." unique_id=222404562]
+[node name="Lavabo3" type="Sprite2D" parent="School" unique_id=222404562]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-171, 284)
 texture = ExtResource("34_d6sr5")
 
-[node name="Lavabo4" type="Sprite2D" parent="." unique_id=1596693540]
+[node name="Lavabo4" type="Sprite2D" parent="School" unique_id=1596693540]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-134, 303)
 texture = ExtResource("34_d6sr5")
 
-[node name="EtageresScience" type="Sprite2D" parent="." unique_id=2115176126]
+[node name="EtageresScience" type="Sprite2D" parent="School" unique_id=2115176126]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-249, 245)
 texture = ExtResource("35_36aea")
 flip_h = true
 
-[node name="EtageresScience4" type="Sprite2D" parent="." unique_id=230021442]
+[node name="EtageresScience4" type="Sprite2D" parent="School" unique_id=230021442]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-331, 279)
 texture = ExtResource("35_36aea")
 
-[node name="EtageresScience2" type="Sprite2D" parent="." unique_id=638960549]
+[node name="EtageresScience2" type="Sprite2D" parent="School" unique_id=638960549]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-235, 252)
 texture = ExtResource("35_36aea")
 flip_h = true
 
-[node name="EtageresScience3" type="Sprite2D" parent="." unique_id=845050073]
+[node name="EtageresScience3" type="Sprite2D" parent="School" unique_id=845050073]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-98, 323)
 texture = ExtResource("35_36aea")
 flip_h = true
 
-[node name="Ordi" type="Sprite2D" parent="." unique_id=573635425]
+[node name="Ordi" type="Sprite2D" parent="School" unique_id=573635425]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-224, 264)
 texture = ExtResource("36_xf30r")
 
-[node name="Extincteur" type="Sprite2D" parent="." unique_id=644755427]
+[node name="Extincteur" type="Sprite2D" parent="School" unique_id=644755427]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-113, 315)
 texture = ExtResource("37_ie6kh")
 
-[node name="DecoArmoire3" type="Sprite2D" parent="." unique_id=270253540]
+[node name="DecoArmoire3" type="Sprite2D" parent="School" unique_id=270253540]
 y_sort_enabled = true
-position = Vector2(-400, 313)
+position = Vector2(-407, 316)
 texture = ExtResource("14_y6d82")
 
-[node name="DecoCorbeille2" type="Sprite2D" parent="." unique_id=1069378046]
+[node name="DecoCorbeille2" type="Sprite2D" parent="School" unique_id=1069378046]
 y_sort_enabled = true
 position = Vector2(-303, 345)
 texture = ExtResource("12_0jolb")
 
-[node name="DecoBureau3" type="Sprite2D" parent="." unique_id=1889806837]
+[node name="DecoBureau3" type="Sprite2D" parent="School" unique_id=1889806837]
 y_sort_enabled = true
 position = Vector2(-151, 251)
 texture = ExtResource("19_4lvpw")
 
-[node name="DecoStuffDesktop3" type="Sprite2D" parent="." unique_id=1206582101]
+[node name="DecoStuffDesktop3" type="Sprite2D" parent="School" unique_id=1206582101]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-151, 247)
 texture = ExtResource("20_rvlop")
 
-[node name="DecoCorbeille3" type="Sprite2D" parent="." unique_id=1611242149]
+[node name="DecoCorbeille3" type="Sprite2D" parent="School" unique_id=1611242149]
 y_sort_enabled = true
 position = Vector2(-137, 259)
 texture = ExtResource("12_0jolb")
 
-[node name="Table3" type="Sprite2D" parent="." unique_id=99937516]
+[node name="Table3" type="Sprite2D" parent="School" unique_id=99937516]
 y_sort_enabled = true
 position = Vector2(-281, 359)
 texture = ExtResource("3_4l5mt")
 
-[node name="DecoVideoprojecteur" type="Sprite2D" parent="." unique_id=2127606886]
+[node name="DecoVideoprojecteur" type="Sprite2D" parent="School" unique_id=2127606886]
 y_sort_enabled = true
 position = Vector2(-348, 331)
 texture = ExtResource("38_3y3u4")
 
-[node name="Aquarium" type="Sprite2D" parent="." unique_id=318262899]
+[node name="Aquarium" type="Sprite2D" parent="School" unique_id=318262899]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(12, 211)
 texture = ExtResource("39_771so")
 
-[node name="AquariumFlask" type="Sprite2D" parent="." unique_id=248644404]
+[node name="AquariumFlask" type="Sprite2D" parent="School" unique_id=248644404]
 y_sort_enabled = true
 position = Vector2(12, 218)
 texture = ExtResource("40_5wttn")
 
-[node name="DecoArmoire4" type="Sprite2D" parent="." unique_id=1214321209]
+[node name="DecoArmoire4" type="Sprite2D" parent="School" unique_id=1214321209]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(41, 224)
 texture = ExtResource("8_hytyq")
 flip_h = true
 
-[node name="DecoDrawings3" type="Sprite2D" parent="." unique_id=547802803]
+[node name="DecoDrawings3" type="Sprite2D" parent="School" unique_id=547802803]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-14, 189)
 texture = ExtResource("13_xq6fy")
 
-[node name="DecoArmoire5" type="Sprite2D" parent="." unique_id=1247686302]
+[node name="DecoArmoire5" type="Sprite2D" parent="School" unique_id=1247686302]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-183, 204)
 texture = ExtResource("8_hytyq")
 
-[node name="Pile1" type="Sprite2D" parent="." unique_id=480660235]
+[node name="Pile1" type="Sprite2D" parent="School" unique_id=480660235]
 y_sort_enabled = true
 position = Vector2(-99, 286)
 texture = ExtResource("41_sgv5r")
 
-[node name="TableProfMur" type="Sprite2D" parent="." unique_id=929295690]
+[node name="TableProfMur" type="Sprite2D" parent="School" unique_id=929295690]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-125, 182)
 texture = ExtResource("42_1sg2t")
 
-[node name="Paper1" type="Sprite2D" parent="." unique_id=246983108]
+[node name="Paper1" type="Sprite2D" parent="School" unique_id=246983108]
 y_sort_enabled = true
 position = Vector2(-166, 240)
 texture = ExtResource("43_ajbr3")
 
-[node name="DecoVideoprojecteur2" type="Sprite2D" parent="." unique_id=2040023779]
+[node name="DecoVideoprojecteur2" type="Sprite2D" parent="School" unique_id=2040023779]
 y_sort_enabled = true
 position = Vector2(-90, 281)
 texture = ExtResource("38_3y3u4")
 
-[node name="MathCarde1" type="Sprite2D" parent="." unique_id=217087058]
+[node name="MathCarde1" type="Sprite2D" parent="School" unique_id=217087058]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-232, 226)
+position = Vector2(-234, 228)
 texture = ExtResource("44_wenuq")
 flip_h = true
 
-[node name="MathCarde2" type="Sprite2D" parent="." unique_id=1776622832]
+[node name="MathCarde2" type="Sprite2D" parent="School" unique_id=1776622832]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-222, 218)
+position = Vector2(-225, 219)
 texture = ExtResource("45_0xpsy")
 flip_h = true
 
-[node name="Hamster" type="Sprite2D" parent="." unique_id=1051428866]
+[node name="Hamster" type="Sprite2D" parent="School" unique_id=1051428866]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-74, 168)
 texture = ExtResource("46_x2cqw")
 metadata/_edit_group_ = true
 
-[node name="Chaise" type="Sprite2D" parent="." unique_id=1959509470]
+[node name="Chaise" type="Sprite2D" parent="School" unique_id=1959509470]
 y_sort_enabled = true
 position = Vector2(-73, 169)
 texture = ExtResource("47_y7bd0")
 flip_h = true
 metadata/_edit_group_ = true
 
-[node name="TableauLiège" type="Sprite2D" parent="." unique_id=1181376580]
+[node name="TableauLiège" type="Sprite2D" parent="School" unique_id=1181376580]
 y_sort_enabled = true
 position = Vector2(-298, 391)
 texture = ExtResource("48_g5rgc")
 flip_h = true
 
-[node name="SkullyTete" type="Sprite2D" parent="." unique_id=2058931399]
+[node name="SkullyTete" type="Sprite2D" parent="School" unique_id=2058931399]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-345.5, 280)
 texture = ExtResource("49_0jyqw")
 metadata/_edit_group_ = true
 
-[node name="Bonaparte" type="Sprite2D" parent="." unique_id=185153432]
+[node name="Bonaparte" type="Sprite2D" parent="School" unique_id=185153432]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-346, 286)
 texture = ExtResource("50_6am2b")
 metadata/_edit_group_ = true
 
-[node name="SkullyTete2" type="Sprite2D" parent="." unique_id=1976433694]
+[node name="SkullyTete2" type="Sprite2D" parent="School" unique_id=1976433694]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(126, 49)
 texture = ExtResource("49_0jyqw")
 metadata/_edit_group_ = true
 
-[node name="Bonaparte2" type="Sprite2D" parent="." unique_id=439353717]
+[node name="Bonaparte2" type="Sprite2D" parent="School" unique_id=439353717]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(125, 56)
 texture = ExtResource("50_6am2b")
 metadata/_edit_group_ = true
 
-[node name="BonaparteChapeau" type="Sprite2D" parent="." unique_id=347779617]
+[node name="BonaparteChapeau" type="Sprite2D" parent="School" unique_id=347779617]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(126, 43)
 texture = ExtResource("51_dwbao")
 
-[node name="DecoArmoireOpen" type="Sprite2D" parent="." unique_id=1489557126]
+[node name="DecoArmoireOpen" type="Sprite2D" parent="School" unique_id=1489557126]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-163, 195)
 texture = ExtResource("53_sgv5r")
 
-[node name="Becane" type="Sprite2D" parent="." unique_id=881022026]
+[node name="Becane" type="Sprite2D" parent="School" unique_id=881022026]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-421, 351)
 texture = ExtResource("55_x2cqw")
 
-[node name="BecaneMur" type="Sprite2D" parent="." unique_id=502954448]
+[node name="BecaneMur" type="Sprite2D" parent="School" unique_id=502954448]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-411, 355)
 texture = ExtResource("56_y7bd0")
 
-[node name="MurStreet3" type="Sprite2D" parent="." unique_id=1069905030]
+[node name="MurStreet3" type="Sprite2D" parent="School" unique_id=1069905030]
 y_sort_enabled = true
 position = Vector2(-416, 491)
 texture = ExtResource("57_g5rgc")
 metadata/_edit_lock_ = true
 
-[node name="MurStreet" type="Sprite2D" parent="." unique_id=157944400]
+[node name="MurStreet" type="Sprite2D" parent="School" unique_id=157944400]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-14, 290)
 texture = ExtResource("58_0jyqw")
 metadata/_edit_lock_ = true
 
-[node name="BgStreet4" type="Sprite2D" parent="." unique_id=106035553]
+[node name="BgStreet4" type="Sprite2D" parent="School" unique_id=106035553]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(29, 335)
 texture = ExtResource("59_0jyqw")
 metadata/_edit_lock_ = true
 
-[node name="BgStreet3b" type="Sprite2D" parent="." unique_id=1920488218]
+[node name="BgStreet3b" type="Sprite2D" parent="School" unique_id=1920488218]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(254, 192)
 texture = ExtResource("60_6am2b")
 metadata/_edit_lock_ = true
 
-[node name="BgStreet2" type="Sprite2D" parent="." unique_id=625091390]
+[node name="BgStreet2" type="Sprite2D" parent="School" unique_id=625091390]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-237, 468)
 texture = ExtResource("61_dwbao")
 metadata/_edit_lock_ = true
 
-[node name="Mursolo2" type="Sprite2D" parent="." unique_id=1622937469]
+[node name="Mursolo2" type="Sprite2D" parent="School" unique_id=1622937469]
 y_sort_enabled = true
 position = Vector2(-10, 112)
 texture = ExtResource("5_y2844")
 
-[node name="Mursolo3" type="Sprite2D" parent="." unique_id=767306878]
+[node name="Mursolo3" type="Sprite2D" parent="School" unique_id=767306878]
 y_sort_enabled = true
 position = Vector2(166, 202)
 texture = ExtResource("5_y2844")
 flip_h = true
+
+[node name="MursoloScience" type="Sprite2D" parent="School" unique_id=2101012701]
+y_sort_enabled = true
+position = Vector2(-261, 238)
+texture = ExtResource("63_dwbao")
+
+[node name="History_Door" parent="School" unique_id=1568950057 instance=ExtResource("62_6am2b")]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(37.5, 88)
+metadata/_edit_lock_ = true
+
+[node name="Maths_Door" parent="School" unique_id=2094472719 instance=ExtResource("62_6am2b")]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(-211.5, 213)
+metadata/_edit_lock_ = true
+
+[node name="Science_Door" parent="School" unique_id=918696610 instance=ExtResource("62_6am2b")]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(-384.5, 301)
+metadata/_edit_lock_ = true
+
+[node name="BgClassroom1" type="Sprite2D" parent="School" unique_id=770404979]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-34, -22)
+texture = ExtResource("2_yrjmh")
+metadata/_edit_lock_ = true
+
+[node name="BgClassroom5" type="Sprite2D" parent="School" unique_id=2142528587]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-207, 67)
+texture = ExtResource("28_bbdob")
+metadata/_edit_lock_ = true
+
+[node name="BgClassroom6" type="Sprite2D" parent="School" unique_id=133521418]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-383, 155)
+texture = ExtResource("2_yrjmh")
+metadata/_edit_lock_ = true
+
+[node name="WallBottom6" type="Sprite2D" parent="School" unique_id=116232863]
+y_sort_enabled = true
+position = Vector2(-378, 161)
+texture = ExtResource("24_rvlop")
+metadata/_edit_lock_ = true
+
+[node name="WallBottom8" type="Sprite2D" parent="School" unique_id=490517895]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-552, 248)
+texture = ExtResource("24_rvlop")
+metadata/_edit_lock_ = true
+
+[node name="WallBottom7" type="Sprite2D" parent="School" unique_id=185460848]
+y_sort_enabled = true
+position = Vector2(-203, 69)
+texture = ExtResource("25_d71tx")
+metadata/_edit_lock_ = true
+
+[node name="WallDoor2" type="Sprite2D" parent="School" unique_id=929432497]
+y_sort_enabled = true
+position = Vector2(-198, 239)
+texture = ExtResource("5_gjsek")
+metadata/_edit_lock_ = true
+
+[node name="WallDoor3" type="Sprite2D" parent="School" unique_id=1783381255]
+y_sort_enabled = true
+position = Vector2(-30, 155)
+texture = ExtResource("5_gjsek")
+metadata/_edit_lock_ = true
+
+[node name="WallDoor4" type="Sprite2D" parent="School" unique_id=1872492006]
+y_sort_enabled = true
+position = Vector2(138, 71)
+texture = ExtResource("5_gjsek")
+metadata/_edit_lock_ = true
+
+[node name="Mursolo4" type="Sprite2D" parent="School" unique_id=352046458]
+y_sort_enabled = true
+position = Vector2(-372, 239)
+texture = ExtResource("5_y2844")
+metadata/_edit_lock_ = true
+
+[node name="MursoloAngle2" type="Sprite2D" parent="School" unique_id=1219413623]
+y_sort_enabled = true
+position = Vector2(-377, 242)
+texture = ExtResource("29_3gpep")
+metadata/_edit_lock_ = true
+
+[node name="Door" parent="School" unique_id=1059013470 instance=ExtResource("62_6am2b")]
+y_sort_enabled = true
+position = Vector2(15.5, 45)
+metadata/_edit_lock_ = true
+
+[node name="Door2" parent="School" unique_id=1144266426 instance=ExtResource("62_6am2b")]
+y_sort_enabled = true
+position = Vector2(-152.5, 129)
+metadata/_edit_lock_ = true
+
+[node name="Door3" parent="School" unique_id=404728032 instance=ExtResource("62_6am2b")]
+y_sort_enabled = true
+position = Vector2(-320.5, 213)
+metadata/_edit_lock_ = true
+
+[node name="Door_reflect" parent="School" unique_id=978375515 instance=ExtResource("62_6am2b")]
+modulate = Color(1, 1, 1, 0.25882354)
+y_sort_enabled = true
+position = Vector2(20, 67)
+flip_h = true
+flip_v = true
+metadata/_edit_lock_ = true
+
+[node name="Door2_reflect" parent="School" unique_id=2061976893 instance=ExtResource("62_6am2b")]
+modulate = Color(1, 1, 1, 0.25882354)
+y_sort_enabled = true
+position = Vector2(-148, 152)
+flip_h = true
+flip_v = true
+metadata/_edit_lock_ = true
+
+[node name="Door3_reflect" parent="School" unique_id=367079072 instance=ExtResource("62_6am2b")]
+modulate = Color(1, 1, 1, 0.25882354)
+y_sort_enabled = true
+position = Vector2(-316, 237)
+flip_h = true
+flip_v = true
+metadata/_edit_lock_ = true
+
+[node name="WallDoorReflect" type="Sprite2D" parent="School" unique_id=1930309441]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-198, 239)
+texture = ExtResource("64_qu6d5")
+metadata/_edit_lock_ = true
+
+[node name="WallDoorReflect2" type="Sprite2D" parent="School" unique_id=897480784]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-30, 155)
+texture = ExtResource("64_qu6d5")
+metadata/_edit_lock_ = true
+
+[node name="WallDoorReflect3" type="Sprite2D" parent="School" unique_id=1992052352]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(138, 71)
+texture = ExtResource("64_qu6d5")
+metadata/_edit_lock_ = true
+
+[node name="WallReflect" type="Sprite2D" parent="School" unique_id=1292135379]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-372.5, 263)
+texture = ExtResource("65_j5gsg")
+metadata/_edit_lock_ = true
+
+[node name="WallReflect12" type="Sprite2D" parent="School" unique_id=1401753713]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(149, 3)
+texture = ExtResource("65_j5gsg")
+metadata/_edit_lock_ = true
+
+[node name="WallReflect2" type="Sprite2D" parent="School" unique_id=1913159663]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-390.5, 263)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect3" type="Sprite2D" parent="School" unique_id=951742234]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-408.5, 254)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+
+[node name="WallReflect4" type="Sprite2D" parent="School" unique_id=1009498241]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-426.5, 245)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+
+[node name="WallReflect5" type="Sprite2D" parent="School" unique_id=1406892615]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-444.5, 236)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+
+[node name="WallReflect6" type="Sprite2D" parent="School" unique_id=1023574647]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-462.5, 227)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+
+[node name="WallReflect7" type="Sprite2D" parent="School" unique_id=583809011]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-480.5, 218)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+
+[node name="WallReflect8" type="Sprite2D" parent="School" unique_id=1846834138]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-498.5, 209)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+
+[node name="WallReflect9" type="Sprite2D" parent="School" unique_id=1077223317]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-516.5, 200)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+
+[node name="WallReflect10" type="Sprite2D" parent="School" unique_id=1276643717]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-534.5, 191)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+
+[node name="WallReflect11" type="Sprite2D" parent="School" unique_id=1813437438]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-552.5, 182)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+
+[node name="WallReflect13" type="Sprite2D" parent="School" unique_id=185401868]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(167, 3)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect14" type="Sprite2D" parent="School" unique_id=1052452315]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(185, 12)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect15" type="Sprite2D" parent="School" unique_id=1811821462]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(203, 21)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect16" type="Sprite2D" parent="School" unique_id=1672536456]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(221, 30)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect17" type="Sprite2D" parent="School" unique_id=976121081]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(264, 51)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect18" type="Sprite2D" parent="School" unique_id=206103990]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(282, 60)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect19" type="Sprite2D" parent="School" unique_id=239045072]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(300, 69)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect20" type="Sprite2D" parent="School" unique_id=184225553]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(318, 78)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect21" type="Sprite2D" parent="School" unique_id=2057515791]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(336, 87)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="WallReflect22" type="Sprite2D" parent="School" unique_id=1073667408]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(354, 96)
+texture = ExtResource("65_j5gsg")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="CasierJauneCopie" type="Sprite2D" parent="School" unique_id=1411010819]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(12, 134)
+texture = ExtResource("66_d0d5c")
+flip_h = true
+
+[node name="CasierJauneCopie2" type="Sprite2D" parent="School" unique_id=1113892809]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(31, 144)
+texture = ExtResource("66_d0d5c")
+flip_h = true
+
+[node name="CasierJauneCopie3" type="Sprite2D" parent="School" unique_id=825737645]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(42, 150)
+texture = ExtResource("66_d0d5c")
+flip_h = true
+
+[node name="DecoDistributeur" type="Sprite2D" parent="School" unique_id=1663068526]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-7, 124)
+texture = ExtResource("67_dd515")
+
+[node name="CasierJauneCopie4" type="Sprite2D" parent="School" unique_id=3484228]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(12, 134)
+texture = ExtResource("66_d0d5c")
+flip_h = true
+
+[node name="CasierJauneCopie5" type="Sprite2D" parent="School" unique_id=1473885991]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(31, 144)
+texture = ExtResource("66_d0d5c")
+flip_h = true
+
+[node name="CasierJauneCopie6" type="Sprite2D" parent="School" unique_id=786893672]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(42, 150)
+texture = ExtResource("66_d0d5c")
+flip_h = true
+
+[node name="DecoDistributeur2" type="Sprite2D" parent="School" unique_id=479810726]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-7, 124)
+texture = ExtResource("67_dd515")
+
+[node name="CasierJauneReflect" type="Sprite2D" parent="School" unique_id=252090499]
+modulate = Color(1, 1, 1, 0.25882354)
+y_sort_enabled = true
+position = Vector2(11, 152)
+texture = ExtResource("68_dd515")
+
+[node name="CasierJauneReflect2" type="Sprite2D" parent="School" unique_id=898026648]
+modulate = Color(1, 1, 1, 0.25882354)
+y_sort_enabled = true
+position = Vector2(30, 162)
+texture = ExtResource("68_dd515")
+
+[node name="CasierJauneReflect3" type="Sprite2D" parent="School" unique_id=1958760480]
+modulate = Color(1, 1, 1, 0.25882354)
+y_sort_enabled = true
+position = Vector2(41, 168)
+texture = ExtResource("68_dd515")
+
+[node name="CasierJauneCopie7" type="Sprite2D" parent="School" unique_id=1311267543]
+y_sort_enabled = true
+position = Vector2(-428, 230)
+texture = ExtResource("66_d0d5c")
+flip_h = true
+
+[node name="CasierJauneCopie8" type="Sprite2D" parent="School" unique_id=1234180273]
+y_sort_enabled = true
+position = Vector2(-415, 237)
+texture = ExtResource("66_d0d5c")
+flip_h = true
+
+[node name="CasierJauneReflect4" type="Sprite2D" parent="School" unique_id=349477228]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-429, 248)
+texture = ExtResource("68_dd515")
+
+[node name="CasierJauneReflect5" type="Sprite2D" parent="School" unique_id=1642301893]
+modulate = Color(1, 1, 1, 0.25882354)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-415.5, 255)
+texture = ExtResource("68_dd515")
+
+[node name="Extincteur2" type="Sprite2D" parent="School" unique_id=760214841]
+y_sort_enabled = true
+position = Vector2(-406, 245)
+texture = ExtResource("37_ie6kh")

@@ -17,7 +17,7 @@ offset_right = -6.1035156e-05
 offset_bottom = -3.0517578e-05
 grow_horizontal = 2
 grow_vertical = 0
-mouse_filter = 2
+mouse_filter = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1201046639]
 layout_mode = 1
