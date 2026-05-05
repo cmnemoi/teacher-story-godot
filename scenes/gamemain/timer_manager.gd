@@ -10,7 +10,9 @@ func update_time(amount):
 
 func stop_class():
 	%StudentManager.reset_all_students()
+	%TeacherManager.reset_life()
 	remaining_time = max_time
+	
 
 func _ready() -> void:
 	ManagerList.timer_manager = self
