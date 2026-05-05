@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bqiqxkr1ffs3a"]
+
+[ext_resource type="Texture2D" uid="uid://doh2q7lhnt10a" path="res://assets/environnement/walls/door_closed.png" id="1_86p5c"]
+[ext_resource type="Script" uid="uid://vkqhr845ce01" path="res://scenes/game_space/door.gd" id="2_gfasm"]
+
+[node name="Door" type="Sprite2D" unique_id=1568950057]
+texture = ExtResource("1_86p5c")
+script = ExtResource("2_gfasm")
