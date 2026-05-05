@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://n7aldgb127tw" path="res://assets/ui/bottom_hud/hudLife.png" id="10_sips2"]
 [ext_resource type="Texture2D" uid="uid://dhh6qfwhysekv" path="res://assets/ui/bottom_hud/hudTime1.png" id="11_l1hup"]
 [ext_resource type="Texture2D" uid="uid://m1jpnfnak7bs" path="res://assets/ui/bottom_hud/hudTime2.png" id="12_firqj"]
+[ext_resource type="Script" uid="uid://b4fcwa2nl4x28" path="res://scenes/UI/cpu_particles_2d.gd" id="12_pn1pb"]
 
 [node name="bottompanel" type="Control" unique_id=1742692976]
 layout_mode = 3
@@ -166,6 +167,28 @@ value = 20.0
 fill_mode = 3
 nine_patch_stretch = true
 texture_progress = ExtResource("10_sips2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="HealthBar" unique_id=251540562]
+unique_name_in_owner = true
+position = Vector2(69.2, 11.053589)
+emitting = false
+amount = 32
+lifetime = 0.48
+one_shot = true
+explosiveness = 0.65
+randomness = 0.23
+emission_shape = 3
+emission_rect_extents = Vector2(30, 4)
+direction = Vector2(-0.6, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+damping_max = 9.434
+angle_max = 81.5
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+color = Color(1, 1, 0.0627451, 1)
+script = ExtResource("12_pn1pb")
 
 [node name="TimeBarTop" type="TextureProgressBar" parent="." unique_id=614900590]
 unique_name_in_owner = true

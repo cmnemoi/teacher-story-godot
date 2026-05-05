@@ -6,10 +6,22 @@ extends Control
 @onready var time_bar_top: TextureProgressBar = %TimeBarTop
 @onready var time_bar_bottom: TextureProgressBar = %TimeBarBottom
 @onready var health_bar_highlight: TextureProgressBar = %HealthBar_Highlight
+@onready var cpu_particles_2d: CPUParticles2D = %CPUParticles2D
 
 var max_time = 10
 var last_time := -1.0
 var last_life := -1.0
+
+func _ready() -> void:
+	health_bar.max_value = ManagerList.teacher_manager.max_teacher_life
+	health_bar_highlight.max_value = ManagerList.teacher_manager.max_teacher_life
+	health_bar.value = health_bar.max_value
+	health_bar_highlight.value = health_bar_highlight.max_value
+
+	time_bar_top.max_value = max_time
+	time_bar_top.value = max_time
+	time_bar_bottom.max_value = max_time
+	time_bar_bottom.value = 0
 
 func _process(_delta: float) -> void:
 	var time = ManagerList.timer_manager.remaining_time
@@ -30,6 +42,7 @@ func _update_health_bar(life:float) -> void:
 	var tween = create_tween()
 	tween.tween_property(health_bar, "value", life, 0.3)
 	tween.tween_callback(hacky_shit.bind(life))
+	cpu_particles_2d.emitting = true
 func hacky_shit(life:float):
 	await get_tree().create_timer(.1).timeout
 	var tween = create_tween()

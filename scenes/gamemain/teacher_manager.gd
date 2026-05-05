@@ -1,6 +1,6 @@
 extends Node
 
-var max_teacher_life : int = 20
+var max_teacher_life : int = 22
 var teacher_life : int = max_teacher_life
 
 func _ready() -> void:
