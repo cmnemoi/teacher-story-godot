@@ -12,6 +12,16 @@ var DEBUG_SKIP_MISSION_SELECTION = false
 
 var skill_list :Array[Control]= []
 
+var skill_resource_list: Array[SkillResource] = [
+	preload("uid://c0ap80fbge1w2"),
+	preload('uid://ceubcahowtp87'),
+	preload('uid://c8u8a65r1rt1s'),
+	preload('uid://3mw2n4es48sm'),
+	preload('uid://cu1vdts2y2rv7'),
+	preload("uid://du8fw0pvf2ns2"),
+	preload("uid://2bowsbefe021"),
+]
+
 var boy_student_sprites = [
 	preload("res://assets/students/guy1.png"),
 	]

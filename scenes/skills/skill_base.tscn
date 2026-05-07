@@ -5,16 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://comgbjh65362c" path="res://scenes/students/tooltip.tscn" id="3_7cx4e"]
 
 [node name="SkillBase" type="Control" unique_id=344824664]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 3
 anchor_left = 0.49300003
 anchor_top = 0.48800004
-anchor_right = 0.52400005
-anchor_bottom = 0.54300004
-offset_left = 0.063964844
-offset_top = -0.22402954
-offset_right = 0.3519287
-offset_bottom = 0.13598633
+anchor_right = 0.51000005
+anchor_bottom = 0.51900005
+offset_right = 0.4159546
+offset_bottom = -0.088012695
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -25,8 +23,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.85, 0.85)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_7cx4e")
 stretch_mode = 5

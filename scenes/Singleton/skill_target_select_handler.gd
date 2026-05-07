@@ -4,35 +4,58 @@ var groupdesks := []
 var students := []
 
 signal student_pressed(student)
+signal desk_pressed(desk)
+
+##Make the player select a table, returns it
+func select_desk():
+	var desks = ManagerList.desk_manager.desks
+	if len(desks) <= 0:
+		return []
+	for desk in desks:
+		desk.mouse_detector.custom_pressed.connect(desk_pressed.emit.bind(desk))
+		desk.highlighted = true
+	var selected_desk = await desk_pressed
+	for desk in desks:
+		desk.mouse_detector.custom_pressed.disconnect(desk_pressed.emit)
+		desk.highlighted = false
+	return selected_desk
+
+func select_desk_with_students():
+	var desks = ManagerList.desk_manager.desks
+	var selectable = len(desks)
+	for desk in desks:
+		if desk.is_empty():
+			selectable -= 1
+		else:
+			desk.mouse_detector.custom_pressed.connect(desk_pressed.emit.bind(desk))
+			desk.highlighted = true
+	if selectable <= 0:
+		return []
+	var selected_desk = await desk_pressed
+	for desk in desks:
+		if !desk.is_empty():
+			desk.mouse_detector.custom_pressed.disconnect(desk_pressed.emit)
+			desk.highlighted = false
+	return selected_desk
 
 ##Make the player select a table, then Returns an array of students at the selected groupdesk
 func select_groupdesk()-> Array:
-	students = ManagerList.student_manager.students
-	var selectable = len(students)
-	for student in students:
-		if student.untouchable == false:
-			student.mouse_detector.custom_pressed.connect(student_pressed.emit.bind(student))
-			student.modulate = Color(1.0, 1.0, 0.0, 1.0)
-		else:
-			selectable -= 1
-	if selectable <= 0:
+	var desks = ManagerList.desk_manager.desks
+	if len(desks) <= 0:
 		return []
-	var selected_student = await student_pressed
-	for student in students:
-		if student.untouchable == false:
-			student.mouse_detector.custom_pressed.disconnect(student_pressed.emit)
-			student.modulate = Color.WHITE
+	for desk in desks:
+		desk.mouse_detector.custom_pressed.connect(desk_pressed.emit.bind(desk))
+		desk.highlighted = true
+	var selected_desk = await desk_pressed
+	for desk in desks:
+		desk.mouse_detector.custom_pressed.disconnect(desk_pressed.emit)
+		desk.highlighted = false
 	
-	var selected_desk : Desk
-	var selected_students = []
-	for desk in ManagerList.desk_manager.desks:
-		if desk.student == selected_student:
-			selected_desk = desk
-	var group = selected_desk.group
-	for desk in ManagerList.desk_manager.desks:
-		if desk.group == group:
-			selected_students.append(desk.student)
-	return selected_students
+	var result = [selected_desk]
+	for desk in desks:
+		if desk.group == selected_desk.group:
+			result.append(desk)
+	return result
 
 func select_student() -> Array :
 	students = ManagerList.student_manager.students
