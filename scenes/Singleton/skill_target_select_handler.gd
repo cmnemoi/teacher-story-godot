@@ -54,7 +54,7 @@ func select_groupdesk()-> Array:
 	var result = [selected_desk]
 	for desk in desks:
 		if desk.group == selected_desk.group:
-			result.append(desk)
+			result.append(desk.student)
 	return result
 
 func select_student() -> Array :

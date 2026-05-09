@@ -10,3 +10,4 @@ enum CaractereType {Reveur,Jovial,Malin,Timide,Clown,Bruyant,Manipulateur,Hypera
 @export var note: float = 10
 @export var sprite: Texture2D = preload("res://assets/students/guy1.png")
 @export var bag_sprite : Texture2D = Global.BAG_SPRITES[0]
+@export var standing_sprite :Texture2D = preload("uid://t3hq4lvdwpn6")

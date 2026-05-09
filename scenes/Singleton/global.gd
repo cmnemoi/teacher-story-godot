@@ -23,10 +23,10 @@ var skill_resource_list: Array[SkillResource] = [
 ]
 
 var boy_student_sprites = [
-	preload("res://assets/students/guy1.png"),
+	[preload("res://assets/students/guy1.png"),preload("res://assets/students/guy1_standing.png")],
 	]
 var girl_student_sprites = [
-	preload("res://assets/students/girl1.png"),
+	[preload("res://assets/students/girl1.png"),preload("res://assets/students/girl1_standing.png")],
 ]
 
 
