@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djfvxwg61l0a7" path="res://scenes/skills/skill_base.gd" id="1_l28oj"]
 [ext_resource type="Texture2D" uid="uid://dye8xtkx5o28h" path="res://assets/skills/EnseignerIcon.png" id="2_7cx4e"]
-[ext_resource type="PackedScene" uid="uid://comgbjh65362c" path="res://scenes/students/tooltip.tscn" id="3_7cx4e"]
+[ext_resource type="PackedScene" uid="uid://comgbjh65362c" path="res://scenes/UI/tooltip.tscn" id="3_7cx4e"]
 
 [node name="SkillBase" type="Control" unique_id=344824664]
 custom_minimum_size = Vector2(20, 20)

@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://co05m2vnhv261" path="res://scenes/gamemain/teacher_manager.gd" id="5_q4ntq"]
 [ext_resource type="PackedScene" uid="uid://cqijj5mokpqyk" path="res://scenes/game_space/game_space.tscn" id="6_nvwvu"]
 [ext_resource type="PackedScene" uid="uid://b70jo7xp1ebb1" path="res://scenes/UI/bottompanel.tscn" id="8_q4ntq"]
+[ext_resource type="PackedScene" uid="uid://dk41c6biguoq4" path="res://scenes/students/student_tooltip.tscn" id="9_wpknp"]
 [ext_resource type="Texture2D" uid="uid://c4nloatrcadeq" path="res://assets/ui/outside_stuff/right_border.png" id="13_1scvx"]
 [ext_resource type="Texture2D" uid="uid://7wsbkr82yxed" path="res://assets/ui/outside_stuff/bottom_border.png" id="13_ebuvp"]
 [ext_resource type="Texture2D" uid="uid://df7t1i674uynl" path="res://assets/ui/outside_stuff/paper_texture.png" id="13_q0l7d"]
@@ -107,6 +108,20 @@ unique_name_in_owner = true
 [node name="bottompanel" parent="MainGameScreen/ClassRoom/SubViewportContainer" unique_id=1742692976 instance=ExtResource("8_q4ntq")]
 z_index = 13
 layout_mode = 2
+
+[node name="Student_Tooltip" parent="MainGameScreen/ClassRoom" unique_id=1432997240 instance=ExtResource("9_wpknp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 280.0
+offset_bottom = 85.0
 
 [node name="InfoPanel" type="Control" parent="MainGameScreen" unique_id=1504059880]
 z_index = 1

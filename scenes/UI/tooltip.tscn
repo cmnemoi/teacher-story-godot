@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://comgbjh65362c"]
 
-[ext_resource type="Script" uid="uid://l8via0tfryjq" path="res://scenes/students/tooltip.gd" id="1_rf1mp"]
+[ext_resource type="Script" uid="uid://l8via0tfryjq" path="res://scenes/UI/tooltip.gd" id="1_rf1mp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuvat"]
 bg_color = Color(1, 1, 1, 1)

@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://dk41c6biguoq4"]
+
+[ext_resource type="Script" uid="uid://d3rh7tapf52bh" path="res://scenes/students/student_tooltip.gd" id="1_fuvat"]
+[ext_resource type="Texture2D" uid="uid://t3hq4lvdwpn6" path="res://assets/students/up_student_placeholder.png" id="2_cl1if"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06ll2"]
+bg_color = Color(0.53, 0.32647997, 0.14839998, 1)
+border_width_bottom = 16
+border_color = Color(0.43, 0.24789503, 0.09890001, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Student_Tooltip" type="Control" unique_id=1432997240]
+custom_minimum_size = Vector2(270, 75)
+layout_mode = 3
+anchor_left = 0.017
+anchor_top = 0.031000001
+anchor_right = 0.017
+anchor_bottom = 0.031000001
+offset_left = 0.41599846
+offset_top = -0.08800125
+offset_right = -19.584002
+offset_bottom = -20.088001
+script = ExtResource("1_fuvat")
+
+[node name="Panel" type="Panel" parent="." unique_id=916249115]
+self_modulate = Color(1, 1, 1, 0.7529412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_06ll2")
+
+[node name="up_sprite" type="TextureRect" parent="Panel" unique_id=780435486]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_right = 0.18
+anchor_bottom = 0.77
+grow_vertical = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cl1if")
+stretch_mode = 5
+flip_h = true
+
+[node name="Name" type="RichTextLabel" parent="Panel" unique_id=1395382248]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 0.2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/normal_font_size = 16
+text = "Name"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="HpContainer" type="HBoxContainer" parent="Panel" unique_id=118857539]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22
+anchor_top = 0.3
+anchor_right = 0.8
+anchor_bottom = 0.4
+grow_horizontal = 0
+theme_override_constants/separation = -1
+
+[node name="Note" type="RichTextLabel" parent="Panel" unique_id=150466873]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.15
+anchor_right = 0.95
+anchor_bottom = 0.2
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/normal_font_size = 16
+text = "0/20"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Caractere" type="RichTextLabel" parent="Panel" unique_id=140877434]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.9
+anchor_right = 0.95
+anchor_bottom = 0.97
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.89, 0.73632663, 0.23139998, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/normal_font_size = 12
+text = "Ennuyant"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1

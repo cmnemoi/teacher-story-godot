@@ -1,5 +1,5 @@
 extends Node
-
+@onready var student_tooltip: Control = %Student_Tooltip
 var students_resources := []
 var students := []
 var name_info_labels : Array[RichTextLabel] = []
@@ -70,10 +70,12 @@ func generate_x_random_student(x):
 
 		var student_gender = gender.pick_random()
 		if student_gender == "boy":
-			new_student_resource.sprite = Global.boy_student_sprites.pick_random()
+			new_student_resource.sprite = Global.boy_student_sprites.pick_random()[0]
+			new_student_resource.standing_sprite = Global.boy_student_sprites.pick_random()[1]
 			new_student_resource.student_name = boy_names.pick_random()
 		elif student_gender == "girl":
-			new_student_resource.sprite = Global.girl_student_sprites.pick_random()
+			new_student_resource.sprite = Global.girl_student_sprites.pick_random()[0]
+			new_student_resource.standing_sprite = Global.girl_student_sprites.pick_random()[1]
 			new_student_resource.student_name = girl_names.pick_random()
 		else:
 			print("WTF IS GOING ON, A STUDENT IS NON BINARY APPARENTLY (SUPPORT TO THEM BUT THAT'S NOT SUPPOSED TO HAPPEN IN THIS GAME THO)")
@@ -89,7 +91,7 @@ func update_info_labels():
 	for i in range(len(name_info_labels)):
 		name_info_labels[i].text = "[color=326e7d]%s"%[students_resources[i].student_name]
 	for i in range(len(note_info_labels)):
-		note_info_labels[i].text = '[right][color=%s]%s/20'%[Global.get_color_for_note(students_resources[i].note),students_resources[i].note]
+		note_info_labels[i].text = '[right][color=%s]%s/20'%[Global.get_color_for_note(students_resources[i].note),int(students_resources[i].note)]
 
 func make_labels(resource,container,include_caractere_labels = false):
 	var name_label = RichTextLabel.new()
@@ -107,7 +109,7 @@ func make_labels(resource,container,include_caractere_labels = false):
 		
 	var note_label = RichTextLabel.new()
 	set_label_settings(note_label)
-	note_label.text = '[right][color=%s]%s/20'%[Global.get_color_for_note(resource.note),resource.note]
+	note_label.text = '[right][color=%s]%s/20'%[Global.get_color_for_note(resource.note),int(resource.note)]
 	container.add_child(note_label)
 	note_info_labels.append(note_label)
 

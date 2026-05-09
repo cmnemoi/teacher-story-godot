@@ -16,6 +16,7 @@ var untouchable: bool = false
 var current_rank: int = 2 ##valeur entre 0 et 2, 0 c'est le dernier rang, 2 celui de devant
 var bonus_note_on_death: int = 0
 @onready var mouse_detector: Area2D = %"Mouse detector"
+var showing_tooltip := false
 
 func make_ui() -> void:
 	$TextureRect.texture = resource.sprite
@@ -80,6 +81,8 @@ func _process(_delta: float) -> void:
 			damage(1)
 		if Input.is_action_just_pressed("debug2"):
 			reset()
+	if showing_tooltip:
+		ManagerList.student_manager.student_tooltip.show()
 
 
 func _on_mouse_detector_mouse_entered() -> void:
@@ -90,6 +93,8 @@ func _on_mouse_detector_mouse_entered() -> void:
 			child.texture = SPRITE_HOVER_ENNUI
 		else:
 			print("The texture of the hp of a astudent was FUCKING WRONG SOMEHOW")
+	ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,CaractereType.keys()[resource.caractere])
+	showing_tooltip = true
 
 func _on_mouse_detector_mouse_exited() -> void:
 	for child in $HpContainer.get_children():
@@ -99,3 +104,5 @@ func _on_mouse_detector_mouse_exited() -> void:
 			child.texture = SPRITE_ENNUI
 		else:
 			print("The texture of the hp of a student was FUCKING WRONG SOMEHOW")
+	showing_tooltip = false
+	ManagerList.student_manager.student_tooltip.hide()
