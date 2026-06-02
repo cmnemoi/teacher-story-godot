@@ -39,6 +39,8 @@ func _on_main_button_pressed() -> void:
 	for student in student_targets:
 		if student is Student:
 			student.damage(resource.damage_modifier,resource.ennui_breaker,resource.ennui_only)
+			student.add_shield(resource.shield_modifier)
+	ManagerList.teacher_manager.teacher_life += resource.heal_modifier
 	match resource.name:
 		"Rappel à l'ordre": pass #TODO: Remove negative effect
 		"Concentration": pass #TODO: Add positive effect 
@@ -56,7 +58,14 @@ func _on_main_button_pressed() -> void:
 		"Antiseche":
 			student_targets[0].bonus_note_on_death += 1
 		"Chatouilles": pass #TODO: Add negative effect "Enervé"
-	
+		"Demenageur": pass#TODO: Move desk
+		"Exclusion": pass #TODO: remove student
+		"Fusil Hypodermique":pass #TODO: add effect "Ramollo"
+		"Gourdin":pass #TODO: add effect "Mal au crâne"
+		"Meneur": pass #TODO: ALL STUDENTS COME TO THE FRONT
+		"Sonnerie": pass #TODO: remove effect "endormi", add effect "attentifs" to those who were "endormi"
+		"Valium":pass #TODO: add effect "Inoffensif"
+
 	if !no_cc_update:
 		resource.current_cooldown = resource.cooldown
 	else:

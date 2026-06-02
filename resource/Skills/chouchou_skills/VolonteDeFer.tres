@@ -7,7 +7,7 @@
 script = ExtResource("1_304do")
 name = "Volonté de Fer"
 sprite = ExtResource("2_304do")
-description = "L'élève ciblé reçoit l'état 'Inoffensif'."
+description = "Vous gagnez un point de self control"
 damage_modifier = 0
 target = "Self"
 cooldown = 3

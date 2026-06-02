@@ -39,6 +39,14 @@ func _ready() -> void:
 	%"Mouse detector".connect("custome_mouse_exit",_on_mouse_detector_mouse_exited)
 	make_ui()
 
+func add_shield(amount):
+	if amount < 0:
+		return
+	if ennui < 0:
+		ennui = 0
+	ennui += amount
+	make_ui()
+
 func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false):
 	if !untouchable:
 		if ennui > 0 and !ennui_breaker:
