@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://kq8idkdo4wqc"]
 
 [ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_ko25a"]
+[ext_resource type="Resource" uid="uid://btnb6x8nfuw7c" path="res://resource/Skills/chouchou_skills/FusilHypodermique.tres" id="2_b2hof"]
 [ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_oyj75"]
 
 [resource]
@@ -11,5 +12,5 @@ rare = 3
 hostility = 3
 modKnow = 1
 desc = "Ne dors jamais. Ses notes s'en ressentent"
-possible_chouchou_skills = Array[ExtResource("1_ko25a")]([null])
+possible_chouchou_skills = Array[ExtResource("1_ko25a")]([ExtResource("2_b2hof")])
 metadata/_custom_type_script = "uid://cmnqh03p15qh1"

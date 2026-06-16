@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_gab6q"]
 [ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_m1aur"]
+[ext_resource type="Resource" uid="uid://bdum1fxo3q3bk" path="res://resource/Skills/chouchou_skills/Demenageur.tres" id="2_oqp8f"]
+[ext_resource type="Resource" uid="uid://2tgfrebk2var" path="res://resource/Skills/chouchou_skills/Chatouilles.tres" id="3_ecdom"]
 
 [resource]
 script = ExtResource("2_m1aur")
@@ -10,5 +12,5 @@ unique = 1
 rare = 4
 hostility = 3
 desc = "Cet élève sent parfois bizarre"
-possible_chouchou_skills = Array[ExtResource("1_gab6q")]([null])
+possible_chouchou_skills = Array[ExtResource("1_gab6q")]([ExtResource("2_oqp8f"), ExtResource("3_ecdom")])
 metadata/_custom_type_script = "uid://cmnqh03p15qh1"

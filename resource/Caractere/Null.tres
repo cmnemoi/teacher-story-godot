@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://dq7adev36ej5t"]
 
 [ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_a5l51"]
+[ext_resource type="Resource" uid="uid://g5xl02df7pyq" path="res://resource/Skills/chouchou_skills/Antiseche.tres" id="2_bcbw2"]
 [ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_cks1u"]
+[ext_resource type="Resource" uid="uid://1sxv8dg0brj0" path="res://resource/Skills/chouchou_skills/Valium.tres" id="3_552pl"]
+[ext_resource type="Resource" uid="uid://dhddmgbolb51h" path="res://resource/Skills/chouchou_skills/Sonnerie.tres" id="4_ttmen"]
 
 [resource]
 script = ExtResource("2_cks1u")
@@ -11,5 +14,5 @@ rare = -1
 hostility = 2
 modKnow = 2
 desc = "Beaucoup de travail en perspective"
-possible_chouchou_skills = Array[ExtResource("1_a5l51")]([null])
+possible_chouchou_skills = Array[ExtResource("1_a5l51")]([ExtResource("2_bcbw2"), ExtResource("3_552pl"), ExtResource("4_ttmen")])
 metadata/_custom_type_script = "uid://cmnqh03p15qh1"

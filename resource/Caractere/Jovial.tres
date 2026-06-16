@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_82dpf"]
 [ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_7macm"]
+[ext_resource type="Resource" uid="uid://pa2p2muslkui" path="res://resource/Skills/chouchou_skills/VolonteDeFer.tres" id="2_gjuyf"]
+[ext_resource type="Resource" uid="uid://dmw45mwkuto08" path="res://resource/Skills/chouchou_skills/Meneur.tres" id="3_wcgqy"]
+[ext_resource type="Resource" uid="uid://b14qv7abfvho4" path="res://resource/Skills/chouchou_skills/MemePasDrole.tres" id="4_wcgqy"]
 
 [resource]
 script = ExtResource("2_7macm")
@@ -11,5 +14,5 @@ rare = -1
 hostility = 1
 modKnow = -1
 desc = "Elocution difficile"
-possible_chouchou_skills = Array[ExtResource("1_82dpf")]([null])
+possible_chouchou_skills = Array[ExtResource("1_82dpf")]([ExtResource("2_gjuyf"), ExtResource("3_wcgqy"), ExtResource("4_wcgqy")])
 metadata/_custom_type_script = "uid://cmnqh03p15qh1"

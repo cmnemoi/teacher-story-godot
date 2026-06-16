@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_j737q"]
 [ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_decfm"]
+[ext_resource type="Resource" uid="uid://xgcfr2shtvk3" path="res://resource/Skills/chouchou_skills/Explications.tres" id="2_f65qp"]
+[ext_resource type="Resource" uid="uid://pa2p2muslkui" path="res://resource/Skills/chouchou_skills/VolonteDeFer.tres" id="3_66nts"]
+[ext_resource type="Resource" uid="uid://cgjqg1hsv6ngk" path="res://resource/Skills/chouchou_skills/Reconfort.tres" id="3_lidxa"]
 
 [resource]
 script = ExtResource("2_decfm")
@@ -11,5 +14,5 @@ rare = -1
 hostility = 1
 modKnow = -1
 desc = "Sérieux dans l'ensemble, se dissipe vite"
-possible_chouchou_skills = Array[ExtResource("1_j737q")]([null])
+possible_chouchou_skills = Array[ExtResource("1_j737q")]([ExtResource("2_f65qp"), ExtResource("3_lidxa"), ExtResource("3_66nts")])
 metadata/_custom_type_script = "uid://cmnqh03p15qh1"

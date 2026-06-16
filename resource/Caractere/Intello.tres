@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_dmaku"]
 [ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_a7qi3"]
+[ext_resource type="Resource" uid="uid://xgcfr2shtvk3" path="res://resource/Skills/chouchou_skills/Explications.tres" id="2_v6alf"]
 
 [resource]
 script = ExtResource("2_a7qi3")
@@ -11,5 +12,5 @@ rare = 2
 hostility = 2
 modKnow = -1
 desc = "Comprends vite et bien, attention à l'ego"
-possible_chouchou_skills = Array[ExtResource("1_dmaku")]([null])
+possible_chouchou_skills = Array[ExtResource("1_dmaku")]([ExtResource("2_v6alf")])
 metadata/_custom_type_script = "uid://cmnqh03p15qh1"

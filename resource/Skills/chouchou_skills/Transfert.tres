@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://cwgh4jo76rv1a"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_s3815"]
+[ext_resource type="Texture2D" uid="uid://dcclts0nnx1gm" path="res://assets/skills/boringtransfer.png" id="2_s3815"]
+
+[resource]
+script = ExtResource("1_s3815")
+name = "Transfert"
+sprite = ExtResource("2_s3815")
+description = "L'élève ciblé perd ses Shield. La moitié est partagée entre ses voisins de table"
+damage_modifier = 999
+ennui_only = true
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

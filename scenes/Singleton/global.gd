@@ -44,7 +44,29 @@ var chouchou_resource_list : Array[SkillResource] = [
 ]
 
 var caractere_list : Array[CaractereResource] = [
+	preload("uid://tbb8i1wv7hlj"),
+	preload("uid://bk17h73tgnaif"),
+	preload("uid://bdt240pmfjvxm"),
+	preload("uid://xtisa3irft78"),
+	preload("uid://dbbyrp4a61db"),
+	preload("uid://dufl8j3hjhotd"),
+	preload("uid://b5ymls61r4yu6"),
+	preload("uid://ds1eyk740pywd"),
+	preload("uid://cvhav8d1pqfgm"),
+	preload("uid://kq8idkdo4wqc"),
+	preload("uid://cma130tp4sy4y"),
+	preload("uid://bnjtfqcavh38a"),
+	preload("uid://bqf2rkdhhydi1"),
+	preload("uid://b82xgrnwimfhd"),
+	preload("uid://c1m7uw770uur1"),
+	preload("uid://bsjopdkygckf8"),
+	preload("uid://dq7adev36ej5t"),
 	preload("uid://cf0vylthqrfkn"),
+	preload("uid://biv3nlxdtc1vk"),
+	preload("uid://c80km1tj8jk55"),
+	preload("uid://c24xe6pl84f1o"),
+	preload("uid://bqgtt6bbe87mq"),
+	preload("uid://45klhe1vx0k5"),
 ]
 
 var boy_student_sprites = [

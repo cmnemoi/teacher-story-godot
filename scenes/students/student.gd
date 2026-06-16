@@ -100,17 +100,9 @@ func _on_mouse_detector_mouse_entered() -> void:
 			child.texture = SPRITE_HOVER_ENNUI
 		else:
 			print("The texture of the hp of a astudent was FUCKING WRONG SOMEHOW")
-	ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,get_caractere_text())
+	ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,resource.caractere)
 	showing_tooltip = true
 
-func get_caractere_text():
-	var text = resource.caractere.name
-	var new_text = ""
-	for carac in text:
-		if carac == carac.to_upper():
-			new_text += " "
-		new_text += carac
-	return new_text
 
 func _on_mouse_detector_mouse_exited() -> void:
 	for child in $HpContainer.get_children():

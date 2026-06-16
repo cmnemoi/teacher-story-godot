@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://b14qv7abfvho4"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_bjjul"]
+[ext_resource type="Texture2D" uid="uid://qimehwrfdul0" path="res://assets/skills/nolaugh.png" id="2_bjjul"]
+
+[resource]
+script = ExtResource("1_bjjul")
+name = "Même pas drôle"
+sprite = ExtResource("2_bjjul")
+description = "Les élèves de la table ciblée perdent l'état 'Mort de rire'."
+damage_modifier = 0
+target = "Table"
+cooldown = 4
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"
