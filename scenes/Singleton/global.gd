@@ -1,12 +1,10 @@
 extends Node
 
 @onready var IS_DEBUG = "debug" in OS.get_cmdline_args()
-enum CaractereType {GrosDormeur,Insolent,CassePied,Intello,Musqué,Nul,OeuilDeLynx,SansGene,Timide,TresBavard}
-
 const HISTORY_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-12,15)
 const MATH_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-258,138)
 const SCIENCE_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-400,235)
-const DEBUG_CHOUCHOU_SKILL: SkillResource = preload("res://resource/Skills/chouchou_skills/Demenageur.tres")
+const DEBUG_CHOUCHOU_SKILL: SkillResource = null
 const BAG_SPRITES = [preload("uid://cxd8ggqp0omqk"),preload("uid://u78sx6xejio6"),preload("uid://cc75phnlu02nq"),preload("uid://88w24qm8hg25")]
 
 var DEBUG_SKIP_MISSION_SELECTION = false
@@ -45,18 +43,10 @@ var chouchou_resource_list : Array[SkillResource] = [
 	preload("uid://dfrelqlpwkj1o"),
 ]
 
-var chouchou_skills : Dictionary = {
-	CaractereType.GrosDormeur : [chouchou_resource_list[0]],
-	CaractereType.Insolent : [chouchou_resource_list[1]],
-	CaractereType.CassePied : [chouchou_resource_list[2]],
-	CaractereType.Intello : [chouchou_resource_list[3]],
-	CaractereType.Musqué : [chouchou_resource_list[4],chouchou_resource_list[5]],
-	CaractereType.Nul : [chouchou_resource_list[6],chouchou_resource_list[7],chouchou_resource_list[8]],
-	CaractereType.OeuilDeLynx : [chouchou_resource_list[9],chouchou_resource_list[10],chouchou_resource_list[11]],
-	CaractereType.SansGene : [chouchou_resource_list[7]],
-	CaractereType.Timide : [chouchou_resource_list[12]],
-	CaractereType.TresBavard : [chouchou_resource_list[13]],
-}
+var caractere_list : Array[CaractereResource] = [
+	preload("uid://cf0vylthqrfkn"),
+]
+
 var boy_student_sprites = [
 	[preload("uid://bwi8bwxynmh7u"),preload("uid://bem8j4deoqc66")],
 	]

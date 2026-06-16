@@ -38,42 +38,12 @@ func generate_x_random_student(x):
 			print("trying to make more students than there are desks")
 			return students_resources
 		var new_student_resource = StudentResource.new()
-		var CaractereType = Global.CaractereType.duplicate()
-		var random_key = CaractereType.keys().pick_random()
+		var caractere_list = Global.caractere_list
 		new_student_resource.bag_sprite = Global.BAG_SPRITES.pick_random()
-		new_student_resource.caractere = CaractereType[random_key]
-		new_student_resource.chouchou_skill = Global.chouchou_skills[CaractereType[random_key]].pick_random()
-		match new_student_resource.caractere: #TODO: should change depending on difficulty
-			CaractereType.GrosDormeur: 
-				new_student_resource.ennui_de_base = randi_range(2,6)
-				new_student_resource.stupidite_de_base = randi_range(3,4)
-			CaractereType.Insolent: 
-				new_student_resource.ennui_de_base = randi_range(2,3)
-				new_student_resource.stupidite_de_base = randi_range(2,4)
-			CaractereType.CassePied: 
-				new_student_resource.ennui_de_base = randi_range(0,3)
-				new_student_resource.stupidite_de_base = randi_range(2,4)
-			CaractereType.Intello: 
-				new_student_resource.ennui_de_base = randi_range(1,2)
-				new_student_resource.stupidite_de_base = randi_range(1,2)
-			CaractereType.Musqué:
-				new_student_resource.ennui_de_base = randi_range(1,4)
-				new_student_resource.stupidite_de_base = randi_range(2,4)
-			CaractereType.Nul:
-				new_student_resource.ennui_de_base = randi_range(1,4)
-				new_student_resource.stupidite_de_base = randi_range(3,4)
-			CaractereType.OeuilDeLynx:
-				new_student_resource.ennui_de_base = randi_range(0,3)
-				new_student_resource.stupidite_de_base = randi_range(2,4)
-			CaractereType.SansGene:
-				new_student_resource.ennui_de_base = randi_range(1,4)
-				new_student_resource.stupidite_de_base = randi_range(3,4)
-			CaractereType.Timide:
-				new_student_resource.ennui_de_base = randi_range(1,4)
-				new_student_resource.stupidite_de_base = randi_range(3,4)
-			CaractereType.TresBavard:
-				new_student_resource.ennui_de_base = randi_range(1,4)
-				new_student_resource.stupidite_de_base = randi_range(3,4)
+		new_student_resource.caractere = caractere_list.pick_random()
+		new_student_resource.chouchou_skill = new_student_resource.caractere.possible_chouchou_skills.pick_random()
+		new_student_resource.ennui_de_base = randi_range(1,4)
+		new_student_resource.stupidite_de_base = randi_range(3,4)
 
 		var student_gender = gender.pick_random()
 		if student_gender == "boy":
@@ -110,7 +80,7 @@ func make_labels(resource,container,include_caractere_labels = false):
 	if include_caractere_labels:
 		var caractere_label = RichTextLabel.new()
 		set_label_settings(caractere_label)
-		caractere_label.text = '[center][color=326e7d]%s'%[Global.CaractereType.keys()[resource.caractere]]
+		caractere_label.text = '[center][color=326e7d]%s'%[resource.caractere.name]
 		container.add_child(caractere_label)
 		caractere_info_labels.append(caractere_label)
 		

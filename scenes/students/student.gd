@@ -104,7 +104,7 @@ func _on_mouse_detector_mouse_entered() -> void:
 	showing_tooltip = true
 
 func get_caractere_text():
-	var text = Global.CaractereType.keys()[resource.caractere]
+	var text = resource.caractere.name
 	var new_text = ""
 	for carac in text:
 		if carac == carac.to_upper():
