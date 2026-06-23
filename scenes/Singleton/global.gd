@@ -1,12 +1,10 @@
 extends Node
 
 @onready var IS_DEBUG = "debug" in OS.get_cmdline_args()
-enum CaractereType {GrosDormeur,Insolent,CassePied,Intello,Musqué,Nul,OeuilDeLynx,SansGene,Timide,TresBavard}
-
 const HISTORY_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-12,15)
 const MATH_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-258,138)
 const SCIENCE_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-400,235)
-const DEBUG_CHOUCHOU_SKILL: SkillResource = preload("res://resource/Skills/chouchou_skills/Meneur.tres")
+const DEBUG_CHOUCHOU_SKILL: SkillResource = null
 const BAG_SPRITES = [preload("uid://cxd8ggqp0omqk"),preload("uid://u78sx6xejio6"),preload("uid://cc75phnlu02nq"),preload("uid://88w24qm8hg25")]
 
 var DEBUG_SKIP_MISSION_SELECTION = false
@@ -45,18 +43,32 @@ var chouchou_resource_list : Array[SkillResource] = [
 	preload("uid://dfrelqlpwkj1o"),
 ]
 
-var chouchou_skills : Dictionary = {
-	CaractereType.GrosDormeur : [chouchou_resource_list[0]],
-	CaractereType.Insolent : [chouchou_resource_list[1]],
-	CaractereType.CassePied : [chouchou_resource_list[2]],
-	CaractereType.Intello : [chouchou_resource_list[3]],
-	CaractereType.Musqué : [chouchou_resource_list[4],chouchou_resource_list[5]],
-	CaractereType.Nul : [chouchou_resource_list[6],chouchou_resource_list[7],chouchou_resource_list[8]],
-	CaractereType.OeuilDeLynx : [chouchou_resource_list[9],chouchou_resource_list[10],chouchou_resource_list[11]],
-	CaractereType.SansGene : [chouchou_resource_list[7]],
-	CaractereType.Timide : [chouchou_resource_list[12]],
-	CaractereType.TresBavard : [chouchou_resource_list[13]],
-}
+var caractere_list : Array[CaractereResource] = [
+	preload("uid://tbb8i1wv7hlj"),
+	preload("uid://bk17h73tgnaif"),
+	preload("uid://bdt240pmfjvxm"),
+	preload("uid://xtisa3irft78"),
+	preload("uid://dbbyrp4a61db"),
+	preload("uid://dufl8j3hjhotd"),
+	preload("uid://b5ymls61r4yu6"),
+	preload("uid://ds1eyk740pywd"),
+	preload("uid://cvhav8d1pqfgm"),
+	preload("uid://kq8idkdo4wqc"),
+	preload("uid://cma130tp4sy4y"),
+	preload("uid://bnjtfqcavh38a"),
+	preload("uid://bqf2rkdhhydi1"),
+	preload("uid://b82xgrnwimfhd"),
+	preload("uid://c1m7uw770uur1"),
+	preload("uid://bsjopdkygckf8"),
+	preload("uid://dq7adev36ej5t"),
+	preload("uid://cf0vylthqrfkn"),
+	preload("uid://biv3nlxdtc1vk"),
+	preload("uid://c80km1tj8jk55"),
+	preload("uid://c24xe6pl84f1o"),
+	preload("uid://bqgtt6bbe87mq"),
+	preload("uid://45klhe1vx0k5"),
+]
+
 var boy_student_sprites = [
 	[preload("uid://bwi8bwxynmh7u"),preload("uid://bem8j4deoqc66")],
 	]

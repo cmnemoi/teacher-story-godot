@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://cugplw05jnhl1"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_4r0bj"]
+[ext_resource type="Texture2D" uid="uid://iacewxuyhndc" path="res://assets/skills/shock.png" id="2_4r0bj"]
+
+[resource]
+script = ExtResource("1_4r0bj")
+name = "ElectroChoc"
+sprite = ExtResource("2_4r0bj")
+description = "L'élève ciblé perd tous ses états critiques"
+damage_modifier = 0
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

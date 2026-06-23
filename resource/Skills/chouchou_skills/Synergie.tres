@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://dkvinsnvr7sdg"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_lbskm"]
+[ext_resource type="Texture2D" uid="uid://c0023dcda5ogh" path="res://assets/skills/bonusxp.png" id="2_lbskm"]
+
+[resource]
+script = ExtResource("1_lbskm")
+name = "Synergie"
+sprite = ExtResource("2_lbskm")
+description = "L'élève ciblée perd 2 pv . S'il est battu, vous recevez 1 point d'xp supplémentaire"
+cooldown = 4
+bonus_note = 1
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

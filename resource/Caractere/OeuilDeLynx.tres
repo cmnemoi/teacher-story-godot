@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://cf0vylthqrfkn"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_noe7l"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="1_ymfu2"]
+[ext_resource type="Resource" uid="uid://ddcxsr1x4xldm" path="res://resource/Skills/chouchou_skills/Alzheimer.tres" id="2_uc1je"]
+[ext_resource type="Resource" uid="uid://btnb6x8nfuw7c" path="res://resource/Skills/chouchou_skills/FusilHypodermique.tres" id="3_ohnmp"]
+[ext_resource type="Resource" uid="uid://bv4m11lil1tpo" path="res://resource/Skills/chouchou_skills/Gourdin.tres" id="4_bx2ww"]
+
+[resource]
+script = ExtResource("1_ymfu2")
+name = "Oeuil De Lynx"
+unique = 1
+rare = -1
+hostility = 3
+desc = "Bon tireur, prudence"
+possible_chouchou_skills = Array[ExtResource("1_noe7l")]([ExtResource("2_uc1je"), ExtResource("3_ohnmp"), ExtResource("4_bx2ww")])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://bk17h73tgnaif"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_noe7l"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="1_ymfu2"]
+[ext_resource type="Resource" uid="uid://74kx3ggkb7f" path="res://resource/Skills/chouchou_skills/Chut.tres" id="2_8odx6"]
+
+[resource]
+script = ExtResource("1_ymfu2")
+name = "Appliqué"
+unique = 1
+rare = -1
+hostility = 1
+desc = "Bon élève"
+possible_chouchou_skills = Array[ExtResource("1_noe7l")]([ExtResource("2_8odx6")])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

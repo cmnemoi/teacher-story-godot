@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://bnjtfqcavh38a"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_5rwwk"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_8xm6j"]
+[ext_resource type="Resource" uid="uid://bv4m11lil1tpo" path="res://resource/Skills/chouchou_skills/Gourdin.tres" id="2_mbooq"]
+[ext_resource type="Resource" uid="uid://74kx3ggkb7f" path="res://resource/Skills/chouchou_skills/Chut.tres" id="3_bro1n"]
+[ext_resource type="Resource" uid="uid://dgpat7rqkeny" path="res://resource/Skills/chouchou_skills/GrosCerveau.tres" id="4_owtnb"]
+
+[resource]
+script = ExtResource("2_8xm6j")
+name = "Intéréssé"
+unique = 1
+rare = -1
+hostility = 3
+desc = "Elève sérieux, la plupart du temps"
+possible_chouchou_skills = Array[ExtResource("1_5rwwk")]([ExtResource("2_mbooq"), ExtResource("3_bro1n"), ExtResource("4_owtnb")])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

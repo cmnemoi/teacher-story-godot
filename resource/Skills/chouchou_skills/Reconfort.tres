@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://cgjqg1hsv6ngk"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_eis48"]
+[ext_resource type="Texture2D" uid="uid://b6wftvtwd78xh" path="res://assets/skills/hot.png" id="2_eis48"]
+
+[resource]
+script = ExtResource("1_eis48")
+name = "Réconfort"
+sprite = ExtResource("2_eis48")
+description = "Vous gagnez un point de self-control à chaque tour. Dure 3 tours Cumulable"
+damage_modifier = 0
+target = "Self"
+cooldown = 5
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

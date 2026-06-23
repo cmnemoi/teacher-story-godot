@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://74kx3ggkb7f"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_4kvqc"]
+[ext_resource type="Texture2D" uid="uid://bu82a37rllqn0" path="res://assets/skills/chut.png" id="2_4kvqc"]
+
+[resource]
+script = ExtResource("1_4kvqc")
+name = "Chut"
+sprite = ExtResource("2_4kvqc")
+description = "Les élèves de la table ciblée perdent 2 états négatifs mais gagnent 1 Shield"
+damage_modifier = 0
+target = "Table"
+fast_skill = true
+shield_modifier = 1
+metadata/_custom_type_script = "uid://cibimso3crkbb"

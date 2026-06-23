@@ -4,6 +4,7 @@ extends Control
 @onready var hp_container: HBoxContainer = $Panel/HpContainer
 @onready var note_label: RichTextLabel = %Note
 @onready var caractere_label: RichTextLabel = %Caractere
+@onready var caractere_desc: RichTextLabel = %CaractereDesc
 const SPRITE_ENNUI = preload("uid://1qgo66qnt5ib")
 
 var life_sprite = preload("uid://dtlcn2mtrw7ax")
@@ -25,4 +26,13 @@ func change(student_name,standing_sprite,life_amount,shield_amount,note,caracter
 		shield.expand_mode = TextureRect.EXPAND_KEEP_SIZE
 		hp_container.add_child(shield)
 	note_label.text = "%s/20"%int(note)
-	caractere_label.text = caractere
+	caractere_label.text = get_caractere_text(caractere.name)
+	caractere_desc.text = caractere.desc
+
+func get_caractere_text(text):
+	var new_text = ""
+	for carac in text:
+		if carac == carac.to_upper():
+			new_text += " "
+		new_text += carac
+	return new_text

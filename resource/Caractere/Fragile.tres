@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://b5ymls61r4yu6"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_hopkx"]
+[ext_resource type="Resource" uid="uid://4m8ll6cf5ovk" path="res://resource/Skills/chouchou_skills/Meditation.tres" id="2_kiwbu"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_t8j0c"]
+
+[resource]
+script = ExtResource("2_t8j0c")
+name = "Fragile"
+unique = 1
+rare = 1
+hostility = 1
+desc = "Pas très solide"
+possible_chouchou_skills = Array[ExtResource("1_hopkx")]([ExtResource("2_kiwbu")])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

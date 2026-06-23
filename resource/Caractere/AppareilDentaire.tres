@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://tbb8i1wv7hlj"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_louie"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_c4vtb"]
+[ext_resource type="Resource" uid="uid://4m8ll6cf5ovk" path="res://resource/Skills/chouchou_skills/Meditation.tres" id="2_dtgur"]
+[ext_resource type="Resource" uid="uid://1sxv8dg0brj0" path="res://resource/Skills/chouchou_skills/Valium.tres" id="3_axdth"]
+[ext_resource type="Resource" uid="uid://dkvinsnvr7sdg" path="res://resource/Skills/chouchou_skills/Synergie.tres" id="4_axdth"]
+
+[resource]
+script = ExtResource("2_c4vtb")
+name = "Jovial"
+unique = 1
+rare = -1
+hostility = 1
+desc = "Content d'être là"
+possible_chouchou_skills = Array[ExtResource("1_louie")]([ExtResource("2_dtgur"), ExtResource("3_axdth"), ExtResource("4_axdth")])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"
