@@ -5,6 +5,16 @@ extends Control
 @onready var main_button: TextureButton = $MainButton
 var disabled := false
 var no_cc_update := false
+@export var no_button :=false
+const ENDORMI = preload("res://resource/Etats/Endormi.tres")
+const MAL_AU_CRÂNE = preload("res://resource/Etats/MalAuCrâne.tres")
+const INOFFENSIF = preload("res://resource/Etats/Inoffensif.tres")
+const ENERVÉ = preload("res://resource/Etats/Enervé.tres")
+const MORT_DE_RIRE = preload("res://resource/Etats/MortDeRire.tres")
+const CHOUCHOU = preload("res://resource/Etats/Chouchou.tres")
+const TRÈS_ATTENTIF = preload("res://resource/Etats/TrèsAttentif.tres")
+const RAMOLLO = preload("res://resource/Etats/Ramollo.tres")
+const ATTENTIF = preload("res://resource/Etats/Attentif.tres")
 
 func _ready() -> void:
 	Global.skill_list.append(self)
@@ -38,14 +48,32 @@ func _on_main_button_pressed() -> void:
 				secondary_targets = await SkillTargetSelectHandler.select_desk()
 		"Single Desk":
 			student_targets = [await SkillTargetSelectHandler.select_desk()]
+	var concentration_no_effect := false
+	var concentration_only_affected_student : Student = null
+	if resource.name == "Concentration":
+		for student in student_targets:
+			if student is Student:
+				if student.ennui >0:
+					if concentration_only_affected_student !=null:
+						concentration_no_effect = true
+					concentration_only_affected_student = student
+
 	for student in student_targets:
 		if student is Student:
 			student.damage(resource.damage_modifier,resource.ennui_breaker,resource.ennui_only)
 			student.add_shield(resource.shield_modifier)
-	ManagerList.teacher_manager.teacher_life += resource.heal_modifier
+	ManagerList.teacher_manager.damage_teacher(-resource.heal_modifier)
 	match resource.name:
-		"Rappel à l'ordre": pass #TODO: Remove negative effect
-		"Concentration": pass #TODO: Add positive effect 
+		"Concentration":
+			if !concentration_no_effect and concentration_only_affected_student != null:
+				concentration_only_affected_student.resource.etats.append(ATTENTIF)
+		"Rappel à l'ordre": 
+			var stop := false
+			for etat in student_targets[0].resource.etats:
+				if etat.negative and !etat.critical and !stop:
+					stop = true
+					student_targets[0].resource.etats.erase(etat)
+					
 		"Changement de place": 
 			if student_targets != []:
 				ManagerList.desk_manager.assign_student_to_another_desk(student_targets[0],secondary_targets)
@@ -54,12 +82,24 @@ func _on_main_button_pressed() -> void:
 				self.resource = Global.DEBUG_CHOUCHOU_SKILL
 			else:
 				self.resource = student_targets[0].resource.chouchou_skill
+			student_targets[0].resource.etats.append(CHOUCHOU)
 			no_cc_update  = true
 		"Alzheimer":
 			Global.bottom_panel.randomize_skills()
 		"Antiseche":
 			student_targets[0].bonus_note_on_death += 1
-		"Chatouilles": pass #TODO: Add negative effect "Enervé"
+		"Chatouilles": 
+			student_targets[0].damage(999,false,true)
+			student_targets[0].resource.etats.append(ENERVÉ)
+		"Chut": 
+			for student in student_targets:
+				if student is Student:
+					student.add_shield(1)
+					var count = 0
+					for etat in student.resource.etats:
+						if etat.negative and count <2:
+							student.resource.etats.erase(etat)
+							count +=1
 		"Demenageur": 
 			var current_desk = student_targets[0]
 			var active := true
@@ -70,9 +110,22 @@ func _on_main_button_pressed() -> void:
 					active = false
 			if active:
 				current_desk.move_front()
-		"Exclusion": pass #TODO: remove student
-		"Fusil Hypodermique":pass #TODO: add effect "Ramollo"
-		"Gourdin":pass #TODO: add effect "Mal au crâne"
+		"ElectroChoc": 
+			for etat in student_targets[0].resource.etats:
+				if etat.critical and etat.name != 'Endormi':
+					student_targets[0].resource.etats.erase(etat)
+		"Exclusion": 
+			for desk in ManagerList.desk_manager.get_room_desk_list():
+				if desk.student == student_targets[0]:
+					desk.play_pouf()
+			ManagerList.student_manager.exclude(student_targets[0])
+		"Fusil Hypodermique": student_targets[0].resource.etats.append(RAMOLLO)
+		"Gourdin":student_targets[0].resource.etats.append(MAL_AU_CRÂNE)
+		"Gros Cerveau": student_targets[0].resource.etats.append(TRÈS_ATTENTIF)
+		"Même pas drôle": 
+			for student in student_targets:
+				if student is Student:
+					student.resource.etats.erase(MORT_DE_RIRE)
 		"Meneur": 
 			var room_desk = ManagerList.desk_manager.get_room_desk_list()
 			if randf() < .90:
@@ -86,9 +139,31 @@ func _on_main_button_pressed() -> void:
 							return true)
 			for i in range(len(student_targets)):
 				ManagerList.desk_manager.assign_student_to_another_desk(student_targets[i],room_desk[i])
-					
-		"Sonnerie": pass #TODO: remove effect "endormi", add effect "attentifs" to those who were "endormi"
-		"Valium":pass #TODO: add effect "Inoffensif"
+		"Réconfort": ManagerList.timer_manager.healing_time.append(3)
+		"Sonnerie": 
+			for student in student_targets:
+				if student is Student:
+					if  ENDORMI in student.resource.etats:
+						student.resource.etats.erase(ENDORMI)
+		"Synergie":
+			for student in student_targets:
+				if student is Student:
+					if student.beaten:
+						print("+1 XP")
+						#TODO: add +1 XP
+		"Transfert": 
+			for student in student_targets:
+				if student is Student:
+					var transfert_temp = student.ennui
+					var transfert_desk : Desk
+					student.damage(transfert_temp,false,true)
+					for desk in ManagerList.desk_manager.desks:
+						if desk.student == student:
+							transfert_desk = desk
+					for desk in ManagerList.desk_manager.get_room_desk_list():
+						if desk.group == transfert_desk.group and desk != transfert_desk:
+							desk.student.add_shield(ceil(transfert_temp/2))
+		"Valium":student_targets[0].resource.etats.append(INOFFENSIF)
 
 	if !no_cc_update:
 		resource.current_cooldown = resource.cooldown
@@ -99,12 +174,11 @@ func _on_main_button_pressed() -> void:
 
 	if !resource.fast_skill:
 		ManagerList.timer_manager.update_time(-1)
-		ManagerList.teacher_manager.teacher_life -= randi_range(0,3)
 
 func _process(_delta: float) -> void:
 	update()
 	disabled = resource.current_cooldown > 0
-	if disabled:
+	if disabled or no_button:
 		modulate = Color(0.53, 0.53, 0.53, 1.0)
 		main_button.disabled = true
 	else:

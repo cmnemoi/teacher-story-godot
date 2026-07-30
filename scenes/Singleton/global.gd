@@ -7,7 +7,7 @@ const SCIENCE_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-400,235)
 const DEBUG_CHOUCHOU_SKILL: SkillResource = null
 const BAG_SPRITES = [preload("uid://cxd8ggqp0omqk"),preload("uid://u78sx6xejio6"),preload("uid://cc75phnlu02nq"),preload("uid://88w24qm8hg25")]
 
-var DEBUG_SKIP_MISSION_SELECTION = false
+@export var DEBUG_SKIP_MISSION_SELECTION = true
 
 var bottom_panel : Control
 
@@ -27,20 +27,27 @@ var skill_resource_list: Array[SkillResource] = [
 	preload("uid://2bowsbefe021"),
 ]
 var chouchou_resource_list : Array[SkillResource] = [
-	preload("uid://pa2p2muslkui"),
-	preload("uid://db0v660vlwixt"),
-	preload("uid://dmw45mwkuto08"),
-	preload("uid://xgcfr2shtvk3"),
-	preload("uid://2tgfrebk2var"),
-	preload("uid://bdum1fxo3q3bk"),
-	preload("uid://g5xl02df7pyq"),
-	preload("uid://dhddmgbolb51h"),
-	preload("uid://1sxv8dg0brj0"),
 	preload("uid://ddcxsr1x4xldm"),
+	preload("uid://g5xl02df7pyq"),
+	preload("uid://2tgfrebk2var"),
+	preload("uid://74kx3ggkb7f"),
+	preload("uid://dfrelqlpwkj1o"),
+	preload("uid://bdum1fxo3q3bk"),
+	preload("uid://cugplw05jnhl1"),
+	preload("uid://db0v660vlwixt"),
+	preload("uid://xgcfr2shtvk3"),
 	preload("uid://btnb6x8nfuw7c"),
 	preload("uid://bv4m11lil1tpo"),
+	preload("uid://dgpat7rqkeny"),
 	preload("uid://4m8ll6cf5ovk"),
-	preload("uid://dfrelqlpwkj1o"),
+	preload("uid://b14qv7abfvho4"),
+	preload("uid://dmw45mwkuto08"),
+	preload("uid://cgjqg1hsv6ngk"),
+	preload("uid://dhddmgbolb51h"),
+	preload("uid://dkvinsnvr7sdg"),
+	preload("uid://cwgh4jo76rv1a"),
+	preload("uid://1sxv8dg0brj0"),
+	preload("uid://pa2p2muslkui"),
 ]
 
 var caractere_list : Array[CaractereResource] = [
@@ -121,3 +128,10 @@ func get_text_for_mission_objective(resource:MissionBase):
 		else: text = "Note minimum:[color=%s][b] %s/20[/b][/color]"%[get_color_for_note(note),note]
 	else: text = "Note minimum:[color=%s][b] %s/20[/b][/color]"%[get_color_for_note(note),note]
 	return text
+
+func array_difference(arr1, arr2):
+	var only_in_arr1 = []
+	for v in arr1:
+		if not (v in arr2):
+			only_in_arr1.append(v)
+	return only_in_arr1
