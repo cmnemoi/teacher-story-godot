@@ -6,6 +6,7 @@ extends Control
 var disabled := false
 var no_cc_update := false
 @export var no_button :=false
+var override_no_button := false
 const ENDORMI = preload("res://resource/Etats/Endormi.tres")
 const MAL_AU_CRÂNE = preload("res://resource/Etats/MalAuCrâne.tres")
 const INOFFENSIF = preload("res://resource/Etats/Inoffensif.tres")
@@ -29,12 +30,28 @@ func _on_main_button_pressed() -> void:
 
 	for skill in Global.skill_list:
 		skill.main_button.disabled = true
+	
+	if resource.rest_skills:
+		match resource.name:
+			"Corriger des exercices": 
+				for student_resource in ManagerList.student_manager.students_beaten_last_class:
+					student_resource.note += 0.5
+					ManagerList.student_manager.update_info_labels()
+			"Se détendre un peu": ManagerList.teacher_manager.damage_teacher(-resource.heal_modifier)
+			"Partager son expérience": print("XP+4") #TODO: Add 4 xp
+			"Se mettre en Arrêt maladie": pass #TODO: heal over 15 hours
+		await get_tree().create_timer(2).timeout
+		ManagerList.mission_manager.start_class()
+		return
+	
+	
 	var student_targets = []
 	var secondary_targets = []
 	match resource.target:
 		"Self": student_targets = []
 		"Column" : student_targets = await SkillTargetSelectHandler.select_column()
-		"Single": student_targets = await SkillTargetSelectHandler.select_student(resource.chouchou_skill)
+		"Single":
+			student_targets = await SkillTargetSelectHandler.select_student(resource.chouchou_skill)
 		"Table":
 			student_targets = await SkillTargetSelectHandler.select_groupdesk()
 		"All": student_targets = SkillTargetSelectHandler.students
@@ -68,12 +85,13 @@ func _on_main_button_pressed() -> void:
 			if !concentration_no_effect and concentration_only_affected_student != null:
 				concentration_only_affected_student.resource.etats.append(ATTENTIF)
 		"Rappel à l'ordre": 
-			var stop := false
-			for etat in student_targets[0].resource.etats:
-				if etat.negative and !etat.critical and !stop:
-					stop = true
-					student_targets[0].resource.etats.erase(etat)
-					
+			if !student_targets.is_empty():
+				var stop := false
+				for etat in student_targets[0].resource.etats: #TODO: bug when 0 students
+					if etat.negative and !etat.critical and !stop:
+						stop = true
+						student_targets[0].resource.etats.erase(etat)
+
 		"Changement de place": 
 			if student_targets != []:
 				ManagerList.desk_manager.assign_student_to_another_desk(student_targets[0],secondary_targets)
@@ -179,7 +197,7 @@ func _on_main_button_pressed() -> void:
 func _process(_delta: float) -> void:
 	update()
 	disabled = resource.current_cooldown > 0
-	if disabled or no_button:
+	if disabled or (no_button and !override_no_button):
 		modulate = Color(0.53, 0.53, 0.53, 1.0)
 		main_button.disabled = true
 	else:

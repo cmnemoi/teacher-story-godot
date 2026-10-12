@@ -7,7 +7,7 @@ const DIFFICULTIES_WEIGHTS : Array[int] = [7,13,10,5]
 const POSSIBLE_GOALS : Array[int] = [8,9,10,11,12,13,14]
 const POSSIBLE_GOALS_FOR_X_ELEVES : Array[int] = [10,12,14,16]
 var goals_weights : Array[int] = [7,10,9,6,2,0]
-
+var current_class_count = 0
 
 func _ready() -> void:
 	ManagerList.mission_manager = self
@@ -22,6 +22,7 @@ func update_mainscreen_ui():
 func generate_mission_selection():
 	%MainGameScreen.hide()
 	%MissionSelectionScreen.show()
+	current_mission_resource = null
 	var debug_child
 	for child in %MissionSelectionInstanceContainer.get_children():
 		if child is MissionSelectionInstance:
@@ -34,6 +35,7 @@ func generate_mission_selection():
 
 
 func mission_selected(resource,name_labels,note_labels,caractere_labels):
+	current_class_count = 0
 	current_mission_resource = resource
 	var sm = ManagerList.student_manager
 	sm.students_resources = resource.students
@@ -41,16 +43,49 @@ func mission_selected(resource,name_labels,note_labels,caractere_labels):
 	sm.note_info_labels = note_labels
 	sm.caractere_info_labels = caractere_labels
 	reparent_labels(Global.interleave_arrays(name_labels,note_labels),%StudentInfoContainer)
-	sm.assign_students_to_random_desk()
+	start_class()
+
+func start_class():
+	ManagerList.student_manager.reset_class()
 	%MainGameScreen.show()
 	%MissionSelectionScreen.hide()
 	update_mainscreen_ui()
-	match resource.matiere:
+	match current_mission_resource.matiere:
 		"Histoire-Géo": %GameSpace.set_camera_offset(Global.HISTORY_CLASS_CAMERA_OFFSET)
 		"Maths": %GameSpace.set_camera_offset(Global.MATH_CLASS_CAMERA_OFFSET)
 		"Science":%GameSpace.set_camera_offset(Global.SCIENCE_CLASS_CAMERA_OFFSET)
-	ManagerList.teacher_manager.spawn_james(resource.matiere)
+	ManagerList.teacher_manager.spawn_james(current_mission_resource.matiere)
+	ManagerList.timer_manager.start_classtime()
+	Global.bottom_panel.reset()
 
+func return_next_timetable_location():
+	if check_if_current_mission_is_completed():
+		Global.DEBUG_SKIP_MISSION_SELECTION = false
+		generate_mission_selection()
+	else:
+		return "home" #TODO: add time table
+
+func check_if_current_mission_is_completed():
+	if current_mission_resource.goal_is_for_x_student == -1:
+		for student_resource in current_mission_resource.students:
+			if student_resource.note < current_mission_resource.goal:
+				return false
+	else:
+		var students = current_mission_resource.students.duplicate()
+		for i in range(current_mission_resource.goal_is_for_x_student):
+			var best_student = get_highest_note(students)
+			if best_student.note < current_mission_resource.goal:
+				return false
+			students.erase(best_student)
+	return true
+
+func get_highest_note(student_list):
+	var highest_student = StudentResource.new()
+	highest_student.note = 0
+	for student in student_list:
+		if student.note > highest_student.note:
+			highest_student = student
+	return highest_student
 
 func reparent_labels(labels,new_parent):
 	for label in labels:
